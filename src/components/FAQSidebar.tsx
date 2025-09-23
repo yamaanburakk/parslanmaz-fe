@@ -197,7 +197,7 @@ const FAQSidebar = () => {
       <div className="bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl p-6 text-white text-center">
         <h3 className="text-lg font-bold mb-2">Güncel Kalın</h3>
         <p className="text-accent-100 text-sm mb-4">
-          Yeni SSS'ler ve güncellemelerden haberdar olun
+          Yeni SSS&apos;ler ve güncellemelerden haberdar olun
         </p>
         <div className="space-y-3">
           <input

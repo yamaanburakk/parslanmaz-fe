@@ -63,7 +63,7 @@ const MissionVision = () => {
                 </div>
                 
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  Sadece Türkiye'de değil, <span className="font-semibold text-accent-600">uluslararası en çok tercih edilen</span> endüstriyel mutfak markası olmak.
+                  Sadece Türkiye&apos;de değil, <span className="font-semibold text-accent-600">uluslararası en çok tercih edilen</span> endüstriyel mutfak markası olmak.
                 </p>
                 
                 <div className="space-y-4">
@@ -91,7 +91,7 @@ const MissionVision = () => {
           <div className="mt-16 text-center">
             <div className="bg-gradient-to-r from-primary-500 to-accent-500 p-8 rounded-2xl text-white">
               <blockquote className="text-2xl md:text-3xl font-bold mb-4">
-                "Her detayda kalite, her projede tutku!"
+                &quot;Her detayda kalite, her projede tutku!&quot;
               </blockquote>
               <p className="text-xl text-primary-100">
                 PARS – Mutfakta profesyonelliğin adı.

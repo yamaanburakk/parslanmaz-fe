@@ -60,9 +60,9 @@ const ProjectsCTA = () => {
           {/* Testimonial */}
           <div className="mt-16 bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
             <blockquote className="text-xl italic text-primary-100 mb-4">
-              "Pars Endüstriyel Mutfak ile çalışmak harika bir deneyimdi. 
+              &quot;Pars Endüstriyel Mutfak ile çalışmak harika bir deneyimdi. 
               Profesyonel yaklaşımları ve kaliteli ürünleri sayesinde 
-              projemiz zamanında ve mükemmel şekilde tamamlandı."
+              projemiz zamanında ve mükemmel şekilde tamamlandı.&quot;
             </blockquote>
             <div className="flex items-center justify-center">
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">

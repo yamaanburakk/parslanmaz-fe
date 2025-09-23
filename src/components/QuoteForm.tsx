@@ -246,7 +246,7 @@ const QuoteForm = () => {
             required
           />
           <label htmlFor="privacy" className="text-sm text-gray-600">
-            <a href="/gizlilik" className="text-primary-600 hover:text-primary-700">Gizlilik Politikası</a>'nı okudum ve kabul ediyorum. 
+            <a href="/gizlilik" className="text-primary-600 hover:text-primary-700">Gizlilik Politikası</a>&apos;nı okudum ve kabul ediyorum. 
             Kişisel verilerimin işlenmesine onay veriyorum.
           </label>
         </div>

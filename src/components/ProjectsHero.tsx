@@ -30,7 +30,7 @@ const ProjectsHero = () => {
                   <span className="block text-accent-400">Projelerimiz</span>
                 </h1>
                 <p className="text-xl text-primary-100 leading-relaxed mb-8">
-                  Türkiye'nin dört bir yanında ve uluslararası projelerde imza attığımız 
+                  Türkiye&apos;nin dört bir yanında ve uluslararası projelerde imza attığımız 
                   <span className="text-accent-300 font-semibold"> başarılı çalışmalarımızı</span> keşfedin.
                 </p>
               </div>

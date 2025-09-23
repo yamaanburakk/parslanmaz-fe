@@ -32,8 +32,8 @@ const AboutContent = () => {
               
               <div className="bg-gradient-to-r from-primary-50 to-accent-50 p-8 rounded-2xl border-l-4 border-accent-400">
                 <p className="text-lg text-gray-800 italic">
-                  "Yerli üretim gücümüz ve sektörel deneyimimizle, Türkiye'nin dört bir yanında ve 
-                  uluslararası projelere değer katıyor, markanızı bir adım öne taşıyoruz."
+                  &quot;Yerli üretim gücümüz ve sektörel deneyimimizle, Türkiye&apos;nin dört bir yanında ve 
+                  uluslararası projelere değer katıyor, markanızı bir adım öne taşıyoruz.&quot;
                 </p>
               </div>
             </div>
