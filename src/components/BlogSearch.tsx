@@ -90,7 +90,7 @@ const BlogSearch = () => {
             onFocus={() => setIsSearchFocused(true)}
             onBlur={() => setTimeout(() => setIsSearchFocused(false), 200)}
             placeholder="Blog yazılarında ara..."
-            className="w-full px-6 py-4 pr-16 text-gray-900 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors shadow-sm"
+            className="w-full px-6 py-4 pr-16 text-white placeholder-white rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors shadow-sm"
           />
           <button
             type="submit"

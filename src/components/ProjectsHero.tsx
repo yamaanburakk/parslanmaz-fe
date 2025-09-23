@@ -20,51 +20,51 @@ const ProjectsHero = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div className="space-y-8">
-              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
-                <span className="text-primary-100 text-sm font-medium">Projelerimiz</span>
+              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 sm:py-3">
+                <span className="text-primary-100 text-xs sm:text-sm font-medium">Projelerimiz</span>
               </div>
               
               <div>
-                <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
                   Başarılı
                   <span className="block text-accent-400">Projelerimiz</span>
                 </h1>
-                <p className="text-xl text-primary-100 leading-relaxed mb-8">
+                <p className="text-sm sm:text-base md:text-lg text-primary-100 leading-relaxed mb-6 sm:mb-8">
                   Türkiye&apos;nin dört bir yanında ve uluslararası projelerde imza attığımız 
                   <span className="text-accent-300 font-semibold"> başarılı çalışmalarımızı</span> keşfedin.
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-accent-500 text-primary-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-accent-400 transition-all duration-300 transform hover:scale-105">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <button className="bg-accent-500 text-primary-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base hover:bg-accent-400 transition-all duration-300 transform hover:scale-105">
                   Projeleri İncele
                 </button>
-                <button className="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+                <button className="border-2 border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
                   Referans Al
                 </button>
               </div>
             </div>
             
             {/* Stats Cards */}
-            <div className="grid grid-cols-2 gap-6">
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center">
-                <div className="text-4xl font-bold text-accent-400 mb-2">500+</div>
-                <div className="text-primary-100">Tamamlanan Proje</div>
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
+              <div className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-2xl text-center">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent-400 mb-2">500+</div>
+                <div className="text-primary-100 text-xs sm:text-sm">Tamamlanan Proje</div>
               </div>
               
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center">
-                <div className="text-4xl font-bold text-accent-400 mb-2">50+</div>
-                <div className="text-primary-100">Ülkeye İhracat</div>
+              <div className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-2xl text-center">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent-400 mb-2">50+</div>
+                <div className="text-primary-100 text-xs sm:text-sm">Ülkeye İhracat</div>
               </div>
               
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center">
-                <div className="text-4xl font-bold text-accent-400 mb-2">15+</div>
-                <div className="text-primary-100">Yıllık Tecrübe</div>
+              <div className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-2xl text-center">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent-400 mb-2">15+</div>
+                <div className="text-primary-100 text-xs sm:text-sm">Yıllık Tecrübe</div>
               </div>
               
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center">
-                <div className="text-4xl font-bold text-accent-400 mb-2">%100</div>
-                <div className="text-primary-100">Müşteri Memnuniyeti</div>
+              <div className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-2xl text-center">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent-400 mb-2">%100</div>
+                <div className="text-primary-100 text-xs sm:text-sm">Müşteri Memnuniyeti</div>
               </div>
             </div>
           </div>
