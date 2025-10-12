@@ -2,7 +2,6 @@ import AboutHero from "@/components/AboutHero";
 import AboutContent from "@/components/AboutContent";
 import MissionVision from "@/components/MissionVision";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import TeamSection from "@/components/TeamSection";
 import StatsSection from "@/components/StatsSection";
 
 export const metadata = {
@@ -12,12 +11,11 @@ export const metadata = {
 
 export default function HakkimizdaPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-20">
       <AboutHero />
       <AboutContent />
       <MissionVision />
       <WhyChooseUs />
-      <TeamSection />
       <StatsSection />
     </div>
   );

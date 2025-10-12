@@ -14,11 +14,11 @@ interface RelatedPost {
   tags: string[];
 }
 
-interface RelatedPostsProps {
-  currentPostId: number;
-}
+// interface RelatedPostsProps {
+//   currentPostId: number; // Will be used when implementing actual related posts logic
+// }
 
-const RelatedPosts = ({ currentPostId }: RelatedPostsProps) => {
+const RelatedPosts = () => {
   const relatedPosts: RelatedPost[] = [
     {
       id: 2,

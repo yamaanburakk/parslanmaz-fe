@@ -193,23 +193,6 @@ const FAQSidebar = () => {
         </div>
       </div>
 
-      {/* Newsletter */}
-      <div className="bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl p-6 text-white text-center">
-        <h3 className="text-lg font-bold mb-2">Güncel Kalın</h3>
-        <p className="text-accent-100 text-sm mb-4">
-          Yeni SSS&apos;ler ve güncellemelerden haberdar olun
-        </p>
-        <div className="space-y-3">
-          <input
-            type="email"
-            placeholder="E-posta adresiniz"
-            className="w-full px-4 py-2 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-white/50"
-          />
-          <button className="w-full bg-white text-accent-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">
-            Abone Ol
-          </button>
-        </div>
-      </div>
     </div>
   );
 };

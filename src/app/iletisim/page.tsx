@@ -1,11 +1,10 @@
 import ContactHero from '@/components/ContactHero';
 import ContactForm from '@/components/ContactForm';
-import ContactInfo from '@/components/ContactInfo';
 import GoogleMap from '@/components/GoogleMap';
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pt-20">
       {/* Contact Hero Section */}
       <ContactHero />
       

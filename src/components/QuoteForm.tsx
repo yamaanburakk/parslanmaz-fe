@@ -43,7 +43,7 @@ const QuoteForm = () => {
         budget: '',
         timeline: ''
       });
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -53,8 +53,8 @@ const QuoteForm = () => {
   return (
     <div className="bg-white rounded-xl shadow-lg p-8">
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">Teklif Formu</h2>
-        <p className="text-gray-600">
+        <h2 className="text-xl font-bold text-gray-900 mb-2">Teklif Formu</h2>
+        <p className="text-[#131C3C] font-medium text-sm">
           Endüstriyel mutfak ekipmanları için detaylı teklif almak için formu doldurun.
         </p>
       </div>
@@ -85,7 +85,7 @@ const QuoteForm = () => {
         {/* Personal Information */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="name" className="block text-xs font-medium text-[#131C3C] mb-2">
               Ad Soyad *
             </label>
             <input
@@ -94,14 +94,14 @@ const QuoteForm = () => {
               name="name"
               value={formData.name}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-gray-900"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66B2FF] focus:border-transparent transition-colors text-gray-900"
               placeholder="Adınızı ve soyadınızı girin"
               required
             />
           </div>
           
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="email" className="block text-xs font-medium text-[#131C3C] mb-2">
               E-posta Adresi *
             </label>
             <input
@@ -110,7 +110,7 @@ const QuoteForm = () => {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-gray-900"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66B2FF] focus:border-transparent transition-colors text-gray-900"
               placeholder="E-posta adresinizi girin"
               required
             />
@@ -119,7 +119,7 @@ const QuoteForm = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="phone" className="block text-xs font-medium text-[#131C3C] mb-2">
               Telefon Numarası *
             </label>
             <input
@@ -128,14 +128,14 @@ const QuoteForm = () => {
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-gray-900"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66B2FF] focus:border-transparent transition-colors text-gray-900"
               placeholder="+90 555 123 45 67"
               required
             />
           </div>
           
           <div>
-            <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="company" className="block text-xs font-medium text-[#131C3C] mb-2">
               Şirket Adı
             </label>
             <input
@@ -144,7 +144,7 @@ const QuoteForm = () => {
               name="company"
               value={formData.company}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-gray-900"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66B2FF] focus:border-transparent transition-colors text-gray-900"
               placeholder="Şirket adınızı girin"
             />
           </div>
@@ -152,7 +152,7 @@ const QuoteForm = () => {
 
         {/* Product Selection */}
         <div>
-          <label htmlFor="product" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="product" className="block text-xs font-medium text-[#131C3C] mb-2">
             Ürün Kategorisi *
           </label>
           <select
@@ -177,7 +177,7 @@ const QuoteForm = () => {
         {/* Budget and Timeline */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="budget" className="block text-xs font-medium text-[#131C3C] mb-2">
               Bütçe Aralığı
             </label>
             <select
@@ -185,7 +185,7 @@ const QuoteForm = () => {
               name="budget"
               value={formData.budget}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-gray-900"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66B2FF] focus:border-transparent transition-colors text-gray-900"
             >
               <option value="">Bütçe aralığını seçiniz</option>
               <option value="0-50k">0 - 50.000 TL</option>
@@ -197,7 +197,7 @@ const QuoteForm = () => {
           </div>
           
           <div>
-            <label htmlFor="timeline" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="timeline" className="block text-xs font-medium text-[#131C3C] mb-2">
               Zaman Çizelgesi
             </label>
             <select
@@ -205,7 +205,7 @@ const QuoteForm = () => {
               name="timeline"
               value={formData.timeline}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-gray-900"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66B2FF] focus:border-transparent transition-colors text-gray-900"
             >
               <option value="">Zaman çizelgesini seçiniz</option>
               <option value="acil">Acil (1 hafta)</option>
@@ -219,7 +219,7 @@ const QuoteForm = () => {
 
         {/* Message */}
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="message" className="block text-xs font-medium text-[#131C3C] mb-2">
             Ekstra Notlar
           </label>
           <textarea
@@ -232,7 +232,7 @@ const QuoteForm = () => {
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none text-gray-900"
             placeholder="Projeniz hakkında detaylı bilgi verebilirsiniz..."
           />
-          <div className="text-right text-sm text-gray-500 mt-1">
+          <div className="text-right text-xs text-[#131C3C] mt-1 font-medium">
             {formData.message.length}/180
           </div>
         </div>
@@ -242,11 +242,11 @@ const QuoteForm = () => {
           <input
             type="checkbox"
             id="privacy"
-            className="mt-1 w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+            className="mt-1 w-4 h-4 text-[#66B2FF] border-gray-300 rounded focus:ring-[#66B2FF]"
             required
           />
-          <label htmlFor="privacy" className="text-sm text-gray-600">
-            <a href="/gizlilik" className="text-primary-600 hover:text-primary-700">Gizlilik Politikası</a>&apos;nı okudum ve kabul ediyorum. 
+          <label htmlFor="privacy" className="text-xs text-[#131C3C] font-medium">
+            <a href="/gizlilik" className="text-[#66B2FF] hover:text-[#4A90E2]">Gizlilik Politikası</a>&apos;nı okudum ve kabul ediyorum. 
             Kişisel verilerimin işlenmesine onay veriyorum.
           </label>
         </div>
@@ -255,7 +255,7 @@ const QuoteForm = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-primary-500 hover:bg-primary-600 disabled:bg-gray-400 text-white py-4 px-6 rounded-lg font-medium transition-colors flex items-center justify-center text-lg"
+          className="w-full bg-gradient-to-r from-[#B8860B] to-[#CD853F] hover:from-[#CD853F] hover:to-[#B8860B] disabled:bg-gray-400 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-[#B8860B]/25 border border-[#B8860B]/40 flex items-center justify-center text-sm"
         >
           {isSubmitting ? (
             <>

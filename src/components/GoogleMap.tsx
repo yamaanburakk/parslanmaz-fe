@@ -37,8 +37,7 @@ const GoogleMap = () => {
             <h4 className="font-semibold text-gray-900 mb-2">İletişim</h4>
             <p className="text-sm text-gray-600">
               📞 +90 541 228 83 66<br />
-              📧 info@parslanmaz.com<br />
-              🚗 Otopark: Mevcut
+              📧 info@parslanmaz.com
             </p>
           </div>
         </div>

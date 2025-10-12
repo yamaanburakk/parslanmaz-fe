@@ -192,7 +192,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pt-20">
       {/* Reading Progress Bar */}
       <ReadingProgress />
       
@@ -207,10 +207,10 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             <BlogPostContent post={post} />
             
             {/* Comments Section */}
-            <BlogComments postId={post.id} />
-            
+            <BlogComments />
+
             {/* Related Posts */}
-            <RelatedPosts currentPostId={post.id} />
+            <RelatedPosts />
           </div>
           
           {/* Sidebar */}

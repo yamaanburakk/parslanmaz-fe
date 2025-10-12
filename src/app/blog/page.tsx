@@ -6,7 +6,7 @@ import BlogCategories from '@/components/BlogCategories';
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pt-20">
       {/* Blog Hero Section */}
       <BlogHero />
       

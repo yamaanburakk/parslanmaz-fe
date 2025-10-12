@@ -4,7 +4,7 @@ import ContactInfo from '@/components/ContactInfo';
 
 export default function QuotePage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-[#F8FAFC] to-[#F1F5F9] pt-20">
       {/* Quote Hero Section */}
       <QuoteHero />
       

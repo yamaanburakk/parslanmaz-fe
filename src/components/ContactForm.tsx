@@ -45,7 +45,7 @@ const ContactForm = () => {
         budget: '',
         timeline: ''
       });
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);

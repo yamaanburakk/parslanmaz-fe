@@ -15,11 +15,11 @@ interface Comment {
   replies?: Comment[];
 }
 
-interface BlogCommentsProps {
-  postId: number;
-}
+// interface BlogCommentsProps {
+//   postId: number; // Will be used when implementing actual comments functionality
+// }
 
-const BlogComments = ({ postId }: BlogCommentsProps) => {
+const BlogComments = () => {
   const [newComment, setNewComment] = useState('');
   const [comments, setComments] = useState<Comment[]>([
     {

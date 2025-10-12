@@ -21,17 +21,17 @@ interface BlogPostContentProps {
 }
 
 const BlogPostContent = ({ post }: BlogPostContentProps) => {
-  const [showFullContent, setShowFullContent] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
+  // const [showFullContent, setShowFullContent] = useState(false);
+  // const [activeSection, setActiveSection] = useState('');
 
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('tr-TR', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
+  // const formatDate = (dateString: string) => {
+  //   const date = new Date(dateString);
+  //   return date.toLocaleDateString('tr-TR', {
+  //     year: 'numeric',
+  //     month: 'long',
+  //     day: 'numeric'
+  //   });
+  // };
 
   const sections = [
     { id: 'giris', title: 'Giriş', icon: '🎯' },

@@ -59,7 +59,7 @@ export default function AcikBufePage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-20">
       <ProductHero 
         title={productData.title}
         subtitle={productData.subtitle}

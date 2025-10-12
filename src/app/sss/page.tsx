@@ -6,7 +6,7 @@ import FAQSidebar from '@/components/FAQSidebar';
 
 export default function FAQPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pt-20">
       {/* FAQ Hero Section */}
       <FAQHero />
       

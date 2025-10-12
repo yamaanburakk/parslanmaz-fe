@@ -46,7 +46,7 @@ const FAQSearch = () => {
     } else {
       setSearchSuggestions([]);
     }
-  }, [searchQuery]);
+  }, [searchQuery, allSuggestions]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();

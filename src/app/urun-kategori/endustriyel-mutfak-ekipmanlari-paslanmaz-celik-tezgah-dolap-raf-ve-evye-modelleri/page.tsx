@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ProductHero from "@/components/ProductHero";
 import ProductFeatures from "@/components/ProductFeatures";
 import ProductGallery from "@/components/ProductGallery";
@@ -60,7 +59,7 @@ export default function EndustriyelMutfakPage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-20">
       <ProductHero 
         title={productData.title}
         subtitle={productData.subtitle}

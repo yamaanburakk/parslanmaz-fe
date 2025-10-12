@@ -1,32 +1,70 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #1f2a44;
-  
-  /* Custom color palette based on #1f2a44 */
-  --primary-50: #f0f2f7;
-  --primary-100: #d9deeb;
-  --primary-200: #b8c2d9;
-  --primary-300: #8fa0c2;
-  --primary-400: #6b7da8;
-  --primary-500: #1f2a44;
-  --primary-600: #1a2339;
-  --primary-700: #151c2e;
-  --primary-800: #101523;
-  --primary-900: #0b0e18;
-  
-  --accent-50: #fef7ed;
-  --accent-100: #fdecd1;
-  --accent-200: #fbd5a3;
-  --accent-300: #f8b86a;
-  --accent-400: #f59e42;
-  --accent-500: #f97316;
-  --accent-600: #ea580c;
-  --accent-700: #c2410c;
-  --accent-800: #9a3412;
-  --accent-900: #7c2d12;
-}
+        :root {
+          --background: #131C3C;
+          --foreground: #ffffff;
+
+          /* Parslanmaz Professional Color Palette - #131C3C bazlı canlı renkler */
+          /* Primary: Logo rengi bazlı profesyonel tonlar */
+          --primary-50: #131C3C;
+          --primary-100: #1A2647;
+          --primary-200: #223052;
+          --primary-300: #2A3A5D;
+          --primary-400: #324468;
+          --primary-500: #3A4E73;
+          --primary-600: #42587E;
+          --primary-700: #4A6289;
+          --primary-800: #526C94;
+          --primary-900: #5A769F;
+
+          /* Accent: Canlı mavi tonları - Logo ile uyumlu */
+          --accent-50: #66B2FF;
+          --accent-100: #5AA8FF;
+          --accent-200: #4E9EFF;
+          --accent-300: #4294FF;
+          --accent-400: #368AFF;
+          --accent-500: #2A80FF;
+          --accent-600: #1E76FF;
+          --accent-700: #126CFF;
+          --accent-800: #0662FF;
+          --accent-900: #0058FF;
+
+          /* Vibrant Orange/Amber for highlights - Canlı vurgu renkleri */
+          --orange-50: #FF6B35;
+          --orange-100: #FF5F2B;
+          --orange-200: #FF5321;
+          --orange-300: #FF4717;
+          --orange-400: #FF3B0D;
+          --orange-500: #FF2F03;
+          --orange-600: #FF2300;
+          --orange-700: #E61F00;
+          --orange-800: #CC1B00;
+          --orange-900: #B31700;
+
+          /* Professional Gold/Yellow accents */
+          --gold-50: #FFD700;
+          --gold-100: #FFD100;
+          --gold-200: #FFCB00;
+          --gold-300: #FFC500;
+          --gold-400: #FFBF00;
+          --gold-500: #FFB900;
+          --gold-600: #FFB300;
+          --gold-700: #FFAD00;
+          --gold-800: #FFA700;
+          --gold-900: #FFA100;
+
+          /* Clean whites and grays */
+          --neutral-50: #F8FAFC;
+          --neutral-100: #F1F5F9;
+          --neutral-200: #E2E8F0;
+          --neutral-300: #CBD5E1;
+          --neutral-400: #94A3B8;
+          --neutral-500: #64748B;
+          --neutral-600: #475569;
+          --neutral-700: #334155;
+          --neutral-800: #1E293B;
+          --neutral-900: #0F172A;
+        }
 
 @theme inline {
   --color-background: var(--background);
@@ -51,19 +89,200 @@
   --color-accent-700: var(--accent-700);
   --color-accent-800: var(--accent-800);
   --color-accent-900: var(--accent-900);
+  --color-orange-50: var(--orange-50);
+  --color-orange-100: var(--orange-100);
+  --color-orange-200: var(--orange-200);
+  --color-orange-300: var(--orange-300);
+  --color-orange-400: var(--orange-400);
+  --color-orange-500: var(--orange-500);
+  --color-orange-600: var(--orange-600);
+  --color-orange-700: var(--orange-700);
+  --color-orange-800: var(--orange-800);
+  --color-orange-900: var(--orange-900);
+  --color-gold-50: var(--gold-50);
+  --color-gold-100: var(--gold-100);
+  --color-gold-200: var(--gold-200);
+  --color-gold-300: var(--gold-300);
+  --color-gold-400: var(--gold-400);
+  --color-gold-500: var(--gold-500);
+  --color-gold-600: var(--gold-600);
+  --color-gold-700: var(--gold-700);
+  --color-gold-800: var(--gold-800);
+  --color-gold-900: var(--gold-900);
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0b0e18;
-    --foreground: #f0f2f7;
+    --background: #131C3C;
+    --foreground: #ffffff;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  font-variation-settings: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Professional Typography Scale */
+h1 {
+  font-size: 1.875rem; /* 30px */
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+p {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Mobile Responsive Typography */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 1.5rem; /* 24px */
+  }
+  
+  h2 {
+    font-size: 1.25rem; /* 20px */
+  }
+  
+  h3 {
+    font-size: 1.125rem; /* 18px */
+  }
+  
+  p {
+    font-size: 0.8125rem; /* 13px */
+  }
+}
+
+/* Professional Button Typography */
+.btn-primary {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.btn-secondary {
+  font-size: 0.8125rem; /* 13px */
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Form Typography */
+.form-label {
+  font-size: 0.75rem; /* 12px */
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.form-input {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.5;
+}
+
+/* Navigation Typography */
+.nav-link {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Card Typography */
+.card-title {
+  font-size: 1rem; /* 16px */
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.card-text {
+  font-size: 0.8125rem; /* 13px */
+  line-height: 1.5;
+}
+
+/* Hero Section Vendor Prefixes */
+.hero-section {
+  -webkit-image-rendering: auto;
+  -moz-image-rendering: auto;
+  -ms-image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+  -webkit-text-rendering: geometricPrecision;
+  -moz-text-rendering: geometricPrecision;
+  -ms-text-rendering: geometricPrecision;
+  -webkit-optimize-contrast: true;
+  -webkit-optimize-speed: false;
+  -webkit-text-stroke: 0.01em transparent;
+  -webkit-will-change: transform, opacity;
+}
+
+.hero-background {
+  -webkit-image-rendering: auto;
+  -moz-image-rendering: auto;
+  -ms-image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -webkit-filter: contrast(1.2) brightness(0.95) saturate(1.15);
+  -moz-filter: contrast(1.2) brightness(0.95) saturate(1.15);
+  -ms-filter: contrast(1.2) brightness(0.95) saturate(1.15);
+  -webkit-perspective: 1000px;
+  -webkit-optimize-contrast: true;
+  -webkit-optimize-speed: false;
+  -webkit-text-stroke: 0.01em transparent;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+  -webkit-text-rendering: geometricPrecision;
+  -moz-text-rendering: geometricPrecision;
+  -ms-text-rendering: geometricPrecision;
 }

@@ -9,7 +9,7 @@ interface ProductHeroProps {
 
 const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroProps) => {
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700 text-white overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-[#131C3C] via-[#1A2647] to-[#223052] text-white overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -19,7 +19,7 @@ const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroPro
           className="object-cover opacity-20"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-500/80 via-primary-600/80 to-primary-700/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#131C3C]/80 via-[#1A2647]/80 to-[#223052]/80"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -27,35 +27,32 @@ const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroPro
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div className="space-y-8">
-              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
-                <span className="text-primary-100 text-sm font-medium">Ürün Kategorisi</span>
+              <div className="inline-flex items-center bg-gradient-to-r from-[#66B2FF]/20 to-[#FF6B35]/20 backdrop-blur-md rounded-full px-6 py-3 border border-[#66B2FF]/40 shadow-xl">
+                <span className="text-[#66B2FF] text-sm font-bold tracking-wide">Ürün Kategorisi</span>
               </div>
               
               <div>
                 <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                   {title}
                 </h1>
-                <h2 className="text-2xl md:text-3xl text-accent-300 mb-6 font-semibold">
+                <h2 className="text-2xl md:text-3xl bg-gradient-to-r from-[#66B2FF] to-[#FF6B35] bg-clip-text text-transparent mb-6 font-semibold">
                   {subtitle}
                 </h2>
-                <p className="text-xl text-primary-100 leading-relaxed">
+                <p className="text-base sm:text-lg text-[#F8FAFC] leading-relaxed font-medium">
                   {description}
                 </p>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/hemen-teklif-al" className="bg-accent-500 text-primary-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-accent-400 transition-all duration-300 transform hover:scale-105 inline-block text-center">
+                <a href="/hemen-teklif-al" className="bg-gradient-to-r from-[#66B2FF] to-[#4E9EFF] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-[#4E9EFF] hover:to-[#66B2FF] transition-all duration-300 transform hover:scale-105 inline-block text-center shadow-lg">
                   Ücretsiz Teklif Al
                 </a>
-                <button className="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
-                  Katalog İndir
-                </button>
               </div>
             </div>
             
             {/* Image */}
             <div className="relative">
-              <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl border border-[#66B2FF]/30">
                 <Image
                   src={heroImage}
                   alt={title}
@@ -67,25 +64,30 @@ const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroPro
               </div>
               
               {/* Floating Cards */}
-              <div className="absolute -top-6 -right-6 bg-white/10 backdrop-blur-sm p-4 rounded-xl">
-                <div className="text-2xl font-bold text-accent-400">500+</div>
-                <div className="text-sm text-primary-100">Proje</div>
+              <div className="absolute -top-6 -right-6 bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-[#66B2FF]/30 shadow-lg">
+                <div className="text-2xl font-bold text-[#66B2FF]">500+</div>
+                <div className="text-sm text-[#F1F5F9]">Proje</div>
               </div>
               
-              <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-sm p-4 rounded-xl">
-                <div className="text-2xl font-bold text-accent-400">5 Yıl</div>
-                <div className="text-sm text-primary-100">Garanti</div>
+              <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-[#FF6B35]/30 shadow-lg">
+                <div className="text-2xl font-bold text-[#FF6B35]">5 Yıl</div>
+                <div className="text-sm text-[#F1F5F9]">Garanti</div>
               </div>
             </div>
           </div>
         </div>
       </div>
       
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#66B2FF]/10 to-[#FF6B35]/10"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#66B2FF]/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#FF6B35]/15 rounded-full blur-2xl"></div>
+      
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-accent-400/10 rounded-full blur-xl"></div>
-        <div className="absolute bottom-20 right-10 w-48 h-48 bg-white/5 rounded-full blur-2xl"></div>
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-accent-300/20 rounded-full blur-lg"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-[#66B2FF]/20 rounded-full blur-xl"></div>
+        <div className="absolute bottom-20 right-10 w-48 h-48 bg-[#FFD700]/10 rounded-full blur-2xl"></div>
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-[#FF6B35]/20 rounded-full blur-lg"></div>
       </div>
     </section>
   );

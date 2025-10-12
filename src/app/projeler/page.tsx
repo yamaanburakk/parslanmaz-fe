@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function ProjelerPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-20">
       <ProjectsHero />
       <ProjectsGrid />
       <ProjectsStats />

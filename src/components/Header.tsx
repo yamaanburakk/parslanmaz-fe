@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
@@ -22,119 +23,126 @@ const Header = () => {
     setActiveMenuItem(menuItem);
   };
 
-  // URL değiştiğinde menüleri kapat
   useEffect(() => {
     setIsMenuOpen(false);
     setIsProductsOpen(false);
     setActiveMenuItem(null);
   }, [pathname]);
 
+
   return (
-    <header className="bg-white/95 backdrop-blur-sm shadow-lg border-b border-primary-200 sticky top-0 z-50">
-      {/* Main Header */}
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center">
-            <img 
-              src="/pars-logo.jpeg" 
-              alt="Pars Endüstriyel Mutfak" 
-              className="h-24 w-auto object-contain bg-white rounded-lg shadow-sm border border-primary-100"
-            />
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            <Link href="/" className="text-primary-700 hover:text-primary-600 font-medium transition-colors relative group text-sm sm:text-base">
-              Anasayfa
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-500 transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/hakkimizda" className="text-primary-700 hover:text-primary-600 font-medium transition-colors relative group text-sm sm:text-base">
-              Hakkımızda
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-500 transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <div className="relative group">
-              <button className="text-primary-700 hover:text-primary-600 font-medium transition-colors flex items-center relative text-sm sm:text-base">
-                Ürünler
-                <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-500 transition-all duration-300 group-hover:w-full"></span>
-              </button>
-              <div className="absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-sm shadow-xl border border-primary-200 rounded-lg py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <a href="/urun-kategori/endustriyel-mutfak-ekipmanlari-paslanmaz-celik-tezgah-dolap-raf-ve-evye-modelleri" className="block px-4 py-3 text-primary-700 hover:bg-accent-50 hover:text-accent-700 transition-colors font-medium border-l-2 border-transparent hover:border-accent-500 text-sm sm:text-base">
-                  Endüstriyel Mutfak Ekipmanları
-                </a>
-                <a href="/urun-kategori/acik-bufe-ekipmanlari-servis-uniteleri-paslanmaz-celik-bufe-tezgah-ve-vitrin-modelleri" className="block px-4 py-3 text-primary-700 hover:bg-accent-50 hover:text-accent-700 transition-colors font-medium border-l-2 border-transparent hover:border-accent-500 text-sm sm:text-base">
-                  Açık Büfe Ekipmanları & Servis Üniteleri
-                </a>
-                <a href="/urun-kategori/ekmek-unlu-mamuller-dolaplari-paslanmaz-celik-firin-vitrin-ve-tezgah-modelleri" className="block px-4 py-3 text-primary-700 hover:bg-accent-50 hover:text-accent-700 transition-colors font-medium border-l-2 border-transparent hover:border-accent-500 text-sm sm:text-base">
-                  Ekmek & Unlu Mamuller Dolapları
-                </a>
-                <a href="/urun-kategori/pasta-sarkuteri-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" className="block px-4 py-3 text-primary-700 hover:bg-accent-50 hover:text-accent-700 transition-colors font-medium border-l-2 border-transparent hover:border-accent-500 text-sm sm:text-base">
-                  Pasta & Şarküteri Dolapları
-                </a>
-                <a href="/urun-kategori/waffle-kumpir-dolaplari-paslanmaz-celik-tezgah-vitrin-ve-dolap-modelleri" className="block px-4 py-3 text-primary-700 hover:bg-accent-50 hover:text-accent-700 transition-colors font-medium border-l-2 border-transparent hover:border-accent-500 text-sm sm:text-base">
-                  Waffle & Kumpir Dolapları
-                </a>
-                <a href="/urun-kategori/cikolata-lokum-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" className="block px-4 py-3 text-primary-700 hover:bg-accent-50 hover:text-accent-700 transition-colors font-medium border-l-2 border-transparent hover:border-accent-500 text-sm sm:text-base">
-                  Çikolata & Lokum Dolapları
-                </a>
-                <a href="/urun-kategori/borek-baklava-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" className="block px-4 py-3 text-primary-700 hover:bg-accent-50 hover:text-accent-700 transition-colors font-medium border-l-2 border-transparent hover:border-accent-500 text-sm sm:text-base">
-                  Börek & Baklava Dolapları
-                </a>
-              </div>
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Top Section - Logo Color Background */}
+      <div className="bg-[#131C3C]">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <div className="flex items-center">
+              <Link href="/" className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#66B2FF]/20 to-[#4A90E2]/20 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 blur-sm group-hover:blur-none"></div>
+                <div className="relative bg-gradient-to-r from-[#131C3C]/0 to-[#1A2647]/0 group-hover:from-[#131C3C]/10 group-hover:to-[#1A2647]/10 rounded-xl p-2 transition-all duration-300 border border-transparent group-hover:border-[#66B2FF]/30 group-hover:shadow-lg group-hover:shadow-[#66B2FF]/20">
+                  <Image 
+                    src="/parslanmaz-logo.jpeg" 
+                    alt="Parslanmaz Endüstriyel Mutfak" 
+                    width={240}
+                    height={64}
+                    className="w-auto object-contain h-16 transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
+                    priority
+                  />
+                </div>
+                {/* Professional Glow Effect */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#66B2FF] to-[#4A90E2] rounded-xl opacity-0 group-hover:opacity-20 transition-all duration-300 blur-md group-hover:blur-lg"></div>
+              </Link>
             </div>
-            <Link href="/projeler" className="text-primary-700 hover:text-primary-600 font-medium transition-colors relative group text-sm sm:text-base">
-              Projeler
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-500 transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/blog" className="text-primary-700 hover:text-primary-600 font-medium transition-colors relative group text-sm sm:text-base">
-              Blog
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-500 transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/sss" className="text-primary-700 hover:text-primary-600 font-medium transition-colors relative group text-sm sm:text-base">
-              SSS
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-500 transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/iletisim" className="text-primary-700 hover:text-primary-600 font-medium transition-colors relative group text-sm sm:text-base">
-              İletişim
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-500 transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-          </nav>
 
-          {/* CTA Button and Mobile Menu */}
-          <div className="flex items-center space-x-4">
-            {/* CTA Button */}
-            <Link 
-              href="/hemen-teklif-al" 
-              className="hidden md:inline-block bg-gradient-to-r from-accent-500 to-accent-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-accent-600 hover:to-accent-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm sm:text-base"
-            >
-              Hemen Teklif Al
-            </Link>
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center space-x-6">
+              <Link href="/" className="text-white hover:text-[#66B2FF] font-semibold relative text-base">
+                Anasayfa
+              </Link>
+              <Link href="/hakkimizda" className="text-white hover:text-[#66B2FF] font-semibold relative text-base">
+                Hakkımızda
+              </Link>
+              <div className="relative group">
+                <button className="text-white hover:text-[#66B2FF] font-semibold flex items-center relative text-base">
+                  Ürünler
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div className="absolute top-full left-0 mt-2 w-64 bg-white backdrop-blur-md shadow-2xl border border-[#66B2FF]/20 rounded-xl py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <a href="/urun-kategori/endustriyel-mutfak-ekipmanlari-paslanmaz-celik-tezgah-dolap-raf-ve-evye-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
+                    Endüstriyel Mutfak Ekipmanları
+                  </a>
+                  <a href="/urun-kategori/acik-bufe-ekipmanlari-servis-uniteleri-paslanmaz-celik-bufe-tezgah-ve-vitrin-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
+                    Açık Büfe Ekipmanları & Servis Üniteleri
+                  </a>
+                  <a href="/urun-kategori/ekmek-unlu-mamuller-dolaplari-paslanmaz-celik-firin-vitrin-ve-tezgah-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
+                    Ekmek & Unlu Mamuller Dolapları
+                  </a>
+                  <a href="/urun-kategori/pasta-sarkuteri-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
+                    Pasta & Şarküteri Dolapları
+                  </a>
+                  <a href="/urun-kategori/waffle-kumpir-dolaplari-paslanmaz-celik-tezgah-vitrin-ve-dolap-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
+                    Waffle & Kumpir Dolapları
+                  </a>
+                  <a href="/urun-kategori/cikolata-lokum-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
+                    Çikolata & Lokum Dolapları
+                  </a>
+                  <a href="/urun-kategori/borek-baklava-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
+                    Börek & Baklava Dolapları
+                  </a>
+                </div>
+              </div>
+              <Link href="/projeler" className="text-white hover:text-[#66B2FF] font-semibold relative text-base">
+                Projeler
+              </Link>
+              <Link href="/blog" className="text-white hover:text-[#66B2FF] font-semibold relative text-base">
+                Blog
+              </Link>
+              <Link href="/sss" className="text-white hover:text-[#66B2FF] font-semibold relative text-base">
+                SSS
+              </Link>
+              <Link href="/iletisim" className="text-white hover:text-[#66B2FF] font-semibold relative text-base">
+                İletişim
+              </Link>
+            </nav>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={handleMenuToggle}
-              className="lg:hidden text-primary-700 hover:text-primary-600 transition-colors p-2 rounded-lg hover:bg-primary-50"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
+            {/* CTA Button and Mobile Menu */}
+            <div className="flex items-center space-x-4">
+              {/* CTA Button */}
+              <Link 
+                href="/hemen-teklif-al" 
+                className="hidden md:inline-block bg-gradient-to-r from-[#131C3C] to-[#1A2647] text-white px-6 py-3 rounded-lg font-bold hover:from-[#1A2647] hover:to-[#131C3C] border border-[#66B2FF]/30 text-base shadow-lg hover:shadow-[#66B2FF]/20 transition-all duration-300"
+              >
+                Hemen Teklif Al
+              </Link>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={handleMenuToggle}
+                className="lg:hidden text-white hover:text-[#66B2FF] p-2 rounded-lg hover:bg-white/10"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-primary-200 bg-gradient-to-br from-primary-50 to-accent-50/30 rounded-lg">
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="lg:hidden bg-[#131C3C] shadow-lg">
+          <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-1 pt-4 px-4">
               <Link 
                 href="/" 
-                className={`py-3 px-4 rounded-lg font-medium transition-all duration-200 text-sm sm:text-base ${
+                className={`py-3 px-4 rounded-xl font-semibold transition-all duration-200 text-sm sm:text-base ${
                   activeMenuItem === 'home' 
-                    ? 'bg-accent-100 text-accent-700 border-l-4 border-accent-500' 
-                    : 'text-primary-700 hover:text-primary-600 hover:bg-white/70'
+                    ? 'bg-[#66B2FF]/20 text-[#66B2FF] border-l-4 border-[#66B2FF] shadow-lg' 
+                    : 'text-white hover:text-[#66B2FF] hover:bg-[#66B2FF]/10'
                 }`}
                 onClick={() => handleMenuItemClick('home')}
               >
@@ -142,10 +150,10 @@ const Header = () => {
               </Link>
               <Link 
                 href="/hakkimizda" 
-                className={`py-3 px-4 rounded-lg font-medium transition-all duration-200 text-sm sm:text-base ${
+                className={`py-3 px-4 rounded-xl font-semibold transition-all duration-200 text-sm sm:text-base ${
                   activeMenuItem === 'about' 
-                    ? 'bg-accent-100 text-accent-700 border-l-4 border-accent-500' 
-                    : 'text-primary-700 hover:text-primary-600 hover:bg-white/70'
+                    ? 'bg-[#66B2FF]/20 text-[#66B2FF] border-l-4 border-[#66B2FF] shadow-lg' 
+                    : 'text-white hover:text-[#66B2FF] hover:bg-[#66B2FF]/10'
                 }`}
                 onClick={() => handleMenuItemClick('about')}
               >
@@ -157,10 +165,10 @@ const Header = () => {
                     handleProductsToggle();
                     handleMenuItemClick('products');
                   }}
-                  className={`py-3 px-4 rounded-lg font-medium flex items-center w-full text-left transition-all duration-200 text-sm sm:text-base ${
+                  className={`py-3 px-4 rounded-xl font-semibold flex items-center w-full text-left transition-all duration-200 text-sm sm:text-base ${
                     activeMenuItem === 'products' 
-                      ? 'bg-accent-100 text-accent-700 border-l-4 border-accent-500' 
-                      : 'text-primary-700 hover:text-primary-600 hover:bg-white/70'
+                      ? 'bg-[#66B2FF]/20 text-[#66B2FF] border-l-4 border-[#66B2FF] shadow-lg' 
+                      : 'text-white hover:text-[#66B2FF] hover:bg-[#66B2FF]/10'
                   }`}
                 >
                   Ürünler
@@ -172,10 +180,10 @@ const Header = () => {
                   <div className="ml-4 mt-2 space-y-1">
                     <a 
                       href="/urun-kategori/endustriyel-mutfak-ekipmanlari-paslanmaz-celik-tezgah-dolap-raf-ve-evye-modelleri" 
-                      className={`block py-2 px-4 rounded-lg font-medium border-l-2 transition-all duration-200 text-xs sm:text-sm ${
+                      className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'endustriyel' 
-                          ? 'bg-accent-100 text-accent-700 border-accent-500' 
-                          : 'text-primary-600 hover:text-accent-700 hover:bg-white/70 border-transparent hover:border-accent-500'
+                          ? 'bg-[#4A90E2]/20 text-[#4A90E2] border-[#4A90E2] shadow-lg' 
+                          : 'text-gray-600 hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
                       }`}
                       onClick={() => handleMenuItemClick('endustriyel')}
                     >
@@ -183,10 +191,10 @@ const Header = () => {
                     </a>
                     <a 
                       href="/urun-kategori/acik-bufe-ekipmanlari-servis-uniteleri-paslanmaz-celik-bufe-tezgah-ve-vitrin-modelleri" 
-                      className={`block py-2 px-4 rounded-lg font-medium border-l-2 transition-all duration-200 text-xs sm:text-sm ${
+                      className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'acik-bufe' 
-                          ? 'bg-accent-100 text-accent-700 border-accent-500' 
-                          : 'text-primary-600 hover:text-accent-700 hover:bg-white/70 border-transparent hover:border-accent-500'
+                          ? 'bg-[#4A90E2]/20 text-[#4A90E2] border-[#4A90E2] shadow-lg' 
+                          : 'text-gray-600 hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
                       }`}
                       onClick={() => handleMenuItemClick('acik-bufe')}
                     >
@@ -194,10 +202,10 @@ const Header = () => {
                     </a>
                     <a 
                       href="/urun-kategori/ekmek-unlu-mamuller-dolaplari-paslanmaz-celik-firin-vitrin-ve-tezgah-modelleri" 
-                      className={`block py-2 px-4 rounded-lg font-medium border-l-2 transition-all duration-200 text-xs sm:text-sm ${
+                      className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'ekmek' 
-                          ? 'bg-accent-100 text-accent-700 border-accent-500' 
-                          : 'text-primary-600 hover:text-accent-700 hover:bg-white/70 border-transparent hover:border-accent-500'
+                          ? 'bg-[#4A90E2]/20 text-[#4A90E2] border-[#4A90E2] shadow-lg' 
+                          : 'text-gray-600 hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
                       }`}
                       onClick={() => handleMenuItemClick('ekmek')}
                     >
@@ -205,10 +213,10 @@ const Header = () => {
                     </a>
                     <a 
                       href="/urun-kategori/pasta-sarkuteri-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" 
-                      className={`block py-2 px-4 rounded-lg font-medium border-l-2 transition-all duration-200 text-xs sm:text-sm ${
+                      className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'pasta' 
-                          ? 'bg-accent-100 text-accent-700 border-accent-500' 
-                          : 'text-primary-600 hover:text-accent-700 hover:bg-white/70 border-transparent hover:border-accent-500'
+                          ? 'bg-[#4A90E2]/20 text-[#4A90E2] border-[#4A90E2] shadow-lg' 
+                          : 'text-gray-600 hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
                       }`}
                       onClick={() => handleMenuItemClick('pasta')}
                     >
@@ -216,10 +224,10 @@ const Header = () => {
                     </a>
                     <a 
                       href="/urun-kategori/waffle-kumpir-dolaplari-paslanmaz-celik-tezgah-vitrin-ve-dolap-modelleri" 
-                      className={`block py-2 px-4 rounded-lg font-medium border-l-2 transition-all duration-200 text-xs sm:text-sm ${
+                      className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'waffle' 
-                          ? 'bg-accent-100 text-accent-700 border-accent-500' 
-                          : 'text-primary-600 hover:text-accent-700 hover:bg-white/70 border-transparent hover:border-accent-500'
+                          ? 'bg-[#4A90E2]/20 text-[#4A90E2] border-[#4A90E2] shadow-lg' 
+                          : 'text-gray-600 hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
                       }`}
                       onClick={() => handleMenuItemClick('waffle')}
                     >
@@ -227,10 +235,10 @@ const Header = () => {
                     </a>
                     <a 
                       href="/urun-kategori/cikolata-lokum-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" 
-                      className={`block py-2 px-4 rounded-lg font-medium border-l-2 transition-all duration-200 text-xs sm:text-sm ${
+                      className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'cikolata' 
-                          ? 'bg-accent-100 text-accent-700 border-accent-500' 
-                          : 'text-primary-600 hover:text-accent-700 hover:bg-white/70 border-transparent hover:border-accent-500'
+                          ? 'bg-[#4A90E2]/20 text-[#4A90E2] border-[#4A90E2] shadow-lg' 
+                          : 'text-gray-600 hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
                       }`}
                       onClick={() => handleMenuItemClick('cikolata')}
                     >
@@ -238,10 +246,10 @@ const Header = () => {
                     </a>
                     <a 
                       href="/urun-kategori/borek-baklava-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" 
-                      className={`block py-2 px-4 rounded-lg font-medium border-l-2 transition-all duration-200 text-xs sm:text-sm ${
+                      className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'borek' 
-                          ? 'bg-accent-100 text-accent-700 border-accent-500' 
-                          : 'text-primary-600 hover:text-accent-700 hover:bg-white/70 border-transparent hover:border-accent-500'
+                          ? 'bg-[#4A90E2]/20 text-[#4A90E2] border-[#4A90E2] shadow-lg' 
+                          : 'text-gray-600 hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
                       }`}
                       onClick={() => handleMenuItemClick('borek')}
                     >
@@ -252,10 +260,10 @@ const Header = () => {
               </div>
               <Link 
                 href="/projeler" 
-                className={`py-3 px-4 rounded-lg font-medium transition-all duration-200 text-sm sm:text-base ${
+                className={`py-3 px-4 rounded-xl font-semibold transition-all duration-200 text-sm sm:text-base ${
                   activeMenuItem === 'projects' 
-                    ? 'bg-accent-100 text-accent-700 border-l-4 border-accent-500' 
-                    : 'text-primary-700 hover:text-primary-600 hover:bg-white/70'
+                    ? 'bg-[#66B2FF]/20 text-[#66B2FF] border-l-4 border-[#66B2FF] shadow-lg' 
+                    : 'text-white hover:text-[#66B2FF] hover:bg-[#66B2FF]/10'
                 }`}
                 onClick={() => handleMenuItemClick('projects')}
               >
@@ -263,10 +271,10 @@ const Header = () => {
               </Link>
               <Link 
                 href="/blog" 
-                className={`py-3 px-4 rounded-lg font-medium transition-all duration-200 text-sm sm:text-base ${
+                className={`py-3 px-4 rounded-xl font-semibold transition-all duration-200 text-sm sm:text-base ${
                   activeMenuItem === 'blog' 
-                    ? 'bg-accent-100 text-accent-700 border-l-4 border-accent-500' 
-                    : 'text-primary-700 hover:text-primary-600 hover:bg-white/70'
+                    ? 'bg-[#66B2FF]/20 text-[#66B2FF] border-l-4 border-[#66B2FF] shadow-lg' 
+                    : 'text-white hover:text-[#66B2FF] hover:bg-[#66B2FF]/10'
                 }`}
                 onClick={() => handleMenuItemClick('blog')}
               >
@@ -274,10 +282,10 @@ const Header = () => {
               </Link>
               <Link 
                 href="/sss" 
-                className={`py-3 px-4 rounded-lg font-medium transition-all duration-200 text-sm sm:text-base ${
+                className={`py-3 px-4 rounded-xl font-semibold transition-all duration-200 text-sm sm:text-base ${
                   activeMenuItem === 'faq' 
-                    ? 'bg-accent-100 text-accent-700 border-l-4 border-accent-500' 
-                    : 'text-primary-700 hover:text-primary-600 hover:bg-white/70'
+                    ? 'bg-[#66B2FF]/20 text-[#66B2FF] border-l-4 border-[#66B2FF] shadow-lg' 
+                    : 'text-white hover:text-[#66B2FF] hover:bg-[#66B2FF]/10'
                 }`}
                 onClick={() => handleMenuItemClick('faq')}
               >
@@ -285,10 +293,10 @@ const Header = () => {
               </Link>
               <Link 
                 href="/iletisim" 
-                className={`py-3 px-4 rounded-lg font-medium transition-all duration-200 text-sm sm:text-base ${
+                className={`py-3 px-4 rounded-xl font-semibold transition-all duration-200 text-sm sm:text-base ${
                   activeMenuItem === 'contact' 
-                    ? 'bg-accent-100 text-accent-700 border-l-4 border-accent-500' 
-                    : 'text-primary-700 hover:text-primary-600 hover:bg-white/70'
+                    ? 'bg-[#66B2FF]/20 text-[#66B2FF] border-l-4 border-[#66B2FF] shadow-lg' 
+                    : 'text-white hover:text-[#66B2FF] hover:bg-[#66B2FF]/10'
                 }`}
                 onClick={() => handleMenuItemClick('contact')}
               >
@@ -296,8 +304,8 @@ const Header = () => {
               </Link>
             </nav>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </header>
   );
 };
