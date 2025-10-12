@@ -15,18 +15,6 @@ const FAQSearch = () => {
   const [searchSuggestions, setSearchSuggestions] = useState<SearchSuggestion[]>([]);
   const [recentSearches, setRecentSearches] = useState<string[]>([]);
 
-  // Sample search suggestions
-  const allSuggestions: SearchSuggestion[] = [
-    { id: '1', question: 'Paslanmaz çelik ekipmanlar nasıl temizlenir?', category: 'Bakım & Temizlik', icon: '🧽' },
-    { id: '2', question: 'Enerji tasarrufu için ne yapabilirim?', category: 'Enerji Tasarrufu', icon: '⚡' },
-    { id: '3', question: 'Hijyen standartları nelerdir?', category: 'Hijyen', icon: '🧼' },
-    { id: '4', question: 'Hangi ekipmanı seçmeliyim?', category: 'Ekipman Seçimi', icon: '🛠️' },
-    { id: '5', question: 'Garanti süresi ne kadar?', category: 'Garanti & Servis', icon: '🛡️' },
-    { id: '6', question: 'Kurulum nasıl yapılır?', category: 'Kurulum', icon: '🔧' },
-    { id: '7', question: 'Fiyatlandırma nasıl yapılır?', category: 'Fiyatlandırma', icon: '💰' },
-    { id: '8', question: 'Teslimat süresi ne kadar?', category: 'Teslimat', icon: '🚚' }
-  ];
-
   // Load recent searches from localStorage
   useEffect(() => {
     const saved = localStorage.getItem('faqRecentSearches');
@@ -38,6 +26,18 @@ const FAQSearch = () => {
   // Filter suggestions based on search query
   useEffect(() => {
     if (searchQuery.length > 1) {
+      // Sample search suggestions - moved inside useEffect to avoid dependency issues
+      const allSuggestions: SearchSuggestion[] = [
+        { id: '1', question: 'Paslanmaz çelik ekipmanlar nasıl temizlenir?', category: 'Bakım & Temizlik', icon: '🧽' },
+        { id: '2', question: 'Enerji tasarrufu için ne yapabilirim?', category: 'Enerji Tasarrufu', icon: '⚡' },
+        { id: '3', question: 'Hijyen standartları nelerdir?', category: 'Hijyen', icon: '🧼' },
+        { id: '4', question: 'Hangi ekipmanı seçmeliyim?', category: 'Ekipman Seçimi', icon: '🛠️' },
+        { id: '5', question: 'Garanti süresi ne kadar?', category: 'Garanti & Servis', icon: '🛡️' },
+        { id: '6', question: 'Kurulum nasıl yapılır?', category: 'Kurulum', icon: '🔧' },
+        { id: '7', question: 'Fiyatlandırma nasıl yapılır?', category: 'Fiyatlandırma', icon: '💰' },
+        { id: '8', question: 'Teslimat süresi ne kadar?', category: 'Teslimat', icon: '🚚' }
+      ];
+
       const filtered = allSuggestions.filter(suggestion =>
         suggestion.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
         suggestion.category.toLowerCase().includes(searchQuery.toLowerCase())
@@ -46,7 +46,7 @@ const FAQSearch = () => {
     } else {
       setSearchSuggestions([]);
     }
-  }, [searchQuery, allSuggestions]);
+  }, [searchQuery]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();

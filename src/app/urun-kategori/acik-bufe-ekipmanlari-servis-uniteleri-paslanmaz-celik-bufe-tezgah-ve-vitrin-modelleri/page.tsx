@@ -1,8 +1,26 @@
-import ProductHero from "@/components/ProductHero";
-import ProductFeatures from "@/components/ProductFeatures";
-import ProductGallery from "@/components/ProductGallery";
-import ProductSpecs from "@/components/ProductSpecs";
-import ProductCTA from "@/components/ProductCTA";
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+
+// Lazy load components with proper error boundaries
+const ProductHero = dynamic(() => import("@/components/ProductHero"), {
+  ssr: true,
+});
+
+const ProductFeatures = dynamic(() => import("@/components/ProductFeatures"), {
+  ssr: true,
+});
+
+const ProductGallery = dynamic(() => import("@/components/ProductGallery"), {
+  ssr: true,
+});
+
+const ProductSpecs = dynamic(() => import("@/components/ProductSpecs"), {
+  ssr: true,
+});
+
+const ProductCTA = dynamic(() => import("@/components/ProductCTA"), {
+  ssr: true,
+});
 
 export const metadata = {
   title: "Açık Büfe Ekipmanları & Servis Üniteleri - Paslanmaz Çelik Büfe Tezgah ve Vitrin Modelleri | Pars Endüstriyel Mutfak",
@@ -60,29 +78,86 @@ export default function AcikBufePage() {
 
   return (
     <div className="min-h-screen pt-20">
-      <ProductHero 
-        title={productData.title}
-        subtitle={productData.subtitle}
-        description={productData.description}
-        heroImage={productData.heroImage}
-      />
-      <ProductFeatures features={productData.features} />
-      <ProductGallery gallery={productData.gallery} />
-      <ProductSpecs 
-        title="Teknik Özellikler"
-        specs={[
-          { label: "Malzeme", value: "Paslanmaz Çelik 304" },
-          { label: "Kapasite", value: "50-200 Kişi" },
-          { label: "Isı Kontrolü", value: "Sıcak/Soğuk" },
-          { label: "Boyut", value: "Özelleştirilebilir" },
-          { label: "Garanti", value: "5 Yıl" },
-          { label: "Üretim", value: "Yerli Üretim" }
-        ]}
-      />
-      <ProductCTA 
-        title="Açık Büfe Ekipmanları İçin Teklif Alın"
-        description="Uzman ekibimizle görüşün ve ihtiyaçlarınıza özel açık büfe çözümleri keşfedin."
-      />
+      <Suspense fallback={<div className="min-h-screen bg-gradient-to-br from-[#131C3C] via-[#1A2647] to-[#223052] animate-pulse" />}>
+        <ProductHero 
+          title={productData.title}
+          subtitle={productData.subtitle}
+          description={productData.description}
+          heroImage={productData.heroImage}
+        />
+      </Suspense>
+      
+      <Suspense fallback={<div className="py-16 bg-gray-50 animate-pulse">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <div key={i} className="bg-white rounded-xl p-6 shadow-sm">
+                <div className="skeleton h-12 w-12 mb-4" />
+                <div className="skeleton h-5 w-3/4 mb-2" />
+                <div className="skeleton h-4 w-full mb-2" />
+                <div className="skeleton h-4 w-2/3" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>}>
+        <ProductFeatures features={productData.features} />
+      </Suspense>
+      
+      <Suspense fallback={<div className="py-16 bg-white animate-pulse">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className="aspect-square">
+                <div className="skeleton h-full w-full rounded-lg" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>}>
+        <ProductGallery gallery={productData.gallery} />
+      </Suspense>
+      
+      <Suspense fallback={<div className="py-16 bg-gray-50 animate-pulse">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+            <div className="skeleton h-8 w-48 mb-6" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <div key={i} className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <div className="skeleton h-4 w-24" />
+                  <div className="skeleton h-4 w-32" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>}>
+        <ProductSpecs 
+          title="Teknik Özellikler"
+          specs={[
+            { label: "Malzeme", value: "Paslanmaz Çelik 304" },
+            { label: "Kapasite", value: "50-200 Kişi" },
+            { label: "Isı Kontrolü", value: "Sıcak/Soğuk" },
+            { label: "Boyut", value: "Özelleştirilebilir" },
+            { label: "Garanti", value: "5 Yıl" },
+            { label: "Üretim", value: "Yerli Üretim" }
+          ]}
+        />
+      </Suspense>
+      
+      <Suspense fallback={<div className="py-16 bg-gradient-to-br from-[#131C3C] to-[#1A2647] text-white animate-pulse">
+        <div className="container mx-auto px-6 text-center">
+          <div className="skeleton h-8 w-64 mx-auto mb-4" />
+          <div className="skeleton h-4 w-96 mx-auto mb-8" />
+          <div className="skeleton h-12 w-40 mx-auto" />
+        </div>
+      </div>}>
+        <ProductCTA 
+          title="Açık Büfe Ekipmanları İçin Teklif Alın"
+          description="Uzman ekibimizle görüşün ve ihtiyaçlarınıza özel açık büfe çözümleri keşfedin."
+        />
+      </Suspense>
     </div>
   );
 }

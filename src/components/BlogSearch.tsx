@@ -14,18 +14,6 @@ const BlogSearch = () => {
   const [searchSuggestions, setSearchSuggestions] = useState<SearchSuggestion[]>([]);
   const [recentSearches, setRecentSearches] = useState<string[]>([]);
 
-  // Sample search suggestions
-  const allSuggestions: SearchSuggestion[] = [
-    { id: '1', title: 'Paslanmaz çelik bakım', category: 'Bakım & Temizlik' },
-    { id: '2', title: 'Enerji tasarrufu yöntemleri', category: 'Enerji Tasarrufu' },
-    { id: '3', title: 'Mutfak hijyen standartları', category: 'Hijyen' },
-    { id: '4', title: 'Ekipman seçim rehberi', category: 'Ekipman Seçimi' },
-    { id: '5', title: 'Catering menü planlama', category: 'Catering' },
-    { id: '6', title: 'Atık yönetimi stratejileri', category: 'Sürdürülebilirlik' },
-    { id: '7', title: 'Mutfak teknolojileri', category: 'Teknoloji' },
-    { id: '8', title: 'Restoran trendleri 2024', category: 'Sektör Trendleri' }
-  ];
-
   // Load recent searches from localStorage
   useEffect(() => {
     const saved = localStorage.getItem('blogRecentSearches');
@@ -37,6 +25,18 @@ const BlogSearch = () => {
   // Filter suggestions based on search query
   useEffect(() => {
     if (searchQuery.length > 1) {
+      // Sample search suggestions - moved inside useEffect to avoid dependency issues
+      const allSuggestions: SearchSuggestion[] = [
+        { id: '1', title: 'Paslanmaz çelik bakım', category: 'Bakım & Temizlik' },
+        { id: '2', title: 'Enerji tasarrufu yöntemleri', category: 'Enerji Tasarrufu' },
+        { id: '3', title: 'Mutfak hijyen standartları', category: 'Hijyen' },
+        { id: '4', title: 'Ekipman seçim rehberi', category: 'Ekipman Seçimi' },
+        { id: '5', title: 'Catering menü planlama', category: 'Catering' },
+        { id: '6', title: 'Atık yönetimi stratejileri', category: 'Sürdürülebilirlik' },
+        { id: '7', title: 'Mutfak teknolojileri', category: 'Teknoloji' },
+        { id: '8', title: 'Restoran trendleri 2024', category: 'Sektör Trendleri' }
+      ];
+
       const filtered = allSuggestions.filter(suggestion =>
         suggestion.title.toLowerCase().includes(searchQuery.toLowerCase())
       );
@@ -44,7 +44,7 @@ const BlogSearch = () => {
     } else {
       setSearchSuggestions([]);
     }
-  }, [searchQuery, allSuggestions]);
+  }, [searchQuery]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();

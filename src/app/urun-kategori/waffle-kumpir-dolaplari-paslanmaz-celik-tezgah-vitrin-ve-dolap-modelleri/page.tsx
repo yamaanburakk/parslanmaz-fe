@@ -1,8 +1,11 @@
-import ProductHero from "@/components/ProductHero";
-import ProductFeatures from "@/components/ProductFeatures";
-import ProductGallery from "@/components/ProductGallery";
-import ProductSpecs from "@/components/ProductSpecs";
-import ProductCTA from "@/components/ProductCTA";
+import dynamic from 'next/dynamic';
+
+// Dynamic imports for better performance
+const ProductHero = dynamic(() => import("@/components/ProductHero"), { ssr: true });
+const ProductFeatures = dynamic(() => import("@/components/ProductFeatures"), { ssr: true });
+const ProductGallery = dynamic(() => import("@/components/ProductGallery"), { ssr: true });
+const ProductSpecs = dynamic(() => import("@/components/ProductSpecs"), { ssr: true });
+const ProductCTA = dynamic(() => import("@/components/ProductCTA"), { ssr: true });
 
 export const metadata = {
   title: "Waffle & Kumpir Dolapları - Paslanmaz Çelik Tezgah, Vitrin ve Dolap Modelleri | Pars Endüstriyel Mutfak",

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo } from 'react';
 import { usePathname } from 'next/navigation';
 
 const Header = () => {
@@ -71,27 +71,27 @@ const Header = () => {
                   </svg>
                 </button>
                 <div className="absolute top-full left-0 mt-2 w-64 bg-white backdrop-blur-md shadow-2xl border border-[#66B2FF]/20 rounded-xl py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <a href="/urun-kategori/endustriyel-mutfak-ekipmanlari-paslanmaz-celik-tezgah-dolap-raf-ve-evye-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
+                  <Link href="/urun-kategori/endustriyel-mutfak-ekipmanlari-paslanmaz-celik-tezgah-dolap-raf-ve-evye-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
                     Endüstriyel Mutfak Ekipmanları
-                  </a>
-                  <a href="/urun-kategori/acik-bufe-ekipmanlari-servis-uniteleri-paslanmaz-celik-bufe-tezgah-ve-vitrin-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
+                  </Link>
+                  <Link href="/urun-kategori/acik-bufe-ekipmanlari-servis-uniteleri-paslanmaz-celik-bufe-tezgah-ve-vitrin-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
                     Açık Büfe Ekipmanları & Servis Üniteleri
-                  </a>
-                  <a href="/urun-kategori/ekmek-unlu-mamuller-dolaplari-paslanmaz-celik-firin-vitrin-ve-tezgah-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
+                  </Link>
+                  <Link href="/urun-kategori/ekmek-unlu-mamuller-dolaplari-paslanmaz-celik-firin-vitrin-ve-tezgah-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
                     Ekmek & Unlu Mamuller Dolapları
-                  </a>
-                  <a href="/urun-kategori/pasta-sarkuteri-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
+                  </Link>
+                  <Link href="/urun-kategori/pasta-sarkuteri-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
                     Pasta & Şarküteri Dolapları
-                  </a>
-                  <a href="/urun-kategori/waffle-kumpir-dolaplari-paslanmaz-celik-tezgah-vitrin-ve-dolap-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
+                  </Link>
+                  <Link href="/urun-kategori/waffle-kumpir-dolaplari-paslanmaz-celik-tezgah-vitrin-ve-dolap-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
                     Waffle & Kumpir Dolapları
-                  </a>
-                  <a href="/urun-kategori/cikolata-lokum-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
+                  </Link>
+                  <Link href="/urun-kategori/cikolata-lokum-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
                     Çikolata & Lokum Dolapları
-                  </a>
-                  <a href="/urun-kategori/borek-baklava-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
+                  </Link>
+                  <Link href="/urun-kategori/borek-baklava-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
                     Börek & Baklava Dolapları
-                  </a>
+                  </Link>
                 </div>
               </div>
               <Link href="/projeler" className="text-white hover:text-[#66B2FF] font-semibold relative text-base">
@@ -178,7 +178,7 @@ const Header = () => {
                 </button>
                 {isProductsOpen && (
                   <div className="ml-4 mt-2 space-y-1">
-                    <a 
+                    <Link 
                       href="/urun-kategori/endustriyel-mutfak-ekipmanlari-paslanmaz-celik-tezgah-dolap-raf-ve-evye-modelleri" 
                       className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'endustriyel' 
@@ -188,8 +188,8 @@ const Header = () => {
                       onClick={() => handleMenuItemClick('endustriyel')}
                     >
                       Endüstriyel Mutfak Ekipmanları
-                    </a>
-                    <a 
+                    </Link>
+                    <Link 
                       href="/urun-kategori/acik-bufe-ekipmanlari-servis-uniteleri-paslanmaz-celik-bufe-tezgah-ve-vitrin-modelleri" 
                       className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'acik-bufe' 
@@ -199,8 +199,8 @@ const Header = () => {
                       onClick={() => handleMenuItemClick('acik-bufe')}
                     >
                       Açık Büfe Ekipmanları & Servis Üniteleri
-                    </a>
-                    <a 
+                    </Link>
+                    <Link 
                       href="/urun-kategori/ekmek-unlu-mamuller-dolaplari-paslanmaz-celik-firin-vitrin-ve-tezgah-modelleri" 
                       className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'ekmek' 
@@ -210,8 +210,8 @@ const Header = () => {
                       onClick={() => handleMenuItemClick('ekmek')}
                     >
                       Ekmek & Unlu Mamuller Dolapları
-                    </a>
-                    <a 
+                    </Link>
+                    <Link 
                       href="/urun-kategori/pasta-sarkuteri-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" 
                       className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'pasta' 
@@ -221,8 +221,8 @@ const Header = () => {
                       onClick={() => handleMenuItemClick('pasta')}
                     >
                       Pasta & Şarküteri Dolapları
-                    </a>
-                    <a 
+                    </Link>
+                    <Link 
                       href="/urun-kategori/waffle-kumpir-dolaplari-paslanmaz-celik-tezgah-vitrin-ve-dolap-modelleri" 
                       className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'waffle' 
@@ -232,8 +232,8 @@ const Header = () => {
                       onClick={() => handleMenuItemClick('waffle')}
                     >
                       Waffle & Kumpir Dolapları
-                    </a>
-                    <a 
+                    </Link>
+                    <Link 
                       href="/urun-kategori/cikolata-lokum-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" 
                       className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'cikolata' 
@@ -243,8 +243,8 @@ const Header = () => {
                       onClick={() => handleMenuItemClick('cikolata')}
                     >
                       Çikolata & Lokum Dolapları
-                    </a>
-                    <a 
+                    </Link>
+                    <Link 
                       href="/urun-kategori/borek-baklava-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" 
                       className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'borek' 
@@ -254,7 +254,7 @@ const Header = () => {
                       onClick={() => handleMenuItemClick('borek')}
                     >
                       Börek & Baklava Dolapları
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>
@@ -310,4 +310,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default memo(Header);

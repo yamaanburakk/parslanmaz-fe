@@ -1,5 +1,50 @@
 @import "tailwindcss";
 
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-display: swap;
+  text-optimized: true;
+}
+
+/* Critical CSS for above-the-fold content */
+.critical-content {
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
+}
+
+/* Optimize images */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Reduce layout shifts */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
         :root {
           --background: #131C3C;
           --foreground: #ffffff;
@@ -249,40 +294,115 @@ p {
   line-height: 1.5;
 }
 
-/* Hero Section Vendor Prefixes */
+/* Performance Optimizations */
+@layer utilities {
+  /* GPU Acceleration */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    will-change: transform, opacity;
+  }
+
+  /* Optimized Transitions */
+  .transition-optimized {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Skeleton Loading */
+  .skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+  }
+
+  @keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Image Optimization */
+  .image-optimized {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+  }
+
+  /* Container Queries Support */
+  .container-responsive {
+    container-type: inline-size;
+  }
+
+  /* Smooth Scrolling */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  /* Text Optimization */
+  .text-optimized {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    .transition-optimized,
+    .gpu-accelerated,
+    .skeleton {
+      animation: none;
+      transition: none;
+      transform: none;
+    }
+  }
+}
+
+/* Hero Section Optimizations */
 .hero-section {
-  -webkit-image-rendering: auto;
-  -moz-image-rendering: auto;
-  -ms-image-rendering: auto;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0);
-  -webkit-font-smoothing: subpixel-antialiased;
-  -moz-osx-font-smoothing: auto;
-  -webkit-text-rendering: geometricPrecision;
-  -moz-text-rendering: geometricPrecision;
-  -ms-text-rendering: geometricPrecision;
-  -webkit-optimize-contrast: true;
-  -webkit-optimize-speed: false;
-  -webkit-text-stroke: 0.01em transparent;
-  -webkit-will-change: transform, opacity;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  will-change: transform, opacity;
 }
 
 .hero-background {
-  -webkit-image-rendering: auto;
-  -moz-image-rendering: auto;
-  -ms-image-rendering: auto;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0);
   -webkit-filter: contrast(1.2) brightness(0.95) saturate(1.15);
-  -moz-filter: contrast(1.2) brightness(0.95) saturate(1.15);
-  -ms-filter: contrast(1.2) brightness(0.95) saturate(1.15);
-  -webkit-perspective: 1000px;
-  -webkit-optimize-contrast: true;
-  -webkit-optimize-speed: false;
-  -webkit-text-stroke: 0.01em transparent;
-  -webkit-font-smoothing: subpixel-antialiased;
-  -moz-osx-font-smoothing: auto;
-  -webkit-text-rendering: geometricPrecision;
-  -moz-text-rendering: geometricPrecision;
-  -ms-text-rendering: geometricPrecision;
+  filter: contrast(1.2) brightness(0.95) saturate(1.15);
+  will-change: transform;
+}
+
+/* Critical CSS for Above-the-Fold */
+.critical-css {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* Lazy Loading Support */
+.lazy-load {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 400px;
+}
+
+/* Performance Monitoring */
+.performance-monitor {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px;
+  font-size: 12px;
+  font-family: monospace;
+  display: none;
+}
+
+/* Intersection Observer Polyfill Support */
+.intersection-observer {
+  will-change: transform, opacity;
 }

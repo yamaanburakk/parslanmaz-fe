@@ -27,8 +27,8 @@ const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroPro
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div className="space-y-8">
-              <div className="inline-flex items-center bg-gradient-to-r from-[#66B2FF]/20 to-[#FF6B35]/20 backdrop-blur-md rounded-full px-6 py-3 border border-[#66B2FF]/40 shadow-xl">
-                <span className="text-[#66B2FF] text-sm font-bold tracking-wide">Ürün Kategorisi</span>
+              <div className="inline-flex items-center bg-gradient-to-r from-[#66B2FF]/20 to-[#FF6B35]/20 backdrop-blur-md rounded-full border border-[#66B2FF]/40 shadow-xl" style={{ padding: '25px 50px !important', minHeight: '70px !important', display: 'flex !important', alignItems: 'center !important', justifyContent: 'center !important', width: 'auto !important' }}>
+                <span className="text-[#66B2FF] text-sm font-bold tracking-wide" style={{ padding: '0 !important', margin: '0 !important' }}>Ürün Kategorisi</span>
               </div>
               
               <div>

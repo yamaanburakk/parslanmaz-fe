@@ -1,8 +1,25 @@
-import BlogHero from '@/components/BlogHero';
-import BlogGrid from '@/components/BlogGrid';
-import BlogSidebar from '@/components/BlogSidebar';
-import BlogSearch from '@/components/BlogSearch';
-import BlogCategories from '@/components/BlogCategories';
+import dynamic from 'next/dynamic';
+
+// Dynamic imports for client components
+const BlogHero = dynamic(() => import('@/components/BlogHero'), {
+  ssr: true,
+});
+
+const BlogGrid = dynamic(() => import('@/components/BlogGrid'), {
+  ssr: true,
+});
+
+const BlogSidebar = dynamic(() => import('@/components/BlogSidebar'), {
+  ssr: true,
+});
+
+const BlogSearch = dynamic(() => import('@/components/BlogSearch'), {
+  ssr: true,
+});
+
+const BlogCategories = dynamic(() => import('@/components/BlogCategories'), {
+  ssr: true,
+});
 
 export default function BlogPage() {
   return (
