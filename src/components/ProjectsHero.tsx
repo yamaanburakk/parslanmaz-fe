@@ -2,86 +2,112 @@ import Image from "next/image";
 
 const ProjectsHero = () => {
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-[#131C3C] via-[#1A2647] to-[#223052] text-white overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#334155] text-white overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
           src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
           alt="Endüstriyel Mutfak Projeleri"
           fill
-          className="object-cover opacity-20"
+          className="object-cover opacity-15"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#131C3C]/80 via-[#1A2647]/80 to-[#223052]/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A]/90 via-[#1E293B]/90 to-[#334155]/90"></div>
+      </div>
+      
+      {/* Background Effects */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#1E3A8A]/10 via-transparent to-[#374151]/10"></div>
+        <div className="absolute top-20 left-20 w-64 h-64 bg-[#1E3A8A]/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-[#374151]/5 rounded-full blur-3xl"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Content */}
-            <div className="space-y-8">
-              <div className="inline-flex items-center bg-gradient-to-r from-[#66B2FF]/20 to-[#FF6B35]/20 backdrop-blur-md rounded-full px-4 sm:px-6 py-2 sm:py-3 border border-[#66B2FF]/40 shadow-xl">
-                <span className="text-[#66B2FF] text-xs sm:text-sm font-bold tracking-wide">Projelerimiz</span>
+            <div className="space-y-8 md:space-y-12">
+              <div className="inline-flex items-center bg-gradient-to-r from-[#60A5FA]/20 to-[#9CA3AF]/20 backdrop-blur-sm rounded-full px-6 md:px-8 py-3 md:py-4 border border-[#60A5FA]/30">
+                <div className="w-2 h-2 bg-gradient-to-r from-[#60A5FA] to-[#9CA3AF] rounded-full mr-3 animate-pulse"></div>
+                <span className="text-white font-semibold text-sm md:text-base tracking-wider uppercase">Projelerimiz</span>
+                <div className="w-2 h-2 bg-gradient-to-r from-[#9CA3AF] to-[#60A5FA] rounded-full ml-3 animate-pulse"></div>
               </div>
               
               <div>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
-                  Başarılı
-                  <span className="block bg-gradient-to-r from-[#66B2FF] via-[#FF6B35] to-[#FFD700] bg-clip-text text-transparent">Projelerimiz</span>
+                <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 md:mb-8 leading-tight">
+                  <span className="bg-gradient-to-r from-white via-[#F1F5F9] to-[#CBD5E1] bg-clip-text text-transparent">
+                    Başarılı
+                  </span>
+                  <span className="block bg-gradient-to-r from-[#60A5FA] via-[#9CA3AF] to-[#64748B] bg-clip-text text-transparent">
+                    Projelerimiz
+                  </span>
                 </h1>
-                <p className="text-sm sm:text-base md:text-lg text-[#F8FAFC] leading-relaxed mb-6 sm:mb-8">
+                <p className="text-base md:text-lg lg:text-xl xl:text-2xl text-white/90 leading-relaxed mb-8 md:mb-12 font-medium max-w-2xl">
                   Türkiye&apos;nin dört bir yanında ve uluslararası projelerde imza attığımız 
-                  <span className="text-[#66B2FF] font-bold"> başarılı çalışmalarımızı</span> keşfedin.
+                  <span className="font-bold text-[#60A5FA]"> başarılı çalışmalarımızı</span> keşfedin.
                 </p>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <button className="bg-gradient-to-r from-[#66B2FF] to-[#4E9EFF] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base hover:from-[#4E9EFF] hover:to-[#66B2FF] transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  Projeleri İncele
-                </button>
-                <button className="border-2 border-[#66B2FF]/60 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base hover:bg-[#66B2FF]/20 hover:border-[#66B2FF] transition-all duration-300 backdrop-blur-sm shadow-lg hover:shadow-[#66B2FF]/25">
-                  Referans Al
-                </button>
               </div>
             </div>
             
-            {/* Stats Cards */}
-            <div className="grid grid-cols-2 gap-4 sm:gap-6">
-              <div className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-2xl text-center border border-[#66B2FF]/20 hover:scale-105 transition-all duration-300">
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#66B2FF] mb-2">500+</div>
-                <div className="text-[#F1F5F9] text-xs sm:text-sm">Tamamlanan Proje</div>
+            {/* Stats Cards - Professional */}
+            <div className="grid grid-cols-2 gap-4 md:gap-6 lg:gap-8">
+              <div className="group relative overflow-hidden bg-gradient-to-br from-[#1E3A8A] via-[#1E40AF] to-[#2563EB] p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-2xl hover:shadow-[#1E3A8A]/50 transition-all duration-700 hover:scale-105 border border-[#1E40AF]/20">
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#60A5FA]/20 via-transparent to-[#2563EB]/20"></div>
+                  <div className="absolute top-4 right-4 w-16 h-16 bg-[#60A5FA]/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-1000"></div>
+                </div>
+                <div className="relative z-10 text-center">
+                  <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-2 md:mb-3">500+</div>
+                  <div className="text-white/90 text-sm md:text-base lg:text-lg font-medium">Tamamlanan Proje</div>
+                </div>
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#60A5FA] via-[#3B82F6] to-[#1E40AF] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
               </div>
               
-              <div className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-2xl text-center border border-[#FF6B35]/20 hover:scale-105 transition-all duration-300">
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#FF6B35] mb-2">50+</div>
-                <div className="text-[#F1F5F9] text-xs sm:text-sm">Ülkeye İhracat</div>
+              <div className="group relative overflow-hidden bg-gradient-to-br from-[#374151] via-[#4B5563] to-[#6B7280] p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-2xl hover:shadow-[#374151]/50 transition-all duration-700 hover:scale-105 border border-[#4B5563]/20">
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#9CA3AF]/20 via-transparent to-[#6B7280]/20"></div>
+                  <div className="absolute top-4 right-4 w-16 h-16 bg-[#9CA3AF]/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-1000"></div>
+                </div>
+                <div className="relative z-10 text-center">
+                  <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-2 md:mb-3">50+</div>
+                  <div className="text-white/90 text-sm md:text-base lg:text-lg font-medium">Ülkeye İhracat</div>
+                </div>
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#9CA3AF] via-[#6B7280] to-[#4B5563] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
               </div>
               
-              <div className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-2xl text-center border border-[#FFD700]/20 hover:scale-105 transition-all duration-300">
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#FFD700] mb-2">15+</div>
-                <div className="text-[#F1F5F9] text-xs sm:text-sm">Yıllık Tecrübe</div>
+              <div className="group relative overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#334155] p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-2xl hover:shadow-[#0F172A]/50 transition-all duration-700 hover:scale-105 border border-[#1E293B]/20">
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#64748B]/20 via-transparent to-[#334155]/20"></div>
+                  <div className="absolute top-4 right-4 w-16 h-16 bg-[#64748B]/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-1000"></div>
+                </div>
+                <div className="relative z-10 text-center">
+                  <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-2 md:mb-3">15+</div>
+                  <div className="text-white/90 text-sm md:text-base lg:text-lg font-medium">Yıllık Tecrübe</div>
+                </div>
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#64748B] via-[#334155] to-[#1E293B] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
               </div>
               
-              <div className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-2xl text-center border border-[#66B2FF]/20 hover:scale-105 transition-all duration-300">
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#66B2FF] mb-2">%100</div>
-                <div className="text-[#F1F5F9] text-xs sm:text-sm">Müşteri Memnuniyeti</div>
+              <div className="group relative overflow-hidden bg-gradient-to-br from-[#1E3A8A] via-[#1E40AF] to-[#2563EB] p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-2xl hover:shadow-[#1E3A8A]/50 transition-all duration-700 hover:scale-105 border border-[#1E40AF]/20">
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#60A5FA]/20 via-transparent to-[#2563EB]/20"></div>
+                  <div className="absolute top-4 right-4 w-16 h-16 bg-[#60A5FA]/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-1000"></div>
+                </div>
+                <div className="relative z-10 text-center">
+                  <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-2 md:mb-3">%100</div>
+                  <div className="text-white/90 text-sm md:text-base lg:text-lg font-medium">Müşteri Memnuniyeti</div>
+                </div>
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#60A5FA] via-[#3B82F6] to-[#1E40AF] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
       
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#66B2FF]/10 to-[#FF6B35]/10"></div>
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#66B2FF]/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#FF6B35]/15 rounded-full blur-2xl"></div>
-      
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-[#66B2FF]/20 rounded-full blur-xl"></div>
-        <div className="absolute bottom-20 right-10 w-48 h-48 bg-[#FFD700]/10 rounded-full blur-2xl"></div>
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-[#FF6B35]/20 rounded-full blur-lg"></div>
-      </div>
+      {/* Floating Particles */}
+      <div className="absolute top-10 md:top-20 left-10 md:left-20 w-2 md:w-3 lg:w-4 h-2 md:h-3 lg:h-4 bg-[#60A5FA]/30 rounded-full animate-pulse"></div>
+      <div className="absolute top-20 md:top-40 right-16 md:right-32 w-1.5 md:w-2 lg:w-3 h-1.5 md:h-2 lg:h-3 bg-[#9CA3AF]/30 rounded-full animate-pulse delay-1000"></div>
+      <div className="absolute bottom-16 md:bottom-32 left-20 md:left-40 w-2.5 md:w-3 lg:w-5 h-2.5 md:h-3 lg:h-5 bg-[#64748B]/30 rounded-full animate-pulse delay-2000"></div>
+      <div className="absolute bottom-10 md:bottom-20 right-10 md:right-20 w-2 md:w-3 lg:w-4 h-2 md:h-3 lg:h-4 bg-[#60A5FA]/30 rounded-full animate-pulse delay-500"></div>
     </section>
   );
 };

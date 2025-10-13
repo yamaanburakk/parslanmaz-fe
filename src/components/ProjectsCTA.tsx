@@ -1,88 +1,90 @@
 const ProjectsCTA = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700 text-white">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
-            Projenizi Birlikte Hayata Geçirelim
-          </h2>
-          <p className="text-sm sm:text-base md:text-xl text-primary-100 mb-8 leading-relaxed">
-            Uzman ekibimizle görüşün ve ihtiyaçlarınıza özel çözümler keşfedin. 
-            Başarılı projelerimizden ilham alın.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <a href="/hemen-teklif-al" className="bg-accent-500 text-primary-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base md:text-lg hover:bg-accent-400 transition-all duration-300 transform hover:scale-105 inline-block text-center">
-              Ücretsiz Teklif Al
-            </a>
-            <button className="border-2 border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base md:text-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
-              Referans Görüşmesi
-            </button>
-            <button className="border-2 border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base md:text-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
-              Proje Danışmanlığı
-            </button>
-          </div>
-          
-          {/* Contact Info */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <div className="text-center">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-              </div>
-              <h3 className="text-base sm:text-lg font-semibold mb-2">Telefon</h3>
-              <p className="text-primary-100 text-sm sm:text-base">+90 541 228 83 66</p>
-            </div>
+    <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#334155] text-white overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#60A5FA]/10 via-transparent to-[#9CA3AF]/10"></div>
+        <div className="absolute top-20 left-20 w-64 h-64 bg-[#60A5FA]/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-[#9CA3AF]/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16 md:mb-20 lg:mb-24">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 md:mb-8 leading-tight">
+              <span className="bg-gradient-to-r from-white via-[#F1F5F9] to-[#CBD5E1] bg-clip-text text-transparent">
+                Projenizi
+              </span>
+              <span className="block bg-gradient-to-r from-[#60A5FA] via-[#9CA3AF] to-[#64748B] bg-clip-text text-transparent">
+                Birlikte Hayata Geçirelim
+              </span>
+            </h2>
             
-            <div className="text-center">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="text-base sm:text-lg font-semibold mb-2">E-posta</h3>
-              <p className="text-primary-100 text-sm sm:text-base">info@parslanmaz.com</p>
-            </div>
+            <p className="text-base md:text-lg lg:text-xl xl:text-2xl text-white/90 leading-relaxed max-w-4xl mx-auto font-medium mb-12 md:mb-16">
+              Uzman ekibimizle görüşün ve ihtiyaçlarınıza özel çözümler keşfedin. 
+              <span className="font-bold text-[#60A5FA]"> Başarılı projelerimizden ilham alın.</span>
+            </p>
             
-            <div className="text-center">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </div>
-              <h3 className="text-base sm:text-lg font-semibold mb-2">Adres</h3>
-              <p className="text-primary-100 text-xs sm:text-sm">Zeytinburnu / İstanbul</p>
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 lg:gap-8 justify-center mb-16 md:mb-20">
+              <a 
+                href="/hemen-teklif-al" 
+                className="group relative overflow-hidden bg-gradient-to-r from-[#60A5FA] to-[#9CA3AF] text-white px-8 md:px-12 py-4 md:py-5 rounded-2xl md:rounded-3xl font-bold text-base md:text-lg lg:text-xl hover:from-[#9CA3AF] hover:to-[#60A5FA] transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-[#60A5FA]/25"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/10 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                <span className="relative z-10">Ücretsiz Teklif Al</span>
+              </a>
+              
+              <button className="group relative overflow-hidden bg-gradient-to-r from-[#1E293B] to-[#334155] text-white px-8 md:px-12 py-4 md:py-5 rounded-2xl md:rounded-3xl font-bold text-base md:text-lg lg:text-xl hover:from-[#334155] hover:to-[#1E293B] transition-all duration-300 transform hover:scale-105 shadow-2xl border border-[#334155]/50">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/5 via-transparent to-white/5 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                <span className="relative z-10">Referans Görüşmesi</span>
+              </button>
+              
+              <button className="group relative overflow-hidden bg-gradient-to-r from-[#374151] to-[#4B5563] text-white px-8 md:px-12 py-4 md:py-5 rounded-2xl md:rounded-3xl font-bold text-base md:text-lg lg:text-xl hover:from-[#4B5563] hover:to-[#374151] transition-all duration-300 transform hover:scale-105 shadow-2xl border border-[#4B5563]/50">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/5 via-transparent to-white/5 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                <span className="relative z-10">Proje Danışmanlığı</span>
+              </button>
             </div>
           </div>
           
           {/* Testimonial */}
-          <div className="mt-12 sm:mt-16 bg-white/10 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-white/20">
-            <blockquote className="text-base sm:text-lg md:text-xl italic text-primary-100 mb-4">
-              &quot;Pars Endüstriyel Mutfak ile çalışmak harika bir deneyimdi. 
-              Profesyonel yaklaşımları ve kaliteli ürünleri sayesinde 
-              projemiz zamanında ve mükemmel şekilde tamamlandı.&quot;
-            </blockquote>
-            <div className="flex items-center justify-center">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
-                <span className="text-white font-bold text-sm sm:text-base">A</span>
+          <div className="max-w-5xl mx-auto">
+            <div className="group relative overflow-hidden bg-gradient-to-br from-white/10 via-[#60A5FA]/5 to-white/10 backdrop-blur-sm p-8 md:p-12 lg:p-16 rounded-2xl md:rounded-3xl border border-[#60A5FA]/20 shadow-2xl hover:shadow-[#60A5FA]/30 transition-all duration-700">
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-4 right-4 w-16 h-16 bg-[#60A5FA]/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-1000"></div>
               </div>
-              <div>
-                <div className="font-semibold text-white text-sm sm:text-base">Ahmet Yılmaz</div>
-                <div className="text-primary-200 text-xs sm:text-sm">Otel Müdürü</div>
+              
+              <div className="relative z-10">
+                <blockquote className="text-lg md:text-xl lg:text-2xl xl:text-3xl italic text-white/95 mb-8 md:mb-12 leading-relaxed font-medium">
+                  &quot;Pars Endüstriyel Mutfak ile çalışmak harika bir deneyimdi. 
+                  <span className="text-[#60A5FA] font-bold"> Profesyonel yaklaşımları</span> ve 
+                  <span className="text-[#9CA3AF] font-bold"> kaliteli ürünleri</span> sayesinde 
+                  projemiz zamanında ve mükemmel şekilde tamamlandı.&quot;
+                </blockquote>
+                
+                <div className="flex items-center justify-center">
+                  <div className="w-16 md:w-20 lg:w-24 h-16 md:h-20 lg:h-24 bg-gradient-to-br from-[#60A5FA] to-[#9CA3AF] rounded-full flex items-center justify-center mr-6 md:mr-8 shadow-lg">
+                    <span className="text-white font-black text-lg md:text-xl lg:text-2xl">A</span>
+                  </div>
+                  <div>
+                    <div className="font-bold text-white text-lg md:text-xl lg:text-2xl mb-1 md:mb-2">Ahmet Yılmaz</div>
+                    <div className="text-white/80 text-sm md:text-base lg:text-lg font-medium">Otel Müdürü</div>
+                  </div>
+                </div>
               </div>
+              
+              {/* Bottom Accent Line */}
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#60A5FA] via-[#9CA3AF] to-[#64748B] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
             </div>
           </div>
         </div>
       </div>
       
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-accent-400/20 rounded-full blur-xl"></div>
-        <div className="absolute bottom-20 right-10 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-accent-300/30 rounded-full blur-lg"></div>
-      </div>
+      {/* Floating Particles */}
+      <div className="absolute top-10 md:top-20 left-10 md:left-20 w-2 md:w-3 lg:w-4 h-2 md:h-3 lg:h-4 bg-[#60A5FA]/30 rounded-full animate-pulse"></div>
+      <div className="absolute top-20 md:top-40 right-16 md:right-32 w-1.5 md:w-2 lg:w-3 h-1.5 md:h-2 lg:h-3 bg-[#9CA3AF]/30 rounded-full animate-pulse delay-1000"></div>
+      <div className="absolute bottom-16 md:bottom-32 left-20 md:left-40 w-2.5 md:w-3 lg:w-5 h-2.5 md:h-3 lg:h-5 bg-[#64748B]/30 rounded-full animate-pulse delay-2000"></div>
+      <div className="absolute bottom-10 md:bottom-20 right-10 md:right-20 w-2 md:w-3 lg:w-4 h-2 md:h-3 lg:h-4 bg-[#60A5FA]/30 rounded-full animate-pulse delay-500"></div>
     </section>
   );
 };

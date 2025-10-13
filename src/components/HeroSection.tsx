@@ -88,8 +88,8 @@ const HeroSection = () => {
             </p>
           </div>
           
-          {/* Buttons - Professional Compact Design */}
-          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
+          {/* Button - Professional Compact Design */}
+          <div className="flex justify-center items-center">
             <a 
               href="/hemen-teklif-al" 
               className="bg-gradient-to-r from-[#B8860B] to-[#CD853F] text-white px-8 py-4 rounded-xl font-semibold text-base hover:from-[#CD853F] hover:to-[#B8860B] transition-all duration-300 shadow-lg hover:shadow-[#B8860B]/40 border border-[#B8860B]/60 inline-flex items-center justify-center gap-2.5 hover:scale-105 transform hover:brightness-110 relative overflow-hidden group"
@@ -105,20 +105,6 @@ const HeroSection = () => {
               </svg>
               <span className="relative z-10">Hemen Teklif Al</span>
             </a>
-            
-            <button className="bg-gradient-to-r from-[#131C3C]/85 to-[#1A2647]/85 backdrop-blur-lg text-white px-8 py-4 rounded-xl font-semibold text-base hover:from-[#1A2647]/90 hover:to-[#131C3C]/90 transition-all duration-300 shadow-lg hover:shadow-[#B8860B]/35 border border-[#B8860B]/60 inline-flex items-center justify-center gap-2.5 hover:scale-105 transform hover:brightness-110 relative overflow-hidden group"
-              style={{
-                boxShadow: '0 8px 20px rgba(19,28,60,0.4), inset 0 1px 0 rgba(255,255,255,0.08)'
-              }}
-            >
-              {/* Subtle Shine Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/8 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-              
-              <svg className="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-              </svg>
-              <span className="relative z-10">Ürünlerimizi İncele</span>
-            </button>
           </div>
         </div>
       </div>

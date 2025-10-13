@@ -13,9 +13,6 @@ const BlogSidebar = dynamic(() => import('@/components/BlogSidebar'), {
   ssr: true,
 });
 
-const BlogSearch = dynamic(() => import('@/components/BlogSearch'), {
-  ssr: true,
-});
 
 const BlogCategories = dynamic(() => import('@/components/BlogCategories'), {
   ssr: true,
@@ -32,9 +29,8 @@ export default function BlogPage() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Main Content Area */}
           <div className="lg:col-span-3">
-            {/* Search and Filter Section */}
+            {/* Filter Section */}
             <div className="mb-8">
-              <BlogSearch />
               <BlogCategories />
             </div>
             

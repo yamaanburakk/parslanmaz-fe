@@ -69,25 +69,6 @@ const WhyChooseUs = () => {
             ))}
           </div>
           
-          {/* Call to Action */}
-          <div className="mt-16 text-center">
-            <div className="bg-gradient-to-r from-primary-50 to-accent-50 p-8 rounded-2xl border border-primary-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Projenizi Birlikte Hayata Geçirelim
-              </h3>
-              <p className="text-lg text-gray-600 mb-6">
-                Uzman ekibimizle görüşün ve ihtiyaçlarınıza özel çözümler keşfedin.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/hemen-teklif-al" className="bg-primary-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-600 transition-colors inline-block text-center">
-                  Ücretsiz Teklif Al
-                </a>
-                <button className="border-2 border-primary-500 text-primary-500 px-8 py-4 rounded-lg font-semibold hover:bg-primary-500 hover:text-white transition-colors">
-                  Projelerimizi İncele
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

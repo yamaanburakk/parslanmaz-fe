@@ -134,108 +134,123 @@ const FAQAccordion = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-      <div className="p-6 border-b border-gray-200">
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">Sıkça Sorulan Sorular</h2>
-        <p className="text-gray-600">Endüstriyel mutfak ekipmanları hakkında en çok merak edilen sorular ve cevapları</p>
-      </div>
-
-      <div className="divide-y divide-gray-200">
-        {faqItems.map((item) => (
-          <div key={item.id} className="p-6">
-            <button
-              onClick={() => toggleItem(item.id)}
-              className="w-full text-left flex items-start justify-between group"
-            >
-              <div className="flex items-start space-x-4 flex-1">
-                <div className="text-2xl mt-1">{item.icon}</div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-900 group-hover:text-primary-600 transition-colors mb-2">
-                    {item.question}
-                  </h3>
-                  <div className="flex items-center space-x-4 text-sm text-gray-500">
-                    <span className="bg-gray-100 px-2 py-1 rounded-full">{item.category}</span>
-                    <span>Son güncelleme: {formatDate(item.lastUpdated)}</span>
+    <div className="space-y-6">
+      {faqItems.map((item) => (
+        <div key={item.id} className="group relative">
+          <div className="relative overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#334155] rounded-2xl md:rounded-3xl shadow-2xl hover:shadow-[#0F172A]/50 transition-all duration-700 hover:scale-[1.01] border border-[#334155]/20">
+            {/* Animated Background */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#3B82F6]/20 via-transparent to-[#8B5CF6]/20"></div>
+              <div className="absolute top-4 md:top-8 right-4 md:right-8 w-24 md:w-48 h-24 md:h-48 bg-[#3B82F6]/10 rounded-full blur-2xl md:blur-3xl group-hover:scale-150 transition-transform duration-1000"></div>
+              <div className="absolute bottom-4 md:bottom-8 left-4 md:left-8 w-16 md:w-32 h-16 md:h-32 bg-[#8B5CF6]/10 rounded-full blur-xl md:blur-2xl group-hover:scale-125 transition-transform duration-1000"></div>
+            </div>
+            
+            <div className="relative z-10 p-6 md:p-8 lg:p-10">
+              <button
+                onClick={() => toggleItem(item.id)}
+                className="w-full text-left flex items-start justify-between group"
+              >
+                <div className="flex items-start space-x-4 md:space-x-6 flex-1">
+                  {/* Icon */}
+                  <div className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-[#3B82F6]/20 to-[#8B5CF6]/20 rounded-xl md:rounded-2xl lg:rounded-3xl flex items-center justify-center backdrop-blur-sm border border-[#3B82F6]/30 shadow-xl md:shadow-2xl group-hover:scale-110 transition-transform duration-500">
+                    <span className="text-2xl md:text-3xl lg:text-4xl">{item.icon}</span>
                   </div>
-                </div>
-              </div>
-              <div className="ml-4 flex-shrink-0">
-                <svg
-                  className={`w-6 h-6 text-gray-400 transition-transform duration-200 ${
-                    openItems.includes(item.id) ? 'rotate-180' : ''
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </div>
-            </button>
-
-            {openItems.includes(item.id) && (
-              <div className="mt-4 pl-12">
-                <div className="prose prose-gray max-w-none">
-                  <div className="whitespace-pre-line text-gray-700 leading-relaxed">
-                    {item.answer}
-                  </div>
-                </div>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {item.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="bg-primary-100 text-primary-700 px-2 py-1 rounded-full text-xs"
-                    >
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Helpful Feedback */}
-                <div className="mt-6 pt-4 border-t border-gray-100">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600">Bu cevap yardımcı oldu mu?</span>
-                    <div className="flex items-center space-x-2">
-                      <button
-                        onClick={() => handleHelpfulVote(item.id, 'helpful')}
-                        className={`flex items-center space-x-1 px-3 py-1 rounded-full text-sm transition-colors ${
-                          helpfulVotes[item.id] === 'helpful'
-                            ? 'bg-green-100 text-green-700'
-                            : 'bg-gray-100 text-gray-600 hover:bg-green-100 hover:text-green-700'
-                        }`}
-                      >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
-                        </svg>
-                        <span>{item.helpful + (helpfulVotes[item.id] === 'helpful' ? 1 : 0)}</span>
-                      </button>
-                      <button
-                        onClick={() => handleHelpfulVote(item.id, 'not-helpful')}
-                        className={`flex items-center space-x-1 px-3 py-1 rounded-full text-sm transition-colors ${
-                          helpfulVotes[item.id] === 'not-helpful'
-                            ? 'bg-red-100 text-red-700'
-                            : 'bg-gray-100 text-gray-600 hover:bg-red-100 hover:text-red-700'
-                        }`}
-                      >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 0115.263 3h4.017c.163 0 .326.02.485.06L17 4m-7 10v2a2 2 0 002 2h.095c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5" />
-                        </svg>
-                        <span>{item.notHelpful + (helpfulVotes[item.id] === 'not-helpful' ? 1 : 0)}</span>
-                      </button>
+                  
+                  <div className="flex-1">
+                    <h3 className="text-lg md:text-xl lg:text-2xl font-black text-white group-hover:text-[#60A5FA] transition-colors duration-500 mb-2 md:mb-3 leading-tight">
+                      {item.question}
+                    </h3>
+                    <div className="flex items-center space-x-4 text-sm md:text-base text-white/70">
+                      <span className="bg-gradient-to-r from-[#60A5FA]/20 to-[#9CA3AF]/20 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[#60A5FA]/30 font-semibold">
+                        {item.category}
+                      </span>
+                      <span>Son güncelleme: {formatDate(item.lastUpdated)}</span>
                     </div>
                   </div>
                 </div>
-              </div>
-            )}
+                
+                <div className="ml-4 flex-shrink-0">
+                  <svg
+                    className={`w-6 h-6 md:w-8 md:h-8 text-white/70 transition-transform duration-300 ${
+                      openItems.includes(item.id) ? 'rotate-180' : ''
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2.5}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </button>
+
+              {openItems.includes(item.id) && (
+                <div className="mt-6 md:mt-8 pl-16 md:pl-20 lg:pl-24">
+                  <div className="prose prose-gray max-w-none">
+                    <div className="whitespace-pre-line text-white/90 leading-relaxed text-base md:text-lg lg:text-xl font-medium">
+                      {item.answer}
+                    </div>
+                  </div>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 md:gap-3 mt-6 md:mt-8">
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="bg-gradient-to-r from-[#60A5FA]/20 to-[#9CA3AF]/20 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-xs md:text-sm font-semibold border border-[#60A5FA]/30"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Helpful Feedback */}
+                  <div className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-white/20">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm md:text-base text-white/80 font-medium">Bu cevap yardımcı oldu mu?</span>
+                      <div className="flex items-center space-x-3 md:space-x-4">
+                        <button
+                          onClick={() => handleHelpfulVote(item.id, 'helpful')}
+                          className={`flex items-center space-x-2 px-4 py-2 rounded-full text-sm md:text-base font-semibold transition-all duration-300 ${
+                            helpfulVotes[item.id] === 'helpful'
+                              ? 'bg-gradient-to-r from-[#10B981] to-[#059669] text-white shadow-lg'
+                              : 'bg-white/10 backdrop-blur-sm text-white/80 hover:bg-gradient-to-r hover:from-[#10B981] hover:to-[#059669] hover:text-white hover:shadow-lg border border-white/20'
+                          }`}
+                        >
+                          <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+                          </svg>
+                          <span>{item.helpful + (helpfulVotes[item.id] === 'helpful' ? 1 : 0)}</span>
+                        </button>
+                        <button
+                          onClick={() => handleHelpfulVote(item.id, 'not-helpful')}
+                          className={`flex items-center space-x-2 px-4 py-2 rounded-full text-sm md:text-base font-semibold transition-all duration-300 ${
+                            helpfulVotes[item.id] === 'not-helpful'
+                              ? 'bg-gradient-to-r from-[#EF4444] to-[#DC2626] text-white shadow-lg'
+                              : 'bg-white/10 backdrop-blur-sm text-white/80 hover:bg-gradient-to-r hover:from-[#EF4444] hover:to-[#DC2626] hover:text-white hover:shadow-lg border border-white/20'
+                          }`}
+                        >
+                          <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 0115.263 3h4.017c.163 0 .326.02.485.06L17 4m-7 10v2a2 2 0 002 2h.095c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5" />
+                          </svg>
+                          <span>{item.notHelpful + (helpfulVotes[item.id] === 'not-helpful' ? 1 : 0)}</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            {/* Decorative Elements */}
+            <div className="absolute bottom-0 left-0 w-full h-1 md:h-2 bg-gradient-to-r from-[#3B82F6] via-[#8B5CF6] to-[#EC4899] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
 
       {/* Load More */}
-      <div className="p-6 bg-gray-50 text-center">
-        <button className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+      <div className="text-center pt-8 md:pt-12">
+        <button className="bg-gradient-to-r from-[#60A5FA] to-[#9CA3AF] hover:from-[#4E9EFF] hover:to-[#8B5CF6] text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
           Daha Fazla Soru Yükle
         </button>
       </div>

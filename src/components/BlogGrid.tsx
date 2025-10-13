@@ -129,142 +129,216 @@ const BlogGrid = () => {
   };
 
   return (
-    <div className="space-y-8">
-      {/* Featured Posts */}
-      <div className="mb-12">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Öne Çıkan Yazılar</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {blogPosts.filter(post => post.featured).map((post) => (
-            <article key={post.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="relative">
-                <div className="h-48 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-                  <div className="text-6xl text-primary-400">📝</div>
-                </div>
-                <div className="absolute top-4 left-4">
-                  <span className="bg-accent-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {post.category}
-                  </span>
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center text-sm text-gray-500 mb-3">
-                  <span>{post.author}</span>
-                  <span className="mx-2">•</span>
-                  <span>{formatDate(post.date)}</span>
-                  <span className="mx-2">•</span>
-                  <span>{post.readTime} okuma</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                  {post.title}
-                </h3>
-                <p className="text-gray-600 mb-4 line-clamp-3">
-                  {post.excerpt}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {post.tags.map((tag) => (
-                    <span key={tag} className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-                <Link 
-                  href={`/blog/${post.slug}`}
-                  className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium transition-colors"
-                >
-                  Devamını Oku
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
-            </article>
-          ))}
-        </div>
+    <div className="py-16 md:py-24 lg:py-32 bg-gradient-to-br from-[#F8FAFC] via-[#F1F5F9] to-[#E2E8F0] text-[#0F172A] overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#60A5FA]/5 via-transparent to-[#9CA3AF]/5"></div>
+        <div className="absolute top-20 left-20 w-64 h-64 bg-[#60A5FA]/3 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-[#9CA3AF]/3 rounded-full blur-3xl"></div>
       </div>
 
-      {/* All Posts */}
-      <div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Tüm Yazılar</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {currentPosts.map((post) => (
-            <article key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-              <div className="relative">
-                <div className="h-40 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-                  <div className="text-4xl text-primary-400">📄</div>
-                </div>
-                <div className="absolute top-3 left-3">
-                  <span className="bg-accent-500 text-white px-2 py-1 rounded text-xs font-medium">
-                    {post.category}
-                  </span>
-                </div>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          {/* Featured Posts */}
+          <div className="mb-16 md:mb-20 lg:mb-24">
+            <div className="text-center mb-12 md:mb-16">
+              <div className="inline-flex items-center bg-gradient-to-r from-[#60A5FA]/20 to-[#9CA3AF]/20 backdrop-blur-sm rounded-full px-6 md:px-8 py-3 md:py-4 border border-[#60A5FA]/30 mb-6 md:mb-8">
+                <div className="w-2 h-2 bg-gradient-to-r from-[#60A5FA] to-[#9CA3AF] rounded-full mr-3 animate-pulse"></div>
+                <span className="text-[#0F172A] font-semibold text-sm md:text-base tracking-wider uppercase">Öne Çıkan</span>
+                <div className="w-2 h-2 bg-gradient-to-r from-[#9CA3AF] to-[#60A5FA] rounded-full ml-3 animate-pulse"></div>
               </div>
-              <div className="p-4">
-                <div className="flex items-center text-xs text-gray-500 mb-2">
-                  <span>{post.author}</span>
-                  <span className="mx-1">•</span>
-                  <span>{formatDate(post.date)}</span>
-                  <span className="mx-1">•</span>
-                  <span>{post.readTime}</span>
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2">
-                  {post.title}
-                </h3>
-                <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-                  {post.excerpt}
-                </p>
-                <Link 
-                  href={`/blog/${post.slug}`}
-                  className="inline-flex items-center text-primary-600 hover:text-primary-700 text-sm font-medium transition-colors"
+              
+              <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 md:mb-8 leading-tight">
+                <span className="bg-gradient-to-r from-[#0F172A] via-[#1E293B] to-[#334155] bg-clip-text text-transparent">
+                  Öne Çıkan
+                </span>
+                <span className="block bg-gradient-to-r from-[#60A5FA] via-[#9CA3AF] to-[#64748B] bg-clip-text text-transparent">
+                  Yazılar
+                </span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
+              {blogPosts.filter(post => post.featured).map((post) => (
+                <article key={post.id} className="group relative overflow-hidden bg-gradient-to-br from-white via-[#F8FAFC] to-[#F1F5F9] rounded-2xl md:rounded-3xl shadow-2xl hover:shadow-[#60A5FA]/20 transition-all duration-700 hover:scale-105 border border-[#E2E8F0]">
+                  {/* Background Effects */}
+                  <div className="absolute inset-0 opacity-5">
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#60A5FA]/20 via-transparent to-[#9CA3AF]/20"></div>
+                    <div className="absolute top-4 right-4 w-16 h-16 bg-[#60A5FA]/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-1000"></div>
+                  </div>
+
+                  <div className="relative h-64 md:h-72 lg:h-80">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#60A5FA]/10 via-[#9CA3AF]/10 to-[#64748B]/10 flex items-center justify-center">
+                      <svg className="w-16 md:w-20 lg:w-24 h-16 md:h-20 lg:h-24 text-[#60A5FA]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                    </div>
+                    <div className="absolute top-4 md:top-6 left-4 md:left-6">
+                      <span className="bg-gradient-to-r from-[#60A5FA] to-[#9CA3AF] text-white px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold shadow-lg">
+                        {post.category}
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="p-6 md:p-8 relative z-10">
+                    <div className="flex items-center text-sm md:text-base text-[#0F172A]/80 mb-4 md:mb-5">
+                      <span className="font-medium">{post.author}</span>
+                      <span className="mx-2 md:mx-3">•</span>
+                      <span>{formatDate(post.date)}</span>
+                      <span className="mx-2 md:mx-3">•</span>
+                      <span className="font-medium">{post.readTime} okuma</span>
+                    </div>
+                    
+                    <h3 className="text-lg md:text-xl lg:text-2xl font-black text-[#0F172A] mb-4 md:mb-5 group-hover:text-[#60A5FA] transition-colors duration-300 line-clamp-2">
+                      {post.title}
+                    </h3>
+                    
+                    <p className="text-sm md:text-base lg:text-lg text-[#0F172A]/90 mb-6 md:mb-8 leading-relaxed font-medium line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-2 md:gap-3 mb-6 md:mb-8">
+                      {post.tags.map((tag) => (
+                        <span key={tag} className="bg-gradient-to-r from-[#60A5FA]/10 to-[#9CA3AF]/10 text-[#0F172A]/80 px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-medium border border-[#60A5FA]/20">
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <Link 
+                      href={`/blog/${post.slug}`}
+                      className="group/link inline-flex items-center bg-gradient-to-r from-[#60A5FA] to-[#9CA3AF] text-white px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl font-semibold text-sm md:text-base lg:text-lg hover:from-[#9CA3AF] hover:to-[#60A5FA] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-[#60A5FA]/25"
+                    >
+                      <span>Devamını Oku</span>
+                      <svg className="w-4 md:w-5 h-4 md:h-5 ml-2 md:ml-3 group-hover/link:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
+                  
+                  {/* Bottom Accent Line */}
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#60A5FA] via-[#9CA3AF] to-[#64748B] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* All Posts */}
+          <div>
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 md:mb-8 leading-tight">
+                <span className="bg-gradient-to-r from-[#0F172A] via-[#1E293B] to-[#334155] bg-clip-text text-transparent">
+                  Tüm
+                </span>
+                <span className="block bg-gradient-to-r from-[#60A5FA] via-[#9CA3AF] to-[#64748B] bg-clip-text text-transparent">
+                  Yazılar
+                </span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+              {currentPosts.map((post) => (
+                <article key={post.id} className="group relative overflow-hidden bg-gradient-to-br from-white via-[#F8FAFC] to-[#F1F5F9] rounded-2xl md:rounded-3xl shadow-2xl hover:shadow-[#60A5FA]/20 transition-all duration-700 hover:scale-105 border border-[#E2E8F0]">
+                  {/* Background Effects */}
+                  <div className="absolute inset-0 opacity-5">
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#60A5FA]/20 via-transparent to-[#9CA3AF]/20"></div>
+                    <div className="absolute top-4 right-4 w-16 h-16 bg-[#60A5FA]/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-1000"></div>
+                  </div>
+
+                  <div className="relative h-48 md:h-56 lg:h-64">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#60A5FA]/10 via-[#9CA3AF]/10 to-[#64748B]/10 flex items-center justify-center">
+                      <svg className="w-12 md:w-14 lg:w-16 h-12 md:h-14 lg:h-16 text-[#60A5FA]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                    </div>
+                    <div className="absolute top-3 md:top-4 left-3 md:left-4">
+                      <span className="bg-gradient-to-r from-[#60A5FA] to-[#9CA3AF] text-white px-2 md:px-3 py-1 md:py-1.5 rounded-full text-xs md:text-sm font-semibold shadow-lg">
+                        {post.category}
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="p-4 md:p-6 relative z-10">
+                    <div className="flex items-center text-xs md:text-sm text-[#0F172A]/80 mb-3 md:mb-4">
+                      <span className="font-medium">{post.author}</span>
+                      <span className="mx-1 md:mx-2">•</span>
+                      <span>{formatDate(post.date)}</span>
+                      <span className="mx-1 md:mx-2">•</span>
+                      <span className="font-medium">{post.readTime}</span>
+                    </div>
+                    
+                    <h3 className="text-base md:text-lg lg:text-xl font-black text-[#0F172A] mb-3 md:mb-4 group-hover:text-[#60A5FA] transition-colors duration-300 line-clamp-2">
+                      {post.title}
+                    </h3>
+                    
+                    <p className="text-xs md:text-sm lg:text-base text-[#0F172A]/90 mb-4 md:mb-6 leading-relaxed font-medium line-clamp-2">
+                      {post.excerpt}
+                    </p>
+                    
+                    <Link 
+                      href={`/blog/${post.slug}`}
+                      className="group/link inline-flex items-center bg-gradient-to-r from-[#60A5FA] to-[#9CA3AF] text-white px-4 md:px-6 py-2 md:py-3 rounded-lg md:rounded-xl font-semibold text-xs md:text-sm lg:text-base hover:from-[#9CA3AF] hover:to-[#60A5FA] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-[#60A5FA]/25"
+                    >
+                      <span>Devamını Oku</span>
+                      <svg className="w-3 md:w-4 h-3 md:h-4 ml-1 md:ml-2 group-hover/link:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
+                  
+                  {/* Bottom Accent Line */}
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#60A5FA] via-[#9CA3AF] to-[#64748B] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="flex justify-center items-center space-x-2 md:space-x-4 mt-16 md:mt-20 lg:mt-24">
+              <button
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+                className="group px-4 md:px-6 py-2 md:py-3 text-[#0F172A]/60 hover:text-[#60A5FA] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 bg-gradient-to-r from-white to-[#F8FAFC] rounded-xl md:rounded-2xl border border-[#E2E8F0] hover:border-[#60A5FA]/30 hover:shadow-lg"
+              >
+                <svg className="w-4 md:w-5 h-4 md:h-5 group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => handlePageChange(page)}
+                  className={`px-4 md:px-6 py-2 md:py-3 rounded-xl md:rounded-2xl font-semibold text-sm md:text-base transition-all duration-300 ${
+                    currentPage === page
+                      ? 'bg-gradient-to-r from-[#60A5FA] to-[#9CA3AF] text-white shadow-lg'
+                      : 'text-[#0F172A]/80 hover:text-[#60A5FA] bg-gradient-to-r from-white to-[#F8FAFC] border border-[#E2E8F0] hover:border-[#60A5FA]/30 hover:shadow-lg'
+                  }`}
                 >
-                  Devamını Oku
-                  <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
-            </article>
-          ))}
+                  {page}
+                </button>
+              ))}
+              
+              <button
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                className="group px-4 md:px-6 py-2 md:py-3 text-[#0F172A]/60 hover:text-[#60A5FA] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 bg-gradient-to-r from-white to-[#F8FAFC] rounded-xl md:rounded-2xl border border-[#E2E8F0] hover:border-[#60A5FA]/30 hover:shadow-lg"
+              >
+                <svg className="w-4 md:w-5 h-4 md:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          )}
         </div>
       </div>
-
-      {/* Pagination */}
-      {totalPages > 1 && (
-        <div className="flex justify-center items-center space-x-2 mt-12">
-          <button
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-            className="px-4 py-2 text-gray-500 hover:text-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-            <button
-              key={page}
-              onClick={() => handlePageChange(page)}
-              className={`px-4 py-2 rounded-md transition-colors ${
-                currentPage === page
-                  ? 'bg-primary-500 text-white'
-                  : 'text-gray-700 hover:bg-gray-100'
-              }`}
-            >
-              {page}
-            </button>
-          ))}
-          
-          <button
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-            className="px-4 py-2 text-gray-500 hover:text-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
-      )}
+      
+      {/* Floating Particles */}
+      <div className="absolute top-10 md:top-20 left-10 md:left-20 w-2 md:w-3 lg:w-4 h-2 md:h-3 lg:h-4 bg-[#60A5FA]/30 rounded-full animate-pulse"></div>
+      <div className="absolute top-20 md:top-40 right-16 md:right-32 w-1.5 md:w-2 lg:w-3 h-1.5 md:h-2 lg:h-3 bg-[#9CA3AF]/30 rounded-full animate-pulse delay-1000"></div>
+      <div className="absolute bottom-16 md:bottom-32 left-20 md:left-40 w-2.5 md:w-3 lg:w-5 h-2.5 md:h-3 lg:h-5 bg-[#64748B]/30 rounded-full animate-pulse delay-2000"></div>
+      <div className="absolute bottom-10 md:bottom-20 right-10 md:right-20 w-2 md:w-3 lg:w-4 h-2 md:h-3 lg:h-4 bg-[#60A5FA]/30 rounded-full animate-pulse delay-500"></div>
     </div>
   );
 };

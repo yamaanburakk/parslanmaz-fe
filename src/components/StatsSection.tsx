@@ -89,20 +89,6 @@ const StatsSection = () => {
             </div>
           </div>
           
-          {/* Call to Action */}
-          <div className="mt-16 text-center">
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-[#66B2FF]/30">
-              <h3 className="text-2xl font-bold mb-4">
-                Siz de Başarı Hikayemizin Bir Parçası Olun
-              </h3>
-              <p className="text-[#F8FAFC] mb-6 font-medium">
-                Uzman ekibimizle görüşün ve projenizi hayata geçirin.
-              </p>
-              <button className="bg-gradient-to-r from-[#66B2FF] to-[#4E9EFF] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-[#4E9EFF] hover:to-[#66B2FF] transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Hemen İletişime Geç
-              </button>
-            </div>
-          </div>
         </div>
       </div>
       
