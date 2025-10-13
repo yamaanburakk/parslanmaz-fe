@@ -14,7 +14,8 @@ html {
 
 body {
   font-display: swap;
-  text-optimized: true;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Critical CSS for above-the-fold content */
@@ -43,6 +44,24 @@ img {
   100% {
     background-position: -200% 0;
   }
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
 }
 
         :root {
@@ -184,8 +203,10 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 /* Professional Typography Scale */
@@ -234,19 +255,38 @@ p {
 /* Mobile Responsive Typography */
 @media (max-width: 640px) {
   h1 {
-    font-size: 1.5rem; /* 24px */
+    font-size: clamp(1.5rem, 5vw, 1.875rem); /* 24px - 30px */
   }
   
   h2 {
-    font-size: 1.25rem; /* 20px */
+    font-size: clamp(1.25rem, 4vw, 1.5rem); /* 20px - 24px */
   }
   
   h3 {
-    font-size: 1.125rem; /* 18px */
+    font-size: clamp(1.125rem, 3.5vw, 1.25rem); /* 18px - 20px */
+  }
+  
+  h4, h5, h6 {
+    font-size: clamp(1rem, 3vw, 1.125rem); /* 16px - 18px */
   }
   
   p {
-    font-size: 0.8125rem; /* 13px */
+    font-size: clamp(0.8125rem, 2.5vw, 0.875rem); /* 13px - 14px */
+  }
+}
+
+/* Tablet Responsive Typography */
+@media (min-width: 641px) and (max-width: 1024px) {
+  h1 {
+    font-size: clamp(1.75rem, 4vw, 2.25rem); /* 28px - 36px */
+  }
+  
+  h2 {
+    font-size: clamp(1.5rem, 3.5vw, 1.875rem); /* 24px - 30px */
+  }
+  
+  h3 {
+    font-size: clamp(1.25rem, 3vw, 1.5rem); /* 20px - 24px */
   }
 }
 
@@ -405,4 +445,108 @@ p {
 /* Intersection Observer Polyfill Support */
 .intersection-observer {
   will-change: transform, opacity;
+}
+
+/* Container Utilities for Responsive Design */
+.container-fluid {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .container-fluid {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-fluid {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-fluid {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container-fluid {
+    max-width: 1536px;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase touch targets on mobile */
+  button, a, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Remove hover effects on touch devices */
+  *:hover {
+    transition: none;
+  }
+}
+
+/* Safe Area Insets for iOS Notch */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+  
+  header {
+    padding-top: max(0px, env(safe-area-inset-top));
+  }
+  
+  footer {
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  header, footer, nav, aside, .no-print {
+    display: none !important;
+  }
+  
+  a {
+    text-decoration: underline;
+    color: #000;
+  }
+  
+  @page {
+    margin: 2cm;
+  }
+}
+
+/* Focus Visible for Accessibility */
+*:focus-visible {
+  outline: 2px solid var(--accent-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Selection Color */
+::selection {
+  background-color: var(--accent-500);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--accent-500);
+  color: white;
 }

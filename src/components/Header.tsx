@@ -183,7 +183,7 @@ const Header = () => {
                       className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'endustriyel' 
                           ? 'bg-[#4A90E2]/20 text-[#4A90E2] border-[#4A90E2] shadow-lg' 
-                          : 'text-gray-600 hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
+                          : 'text-white hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
                       }`}
                       onClick={() => handleMenuItemClick('endustriyel')}
                     >
@@ -194,7 +194,7 @@ const Header = () => {
                       className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'acik-bufe' 
                           ? 'bg-[#4A90E2]/20 text-[#4A90E2] border-[#4A90E2] shadow-lg' 
-                          : 'text-gray-600 hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
+                          : 'text-white hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
                       }`}
                       onClick={() => handleMenuItemClick('acik-bufe')}
                     >
@@ -205,7 +205,7 @@ const Header = () => {
                       className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'ekmek' 
                           ? 'bg-[#4A90E2]/20 text-[#4A90E2] border-[#4A90E2] shadow-lg' 
-                          : 'text-gray-600 hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
+                          : 'text-white hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
                       }`}
                       onClick={() => handleMenuItemClick('ekmek')}
                     >
@@ -216,7 +216,7 @@ const Header = () => {
                       className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'pasta' 
                           ? 'bg-[#4A90E2]/20 text-[#4A90E2] border-[#4A90E2] shadow-lg' 
-                          : 'text-gray-600 hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
+                          : 'text-white hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
                       }`}
                       onClick={() => handleMenuItemClick('pasta')}
                     >
@@ -227,7 +227,7 @@ const Header = () => {
                       className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'waffle' 
                           ? 'bg-[#4A90E2]/20 text-[#4A90E2] border-[#4A90E2] shadow-lg' 
-                          : 'text-gray-600 hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
+                          : 'text-white hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
                       }`}
                       onClick={() => handleMenuItemClick('waffle')}
                     >
@@ -238,7 +238,7 @@ const Header = () => {
                       className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'cikolata' 
                           ? 'bg-[#4A90E2]/20 text-[#4A90E2] border-[#4A90E2] shadow-lg' 
-                          : 'text-gray-600 hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
+                          : 'text-white hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
                       }`}
                       onClick={() => handleMenuItemClick('cikolata')}
                     >
@@ -249,7 +249,7 @@ const Header = () => {
                       className={`block py-2 px-4 rounded-xl font-semibold border-l-2 transition-all duration-200 text-xs sm:text-sm ${
                         activeMenuItem === 'borek' 
                           ? 'bg-[#4A90E2]/20 text-[#4A90E2] border-[#4A90E2] shadow-lg' 
-                          : 'text-gray-600 hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
+                          : 'text-white hover:text-[#4A90E2] hover:bg-[#4A90E2]/10 border-transparent hover:border-[#4A90E2]'
                       }`}
                       onClick={() => handleMenuItemClick('borek')}
                     >

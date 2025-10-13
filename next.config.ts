@@ -11,6 +11,12 @@ const nextConfig: NextConfig = {
   generateEtags: true,
   output: 'standalone',
   
+  // React compiler optimization
+  reactStrictMode: true,
+  
+  // Production source maps
+  productionBrowserSourceMaps: false,
+  
   // Experimental features for better performance
   experimental: {
     optimizePackageImports: ['react', 'react-dom', 'next'],
@@ -26,6 +32,12 @@ const nextConfig: NextConfig = {
     staticGenerationRetryCount: 3,
     // Enable modern bundling
     esmExternals: true,
+    // Parallel server compilation
+    webpackBuildWorker: true,
+    // Parallel server compilation
+    parallelServerCompiles: true,
+    // Parallel build worker
+    parallelServerBuildTraces: true,
   },
 
   // Image optimization
@@ -45,6 +57,10 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
+    // Loader optimization
+    loader: 'default',
+    // Unoptimized for development
+    unoptimized: false,
   },
 
   // Webpack optimizations

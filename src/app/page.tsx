@@ -2,7 +2,6 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ProductsSection from "@/components/ProductsSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
-import ContactSection from "@/components/ContactSection";
 import { Metadata } from "next";
 
 // Static generation for better performance
@@ -33,7 +32,6 @@ export default function Home() {
       <AboutSection />
       <ProductsSection />
       <WhyChooseUsSection />
-      <ContactSection />
     </div>
   );
 }

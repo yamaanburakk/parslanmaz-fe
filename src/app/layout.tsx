@@ -69,9 +69,10 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
+  other: {
+    'google-site-verification': 'verification-code-placeholder',
+    'yandex-verification': 'verification-code-placeholder',
+    'facebook-domain-verification': 'verification-code-placeholder',
   },
   openGraph: {
     title: "Pars Endüstriyel Mutfak | Paslanmaz Çelik Mutfak Ekipmanları",
@@ -130,17 +131,37 @@ export default function RootLayout({
   return (
     <html lang="tr" className="scroll-smooth">
       <head>
+        {/* Preconnect for Performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        
+        {/* PWA and Mobile Optimization */}
         <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/parslanmaz-logo.jpeg" />
-        <meta name="theme-color" content="#131C3C" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/parslanmaz-logo.jpeg" />
+        <link rel="icon" type="image/jpeg" sizes="32x32" href="/parslanmaz-logo.jpeg" />
+        <link rel="icon" type="image/jpeg" sizes="16x16" href="/parslanmaz-logo.jpeg" />
+        
+        {/* Theme and Mobile App Configuration */}
+        <meta name="theme-color" content="#131C3C" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#131C3C" media="(prefers-color-scheme: dark)" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Pars Mutfak" />
         <meta name="msapplication-TileColor" content="#131C3C" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        
+        {/* SEO Enhancement */}
+        <meta name="geo.region" content="TR-34" />
+        <meta name="geo.placename" content="Istanbul" />
+        <meta name="geo.position" content="41.015137;28.979530" />
+        <meta name="ICBM" content="41.015137, 28.979530" />
+        
+        {/* Language and Content Type */}
+        <meta httpEquiv="content-language" content="tr" />
+        <meta name="language" content="Turkish" />
       </head>
       <body className={`${inter.className} antialiased text-optimized`} suppressHydrationWarning>
         <StructuredData type="Organization" />
