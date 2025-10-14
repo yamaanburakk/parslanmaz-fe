@@ -182,13 +182,34 @@ const ProductsSection = memo(() => {
                   </>
                 )}
 
-                {/* Enhanced Action Button */}
+                {/* Ultra Professional Action Button */}
                 <div className="flex items-center justify-between mt-4">
-                  <Link href={"image" in product ? product.href : "#"} className="text-sm sm:text-base text-[#66B2FF] font-bold hover:text-[#FFD700] transition-all duration-500 inline-flex items-center gap-2 group-hover:gap-3 bg-gradient-to-r from-[#66B2FF]/10 to-[#FFD700]/10 px-4 py-2 rounded-lg group-hover:from-[#66B2FF]/20 group-hover:to-[#FFD700]/20 backdrop-blur-sm border border-[#66B2FF]/20 group-hover:border-[#66B2FF]/40">
-                    Detayları Gör 
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                  <Link 
+                    href={"image" in product ? product.href : "#"} 
+                    className="group/btn relative overflow-hidden bg-gradient-to-r from-[#1E293B] via-[#334155] to-[#1E293B] hover:from-[#66B2FF] hover:via-[#FFD700] hover:to-[#66B2FF] text-white font-bold text-sm sm:text-base px-6 py-3 rounded-xl border border-[#334155]/50 hover:border-[#66B2FF]/60 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#66B2FF]/25 backdrop-blur-sm"
+                  >
+                    {/* Shine Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
+                    
+                    {/* Button Content */}
+                    <div className="relative z-10 flex items-center gap-2 group-hover/btn:gap-3">
+                      <span className="relative">
+                        Detayları Gör
+                        <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white group-hover/btn:w-full transition-all duration-500"></div>
+                      </span>
+                      
+                      {/* Enhanced Arrow Icon */}
+                      <div className="relative">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:translate-x-1 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                        </svg>
+                        {/* Arrow Glow Effect */}
+                        <div className="absolute inset-0 bg-white/30 rounded-full blur-sm opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
+                      </div>
+                    </div>
+                    
+                    {/* Button Border Glow */}
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#66B2FF]/20 via-[#FFD700]/20 to-[#66B2FF]/20 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500 blur-sm"></div>
                   </Link>
                   
                   {/* Enhanced Status Indicator */}

@@ -24,81 +24,33 @@ const ProjectsHero = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="text-center">
             {/* Content */}
-            <div className="space-y-8 md:space-y-12">
-              <div className="inline-flex items-center bg-gradient-to-r from-[#60A5FA]/20 to-[#9CA3AF]/20 backdrop-blur-sm rounded-full px-6 md:px-8 py-3 md:py-4 border border-[#60A5FA]/30">
+            <div className="space-y-8 md:space-y-12 max-w-4xl mx-auto">
+              <div className="inline-flex items-center bg-gradient-to-r from-[#60A5FA]/20 to-[#9CA3AF]/20 backdrop-blur-sm rounded-full px-6 md:px-8 py-3 md:py-4 border border-[#60A5FA]/30 mb-8 md:mb-12">
                 <div className="w-2 h-2 bg-gradient-to-r from-[#60A5FA] to-[#9CA3AF] rounded-full mr-3 animate-pulse"></div>
-                <span className="text-white font-semibold text-sm md:text-base tracking-wider uppercase">Projelerimiz</span>
+                <span className="text-white font-semibold text-sm md:text-base tracking-wider uppercase">Başarılı Projelerimiz</span>
                 <div className="w-2 h-2 bg-gradient-to-r from-[#9CA3AF] to-[#60A5FA] rounded-full ml-3 animate-pulse"></div>
               </div>
               
               <div>
-                <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 md:mb-8 leading-tight">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 md:mb-12 leading-tight">
                   <span className="bg-gradient-to-r from-white via-[#F1F5F9] to-[#CBD5E1] bg-clip-text text-transparent">
-                    Başarılı
+                    Endüstriyel Mutfak
                   </span>
                   <span className="block bg-gradient-to-r from-[#60A5FA] via-[#9CA3AF] to-[#64748B] bg-clip-text text-transparent">
-                    Projelerimiz
+                    Çözümlerimiz
                   </span>
                 </h1>
-                <p className="text-base md:text-lg lg:text-xl xl:text-2xl text-white/90 leading-relaxed mb-8 md:mb-12 font-medium max-w-2xl">
+                <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white/90 leading-relaxed mb-8 md:mb-12 font-medium max-w-4xl mx-auto">
                   Türkiye&apos;nin dört bir yanında ve uluslararası projelerde imza attığımız 
-                  <span className="font-bold text-[#60A5FA]"> başarılı çalışmalarımızı</span> keşfedin.
+                  <span className="font-bold text-[#60A5FA]"> başarılı çalışmalarımızı</span> keşfedin. 
+                  Farklı sektörlerde gerçekleştirdiğimiz projeler ve 
+                  <span className="font-bold text-[#9CA3AF]"> müşteri memnuniyeti</span> odaklı yaklaşımımız.
                 </p>
               </div>
             </div>
             
-            {/* Stats Cards - Professional */}
-            <div className="grid grid-cols-2 gap-4 md:gap-6 lg:gap-8">
-              <div className="group relative overflow-hidden bg-gradient-to-br from-[#1E3A8A] via-[#1E40AF] to-[#2563EB] p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-2xl hover:shadow-[#1E3A8A]/50 transition-all duration-700 hover:scale-105 border border-[#1E40AF]/20">
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#60A5FA]/20 via-transparent to-[#2563EB]/20"></div>
-                  <div className="absolute top-4 right-4 w-16 h-16 bg-[#60A5FA]/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-1000"></div>
-                </div>
-                <div className="relative z-10 text-center">
-                  <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-2 md:mb-3">12+</div>
-                  <div className="text-white/90 text-sm md:text-base lg:text-lg font-medium">Tamamlanan Proje</div>
-                </div>
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#60A5FA] via-[#3B82F6] to-[#1E40AF] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
-              </div>
-              
-              <div className="group relative overflow-hidden bg-gradient-to-br from-[#374151] via-[#4B5563] to-[#6B7280] p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-2xl hover:shadow-[#374151]/50 transition-all duration-700 hover:scale-105 border border-[#4B5563]/20">
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#9CA3AF]/20 via-transparent to-[#6B7280]/20"></div>
-                  <div className="absolute top-4 right-4 w-16 h-16 bg-[#9CA3AF]/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-1000"></div>
-                </div>
-                <div className="relative z-10 text-center">
-                  <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-2 md:mb-3">3+</div>
-                  <div className="text-white/90 text-sm md:text-base lg:text-lg font-medium">Ülkeye İhracat</div>
-                </div>
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#9CA3AF] via-[#6B7280] to-[#4B5563] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
-              </div>
-              
-              <div className="group relative overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#334155] p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-2xl hover:shadow-[#0F172A]/50 transition-all duration-700 hover:scale-105 border border-[#1E293B]/20">
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#64748B]/20 via-transparent to-[#334155]/20"></div>
-                  <div className="absolute top-4 right-4 w-16 h-16 bg-[#64748B]/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-1000"></div>
-                </div>
-                <div className="relative z-10 text-center">
-                  <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-2 md:mb-3">1+</div>
-                  <div className="text-white/90 text-sm md:text-base lg:text-lg font-medium">Yıllık Tecrübe</div>
-                </div>
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#64748B] via-[#334155] to-[#1E293B] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
-              </div>
-              
-              <div className="group relative overflow-hidden bg-gradient-to-br from-[#1E3A8A] via-[#1E40AF] to-[#2563EB] p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-2xl hover:shadow-[#1E3A8A]/50 transition-all duration-700 hover:scale-105 border border-[#1E40AF]/20">
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#60A5FA]/20 via-transparent to-[#2563EB]/20"></div>
-                  <div className="absolute top-4 right-4 w-16 h-16 bg-[#60A5FA]/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-1000"></div>
-                </div>
-                <div className="relative z-10 text-center">
-                  <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-2 md:mb-3">%100</div>
-                  <div className="text-white/90 text-sm md:text-base lg:text-lg font-medium">Müşteri Memnuniyeti</div>
-                </div>
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#60A5FA] via-[#3B82F6] to-[#1E40AF] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

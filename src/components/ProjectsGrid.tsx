@@ -166,26 +166,18 @@ const ProjectsGrid = memo(() => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
+          {/* Projects Grid Header */}
           <div className="text-center mb-16 md:mb-20 lg:mb-24">
-            <div className="inline-flex items-center bg-gradient-to-r from-[#60A5FA]/20 to-[#9CA3AF]/20 backdrop-blur-sm rounded-full px-6 md:px-8 py-3 md:py-4 border border-[#60A5FA]/30 mb-6 md:mb-8">
-              <div className="w-2 h-2 bg-gradient-to-r from-[#60A5FA] to-[#9CA3AF] rounded-full mr-3 animate-pulse"></div>
-              <span className="text-white font-semibold text-sm md:text-base tracking-wider uppercase">Projelerimiz</span>
-              <div className="w-2 h-2 bg-gradient-to-r from-[#9CA3AF] to-[#60A5FA] rounded-full ml-3 animate-pulse"></div>
-            </div>
-            
-            <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 md:mb-8 leading-tight">
-              <span className="bg-gradient-to-r from-white via-[#F1F5F9] to-[#CBD5E1] bg-clip-text text-transparent">
-                Başarılı
-              </span>
-              <span className="block bg-gradient-to-r from-[#60A5FA] via-[#9CA3AF] to-[#64748B] bg-clip-text text-transparent">
-                Projelerimiz
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black mb-6 md:mb-8 leading-tight">
+              <span className="bg-gradient-to-r from-[#60A5FA] via-[#9CA3AF] to-[#64748B] bg-clip-text text-transparent">
+                Proje Portföyümüz
               </span>
             </h2>
             
-            <p className="text-base md:text-lg lg:text-xl xl:text-2xl text-white/90 leading-relaxed max-w-4xl mx-auto font-medium">
-              Farklı sektörlerde gerçekleştirdiğimiz projeler ve 
-              <span className="font-bold text-[#60A5FA]"> müşteri memnuniyeti</span>
+            <p className="text-base md:text-lg lg:text-xl text-white/80 leading-relaxed max-w-3xl mx-auto font-medium">
+              Her projede <span className="font-bold text-[#60A5FA]">kalite</span>, 
+              <span className="font-bold text-[#9CA3AF]"> inovasyon</span> ve 
+              <span className="font-bold text-[#64748B]"> müşteri memnuniyeti</span> odaklı yaklaşımımız
             </p>
           </div>
           

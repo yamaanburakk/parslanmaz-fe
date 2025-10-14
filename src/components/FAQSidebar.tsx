@@ -1,67 +1,62 @@
 'use client';
 
+import { useState } from 'react';
+
 const FAQSidebar = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const popularQuestions = [
     {
       id: 1,
       question: "Paslanmaz çelik ekipmanlar nasıl temizlenir?",
       category: "Bakım & Temizlik",
-      views: 1250
+      views: 1250,
+      faqId: 1 // Corresponding FAQ item ID
     },
     {
       id: 2,
       question: "Enerji tasarrufu için ne yapabilirim?",
       category: "Enerji Tasarrufu",
-      views: 980
+      views: 980,
+      faqId: 2 // Corresponding FAQ item ID
     },
     {
       id: 3,
       question: "Hijyen standartları nelerdir?",
       category: "Hijyen",
-      views: 1150
+      views: 1150,
+      faqId: 3 // Corresponding FAQ item ID
     },
     {
       id: 4,
       question: "Hangi ekipmanı seçmeliyim?",
       category: "Ekipman Seçimi",
-      views: 850
+      views: 850,
+      faqId: 4 // Corresponding FAQ item ID
     }
   ];
+
+  const handleQuestionClick = (faqId: number) => {
+    // Scroll to the FAQ item
+    const faqElement = document.getElementById(`faq-item-${faqId}`);
+    if (faqElement) {
+      faqElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'center'
+      });
+      
+      // Open the FAQ item
+      setTimeout(() => {
+        const faqButton = faqElement.querySelector('button');
+        if (faqButton) {
+          faqButton.click();
+        }
+      }, 500);
+    }
+  };
 
 
   return (
     <div className="space-y-8">
-      {/* Contact Support */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#334155] rounded-2xl md:rounded-3xl shadow-2xl border border-[#334155]/20">
-        {/* Animated Background */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#3B82F6]/20 via-transparent to-[#8B5CF6]/20"></div>
-          <div className="absolute top-4 right-4 w-24 h-24 bg-[#3B82F6]/10 rounded-full blur-2xl"></div>
-          <div className="absolute bottom-4 left-4 w-16 h-16 bg-[#8B5CF6]/10 rounded-full blur-xl"></div>
-        </div>
-        
-        <div className="relative z-10 p-6 md:p-8 text-center">
-          <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-[#3B82F6]/20 to-[#8B5CF6]/20 rounded-2xl md:rounded-3xl flex items-center justify-center backdrop-blur-sm border border-[#3B82F6]/30 shadow-xl mx-auto mb-4 md:mb-6">
-            <svg className="w-8 h-8 md:w-10 md:h-10 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-            </svg>
-          </div>
-          
-          <h3 className="text-xl md:text-2xl font-black text-white mb-3 md:mb-4">
-            Uzman Desteği
-          </h3>
-          <p className="text-white/80 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
-            Sorularınızın cevabını bulamadınız mı? Uzman ekibimiz size yardımcı olmaya hazır.
-          </p>
-          
-          <button className="bg-gradient-to-r from-[#60A5FA] to-[#9CA3AF] hover:from-[#4E9EFF] hover:to-[#8B5CF6] text-white px-6 py-3 rounded-2xl font-bold text-sm md:text-base transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
-            Destek Al
-          </button>
-        </div>
-        
-        {/* Decorative Elements */}
-        <div className="absolute bottom-0 left-0 w-full h-1 md:h-2 bg-gradient-to-r from-[#3B82F6] via-[#8B5CF6] to-[#EC4899]"></div>
-      </div>
 
       {/* Popular Questions */}
       <div className="relative overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#334155] rounded-2xl md:rounded-3xl shadow-2xl border border-[#334155]/20">
@@ -87,17 +82,28 @@ const FAQSidebar = () => {
           <div className="space-y-4">
             {popularQuestions.map((question) => (
               <div key={question.id} className="group">
-                <div className="bg-white/5 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-5 border border-white/10 hover:bg-white/10 transition-all duration-300 cursor-pointer">
+                <div 
+                  onClick={() => handleQuestionClick(question.faqId)}
+                  className="bg-white/5 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-5 border border-white/10 hover:bg-white/10 hover:border-[#10B981]/30 transition-all duration-300 cursor-pointer transform hover:scale-[1.02] hover:shadow-lg hover:shadow-[#10B981]/20"
+                >
                   <h4 className="text-white font-bold text-sm md:text-base mb-2 group-hover:text-[#10B981] transition-colors duration-300 leading-tight">
                     {question.question}
                   </h4>
                   <div className="flex items-center justify-between">
-                    <span className="text-white/60 text-xs md:text-sm font-semibold">
+                    <span className="text-white/60 text-xs md:text-sm font-semibold group-hover:text-[#10B981]/80 transition-colors duration-300">
                       {question.category}
                     </span>
-                    <span className="text-white/60 text-xs md:text-sm font-semibold">
+                    <span className="text-white/60 text-xs md:text-sm font-semibold group-hover:text-[#10B981]/80 transition-colors duration-300">
                       {question.views} görüntüleme
                     </span>
+                  </div>
+                  
+                  {/* Click indicator */}
+                  <div className="mt-2 flex items-center text-[#10B981] text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                    Tıklayarak görüntüle
                   </div>
                 </div>
               </div>

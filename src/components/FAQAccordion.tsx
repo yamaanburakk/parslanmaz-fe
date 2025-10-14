@@ -17,6 +17,8 @@ interface FAQItem {
 const FAQAccordion = () => {
   const [openItems, setOpenItems] = useState<number[]>([]);
   const [helpfulVotes, setHelpfulVotes] = useState<{[key: number]: 'helpful' | 'not-helpful' | null}>({});
+  const [visibleItems, setVisibleItems] = useState(8);
+  const [isLoading, setIsLoading] = useState(false);
 
   const faqItems: FAQItem[] = [
     {
@@ -106,6 +108,94 @@ const FAQAccordion = () => {
       notHelpful: 1,
       tags: ["teslimat", "süre", "lojistik"],
       lastUpdated: "2023-12-28"
+    },
+    {
+      id: 9,
+      question: "Özel tasarım ekipman üretimi yapıyor musunuz?",
+      answer: "Evet, özel tasarım ekipman üretimi yapıyoruz:\n\n**Özel Tasarım Süreci**:\n- İhtiyaç analizi\n- 3D tasarım ve görselleştirme\n- Prototip üretimi\n- Test ve onay\n- Seri üretim\n\n**Özel Tasarım Kapsamı**:\n- Özel boyutlarda ekipmanlar\n- Özel malzeme seçimi\n- Özel renk ve yüzey işlemleri\n- Özel fonksiyonlar\n- Logo ve marka uygulamaları\n\n**Süre ve Maliyet**:\n- Tasarım süresi: 1-2 hafta\n- Üretim süresi: 3-6 hafta\n- Minimum sipariş miktarı\n- Özel fiyatlandırma",
+      category: "Özel Tasarım",
+      icon: "🎨",
+      helpful: 28,
+      notHelpful: 2,
+      tags: ["özel tasarım", "üretim", "3D"],
+      lastUpdated: "2023-12-25"
+    },
+    {
+      id: 10,
+      question: "Ekipmanlarınızın enerji tüketimi nasıl?",
+      answer: "Enerji verimliliği odaklı ürünlerimiz:\n\n**Enerji Sınıfları**:\n- A+++ enerji sınıfı ekipmanlar\n- Düşük güç tüketimi\n- Akıllı enerji yönetimi\n\n**Enerji Tasarrufu Özellikleri**:\n- LED aydınlatma sistemleri\n- Otomatik kapanma özellikleri\n- Sıcaklık kontrol sistemleri\n- Verimli motor teknolojileri\n\n**Enerji Tasarrufu Hesaplaması**:\n- Yıllık enerji maliyeti hesaplama\n- Geri ödeme süresi analizi\n- Çevresel etki değerlendirmesi\n\n**Enerji Sertifikaları**:\n- CE sertifikası\n- Enerji verimliliği belgeleri\n- Çevre dostu üretim",
+      category: "Enerji Verimliliği",
+      icon: "⚡",
+      helpful: 31,
+      notHelpful: 1,
+      tags: ["enerji", "verimlilik", "çevre"],
+      lastUpdated: "2023-12-22"
+    },
+    {
+      id: 11,
+      question: "Bakım ve onarım hizmetleri nasıl çalışır?",
+      answer: "Kapsamlı bakım ve onarım hizmetlerimiz:\n\n**Bakım Hizmetleri**:\n- Düzenli bakım programları\n- Önleyici bakım\n- Periyodik kontroller\n- Temizlik hizmetleri\n\n**Onarım Hizmetleri**:\n- 7/24 acil müdahale\n- Hızlı onarım\n- Yedek parça temini\n- Uzman teknisyen hizmeti\n\n**Bakım Paketleri**:\n- Temel bakım paketi\n- Kapsamlı bakım paketi\n- Premium bakım paketi\n- Özel bakım anlaşmaları\n\n**Bakım Süreci**:\n- Randevu alma\n- Teknisyen gönderimi\n- Bakım/onarım işlemi\n- Rapor hazırlama\n- Takip ve kontrol",
+      category: "Bakım & Onarım",
+      icon: "🔧",
+      helpful: 42,
+      notHelpful: 1,
+      tags: ["bakım", "onarım", "servis"],
+      lastUpdated: "2023-12-20"
+    },
+    {
+      id: 12,
+      question: "Ekipmanlarınızın güvenlik standartları nelerdir?",
+      answer: "Yüksek güvenlik standartlarımız:\n\n**Güvenlik Sertifikaları**:\n- CE güvenlik sertifikası\n- ISO 9001 kalite yönetimi\n- HACCP gıda güvenliği\n- TSE standartları\n\n**Güvenlik Özellikleri**:\n- Elektriksel güvenlik\n- Termal güvenlik\n- Mekanik güvenlik\n- Hijyen güvenliği\n\n**Güvenlik Testleri**:\n- Elektriksel testler\n- Basınç testleri\n- Sıcaklık testleri\n- Dayanıklılık testleri\n\n**Güvenlik Eğitimi**:\n- Kullanım eğitimi\n- Güvenlik eğitimi\n- Acil durum eğitimi\n- Bakım eğitimi",
+      category: "Güvenlik",
+      icon: "🛡️",
+      helpful: 39,
+      notHelpful: 0,
+      tags: ["güvenlik", "sertifika", "test"],
+      lastUpdated: "2023-12-18"
+    },
+    {
+      id: 13,
+      question: "Uluslararası projeleriniz var mı?",
+      answer: "Evet, uluslararası projelerimiz:\n\n**Hizmet Verdiğimiz Ülkeler**:\n- Almanya\n- Fransa\n- İngiltere\n- Hollanda\n- Belçika\n- Orta Doğu ülkeleri\n\n**Uluslararası Projeler**:\n- Otel zincirleri\n- Restoran grupları\n- Catering firmaları\n- Endüstriyel tesisler\n\n**Uluslararası Hizmetler**:\n- Proje yönetimi\n- Lojistik hizmetleri\n- Kurulum hizmetleri\n- Teknik destek\n- Eğitim hizmetleri\n\n**Uluslararası Standartlar**:\n- ISO standartları\n- Avrupa standartları\n- Yerel standartlar\n- Gümrük işlemleri",
+      category: "Uluslararası",
+      icon: "🌍",
+      helpful: 25,
+      notHelpful: 1,
+      tags: ["uluslararası", "ihracat", "proje"],
+      lastUpdated: "2023-12-15"
+    },
+    {
+      id: 14,
+      question: "Ekipmanlarınızın ömrü ne kadar?",
+      answer: "Ekipmanlarımızın ömrü:\n\n**Ortalama Kullanım Ömrü**:\n- Paslanmaz çelik ekipmanlar: 15-20 yıl\n- Elektronik parçalar: 8-12 yıl\n- Aşınan parçalar: 3-5 yıl\n\n**Ömrü Etkileyen Faktörler**:\n- Kullanım yoğunluğu\n- Bakım kalitesi\n- Çevre koşulları\n- Kullanım şekli\n\n**Ömür Uzatma Yöntemleri**:\n- Düzenli bakım\n- Doğru kullanım\n- Kaliteli temizlik\n- Profesyonel servis\n\n**Garanti ve Destek**:\n- 2 yıl garanti\n- 7/24 teknik destek\n- Yedek parça temini\n- Bakım hizmetleri",
+      category: "Dayanıklılık",
+      icon: "⏰",
+      helpful: 33,
+      notHelpful: 2,
+      tags: ["ömür", "dayanıklılık", "garanti"],
+      lastUpdated: "2023-12-12"
+    },
+    {
+      id: 15,
+      question: "Ekipman seçiminde nelere dikkat etmeliyim?",
+      answer: "Ekipman seçiminde dikkat edilecek noktalar:\n\n**İhtiyaç Analizi**:\n- Günlük kapasite\n- Menü çeşitliliği\n- Çalışma saatleri\n- Bütçe planlaması\n\n**Teknik Özellikler**:\n- Enerji verimliliği\n- Güvenlik standartları\n- Hijyen özellikleri\n- Kolay temizlik\n\n**Fiziksel Koşullar**:\n- Alan büyüklüğü\n- Bağlantı imkanları\n- Havalandırma\n- Su ve elektrik\n\n**Maliyet Analizi**:\n- İlk yatırım maliyeti\n- İşletme maliyeti\n- Bakım maliyeti\n- Geri ödeme süresi",
+      category: "Ekipman Seçimi",
+      icon: "🎯",
+      helpful: 47,
+      notHelpful: 3,
+      tags: ["seçim", "rehber", "analiz"],
+      lastUpdated: "2023-12-10"
+    },
+    {
+      id: 16,
+      question: "Ekipmanlarınızın montajı nasıl yapılır?",
+      answer: "Profesyonel montaj hizmetimiz:\n\n**Montaj Öncesi**:\n- Alan hazırlığı\n- Bağlantı kontrolü\n- Ekipman teslimi\n- Montaj planlaması\n\n**Montaj Süreci**:\n- Ekipman yerleştirme\n- Bağlantı işlemleri\n- Test ve kalibrasyon\n- Eğitim ve devir\n\n**Gerekli Bağlantılar**:\n- Elektrik bağlantısı\n- Su bağlantısı\n- Gaz bağlantısı\n- Havalandırma\n\n**Montaj Sonrası**:\n- Test çalıştırması\n- Kullanım eğitimi\n- Bakım planı\n- Garanti belgesi",
+      category: "Montaj",
+      icon: "🔨",
+      helpful: 29,
+      notHelpful: 1,
+      tags: ["montaj", "kurulum", "eğitim"],
+      lastUpdated: "2023-12-08"
     }
   ];
 
@@ -133,10 +223,21 @@ const FAQAccordion = () => {
     });
   };
 
+  const loadMoreQuestions = async () => {
+    setIsLoading(true);
+    // Simulate loading delay
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    setVisibleItems(prev => Math.min(prev + 4, faqItems.length));
+    setIsLoading(false);
+  };
+
+  const displayedItems = faqItems.slice(0, visibleItems);
+  const hasMoreItems = visibleItems < faqItems.length;
+
   return (
     <div className="space-y-6">
-      {faqItems.map((item) => (
-        <div key={item.id} className="group relative">
+      {displayedItems.map((item) => (
+        <div key={item.id} id={`faq-item-${item.id}`} className="group relative">
           <div className="relative overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#334155] rounded-2xl md:rounded-3xl shadow-2xl hover:shadow-[#0F172A]/50 transition-all duration-700 hover:scale-[1.01] border border-[#334155]/20">
             {/* Animated Background */}
             <div className="absolute inset-0 opacity-10">
@@ -249,11 +350,24 @@ const FAQAccordion = () => {
       ))}
 
       {/* Load More */}
-      <div className="text-center pt-8 md:pt-12">
-        <button className="bg-gradient-to-r from-[#60A5FA] to-[#9CA3AF] hover:from-[#4E9EFF] hover:to-[#8B5CF6] text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
-          Daha Fazla Soru Yükle
-        </button>
-      </div>
+      {hasMoreItems && (
+        <div className="text-center pt-8 md:pt-12">
+          <button 
+            onClick={loadMoreQuestions}
+            disabled={isLoading}
+            className="bg-gradient-to-r from-[#60A5FA] to-[#9CA3AF] hover:from-[#4E9EFF] hover:to-[#8B5CF6] disabled:from-[#6B7280] disabled:to-[#4B5563] text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed"
+          >
+            {isLoading ? (
+              <div className="flex items-center space-x-3">
+                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                <span>Yükleniyor...</span>
+              </div>
+            ) : (
+              'Daha Fazla Soru Yükle'
+            )}
+          </button>
+        </div>
+      )}
     </div>
   );
 };

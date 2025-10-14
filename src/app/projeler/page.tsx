@@ -10,10 +10,6 @@ const ProjectsStats = dynamic(() => import("@/components/ProjectsStats"), {
   loading: () => <div className="h-64 bg-white animate-pulse" />,
 });
 
-const ProjectsCTA = dynamic(() => import("@/components/ProjectsCTA"), {
-  loading: () => <div className="h-64 bg-gradient-to-br from-accent-500 to-orange-500 animate-pulse" />,
-});
-
 export const metadata = {
   title: "Projeler - Pars Endüstriyel Mutfak | Tamamlanan Projeler ve Referanslar",
   description: "Pars Endüstriyel Mutfak'ın tamamladığı başarılı projeler. Restoran, otel, kafe ve endüstriyel mutfak projeleri. Profesyonel çözümler ve referanslar.",
@@ -28,7 +24,6 @@ export default function ProjelerPage() {
       <ProjectsHero />
       <ProjectsGrid />
       <ProjectsStats />
-      <ProjectsCTA />
     </div>
   );
 }
