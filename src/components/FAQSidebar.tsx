@@ -28,12 +28,6 @@ const FAQSidebar = () => {
     }
   ];
 
-  const quickLinks = [
-    { name: 'Bakım Rehberi', href: '/blog', icon: '🔧' },
-    { name: 'Ürün Kataloğu', href: '/urunler', icon: '📋' },
-    { name: 'Teknik Destek', href: '/destek', icon: '🛠️' },
-    { name: 'İletişim', href: '/iletisim', icon: '📞' }
-  ];
 
   return (
     <div className="space-y-8">
@@ -115,51 +109,6 @@ const FAQSidebar = () => {
         <div className="absolute bottom-0 left-0 w-full h-1 md:h-2 bg-gradient-to-r from-[#10B981] via-[#059669] to-[#047857]"></div>
       </div>
 
-      {/* Quick Links */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#334155] rounded-2xl md:rounded-3xl shadow-2xl border border-[#334155]/20">
-        {/* Animated Background */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#8B5CF6]/20 via-transparent to-[#7C3AED]/20"></div>
-          <div className="absolute top-4 right-4 w-20 h-20 bg-[#8B5CF6]/10 rounded-full blur-xl"></div>
-        </div>
-        
-        <div className="relative z-10 p-6 md:p-8">
-          <div className="flex items-center mb-6 md:mb-8">
-            <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-[#8B5CF6]/20 to-[#7C3AED]/20 rounded-xl md:rounded-2xl flex items-center justify-center backdrop-blur-sm border border-[#8B5CF6]/30 shadow-lg mr-4">
-              <svg className="w-6 h-6 md:w-7 md:h-7 text-[#8B5CF6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-              </svg>
-            </div>
-            <div>
-              <h3 className="text-lg md:text-xl font-black text-white">Hızlı Linkler</h3>
-              <p className="text-white/70 text-sm md:text-base">Faydalı kaynaklar</p>
-            </div>
-          </div>
-          
-          <div className="space-y-3">
-            {quickLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                className="group flex items-center p-3 md:p-4 bg-white/5 backdrop-blur-sm rounded-xl md:rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300"
-              >
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-[#8B5CF6]/20 to-[#7C3AED]/20 rounded-lg md:rounded-xl flex items-center justify-center backdrop-blur-sm border border-[#8B5CF6]/30 shadow-lg mr-3 md:mr-4 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-lg md:text-xl">{link.icon}</span>
-                </div>
-                <span className="text-white font-bold text-sm md:text-base group-hover:text-[#8B5CF6] transition-colors duration-300">
-                  {link.name}
-                </span>
-                <svg className="w-4 h-4 md:w-5 md:h-5 text-white/60 ml-auto group-hover:text-[#8B5CF6] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            ))}
-          </div>
-        </div>
-        
-        {/* Decorative Elements */}
-        <div className="absolute bottom-0 left-0 w-full h-1 md:h-2 bg-gradient-to-r from-[#8B5CF6] via-[#7C3AED] to-[#6D28D9]"></div>
-      </div>
 
       {/* Statistics */}
       <div className="relative overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#334155] rounded-2xl md:rounded-3xl shadow-2xl border border-[#334155]/20">

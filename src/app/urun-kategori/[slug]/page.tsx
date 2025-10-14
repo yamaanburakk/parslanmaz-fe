@@ -162,8 +162,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const productData = productDataMap[params.slug];
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const productData = productDataMap[slug];
   
   if (!productData) {
     return {
@@ -175,12 +176,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: `${productData.title} - ${productData.subtitle} | Pars Endüstriyel Mutfak`,
     description: productData.description,
-    keywords: `${productData.title.toLowerCase()}, paslanmaz çelik, endüstriyel mutfak, ${params.slug.replace(/-/g, ' ')}`,
+    keywords: `${productData.title.toLowerCase()}, paslanmaz çelik, endüstriyel mutfak, ${slug.replace(/-/g, ' ')}`,
   };
 }
 
-export default function ProductCategoryPage({ params }: { params: { slug: string } }) {
-  const productData = productDataMap[params.slug];
+export default async function ProductCategoryPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const productData = productDataMap[slug];
 
   if (!productData) {
     notFound();

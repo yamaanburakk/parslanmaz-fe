@@ -17,15 +17,6 @@ const nextConfig: NextConfig = {
   // Production source maps
   productionBrowserSourceMaps: false,
   
-  // Turbopack configuration (moved from experimental)
-  turbopack: {
-    rules: {
-      '*.svg': {
-        loaders: ['@svgr/webpack'],
-        as: '*.js',
-      },
-    },
-  },
 
   // Experimental features for better performance
   experimental: {

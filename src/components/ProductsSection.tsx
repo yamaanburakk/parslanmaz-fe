@@ -1,15 +1,34 @@
-import { memo, useMemo } from "react";
+import { memo, useMemo, type ReactNode } from "react";
+import Image from "next/image";
+import Link from "next/link";
+
+type ProductBase = {
+  title: string;
+  description: string;
+};
+
+type ProductWithImage = ProductBase & {
+  image: { src: string; alt: string };
+  href: string;
+};
+
+type ProductWithIcon = ProductBase & {
+  icon: ReactNode;
+};
+
+type ProductCategory = ProductWithImage | ProductWithIcon;
 
 const ProductsSection = memo(() => {
-  const productCategories = useMemo(() => [
+  const productCategories: ProductCategory[] = useMemo(() => [
     {
       title: "Endüstriyel Mutfak Ekipmanları",
       description: "Profesyonel mutfaklar için özel tasarım ekipmanlar",
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-        </svg>
-      )
+      // Local optimized hero for the card
+      image: {
+        src: "/endustriyel-mutfak-ekipmanları.jpeg",
+        alt: "Endüstriyel Mutfak Ekipmanları görseli"
+      },
+      href: "/urun-kategori/endustriyel-mutfak-ekipmanlari-paslanmaz-celik-tezgah-dolap-raf-ve-evye-modelleri"
     },
     {
       title: "Açık Büfe Ekipmanları & Servis Üniteleri",
@@ -105,39 +124,71 @@ const ProductsSection = memo(() => {
               {/* Hover Effect Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#66B2FF]/5 to-[#FFD700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
-              {/* Icon Container */}
-              <div className="relative mb-6 sm:mb-8">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-gradient-to-br from-[#66B2FF]/20 to-[#FFD700]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-500 border border-[#66B2FF]/30 group-hover:border-[#66B2FF]/60 shadow-lg group-hover:shadow-[#66B2FF]/30">
-                  <div className="text-[#66B2FF] group-hover:text-[#FFD700] transition-colors duration-500">
-                    {product.icon}
+              {/* Media: Prefer photo when available, else show icon */}
+              {"image" in product ? (
+                <Link href={product.href} className="block relative mb-6 sm:mb-8 w-full overflow-hidden rounded-xl aspect-[16/9] border border-white/5 shadow-lg focus:outline-none focus:ring-2 focus:ring-[#66B2FF]/60">
+                  <Image
+                    src={product.image.src}
+                    alt={product.image.alt}
+                    fill
+                    priority={index === 0}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover object-center will-change-transform transition-transform duration-700 group-hover:scale-[1.03]"
+                    placeholder="blur"
+                    blurDataURL="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Crect width='10' height='6' fill='%23222'/%3E%3C/svg%3E"
+                    quality={82}
+                    aria-label={product.title}
+                    decoding="async"
+                  />
+                  {/* Subtle gradient only for contrast; text is placed below */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+                  {/* Accent badge */}
+                  <div className="absolute right-3 top-3 sm:right-4 sm:top-4">
+                    <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-white/10 text-white/90 backdrop-blur-md border border-white/20">
+                      Öne Çıkan
+                    </span>
+                  </div>
+                </Link>
+              ) : (
+                <div className="relative mb-6 sm:mb-8">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-gradient-to-br from-[#66B2FF]/20 to-[#FFD700]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-500 border border-[#66B2FF]/30 group-hover:border-[#66B2FF]/60 shadow-lg group-hover:shadow-[#66B2FF]/30">
+                    {"icon" in product && (
+                      <div className="text-[#66B2FF] group-hover:text-[#FFD700] transition-colors duration-500">
+                        {product.icon}
+                      </div>
+                    )}
                   </div>
                 </div>
-              </div>
+              )}
               
               {/* Content */}
               <div className="relative z-10">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-4 sm:mb-6 group-hover:text-[#66B2FF] transition-colors duration-500 leading-tight">
-                {product.title}
-              </h3>
-                <p className="text-sm sm:text-base text-[#CBD5E1] mb-6 sm:mb-8 leading-relaxed group-hover:text-[#F1F5F9] transition-colors duration-500">
-                {product.description}
-              </p>
-                
+                {!("image" in product) && (
+                  <>
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-4 sm:mb-6 group-hover:text-[#66B2FF] transition-colors duration-500 leading-tight">
+                      {product.title}
+                    </h3>
+                    <p className="text-sm sm:text-base text-[#CBD5E1] mb-6 sm:mb-8 leading-relaxed group-hover:text-[#F1F5F9] transition-colors duration-500">
+                      {product.description}
+                    </p>
+                  </>
+                )}
+
                 {/* Action Button */}
-                <div className="flex items-center justify-between">
-                  <button className="text-sm sm:text-base text-[#66B2FF] font-bold hover:text-[#FFD700] transition-colors duration-500 inline-flex items-center gap-2 group-hover:gap-3">
-                Detayları Gör 
+                <div className="flex items-center justify-between mt-2">
+                  <Link href={"image" in product ? product.href : "#"} className="text-sm sm:text-base text-[#66B2FF] font-bold hover:text-[#FFD700] transition-colors duration-500 inline-flex items-center gap-2 group-hover:gap-3">
+                    Detayları Gör 
                     <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
                   
                   {/* Status Indicator */}
                   <div className="w-2 h-2 bg-[#66B2FF] rounded-full opacity-60 group-hover:opacity-100 group-hover:bg-[#FFD700] transition-all duration-500"></div>
                 </div>
                 
                 {/* Progress Bar */}
-                <div className="mt-4 sm:mt-6 h-1 bg-[#334155] rounded-full overflow-hidden">
+                <div className="mt-4 sm:mt-5 h-1 bg-[#334155] rounded-full overflow-hidden">
                   <div className="h-full w-0 bg-gradient-to-r from-[#66B2FF] to-[#FFD700] rounded-full group-hover:w-full transition-all duration-700"></div>
                 </div>
               </div>
