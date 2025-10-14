@@ -207,7 +207,7 @@ const FAQCategories = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           <div className="text-center group">
             <div className="bg-gradient-to-br from-[#374151]/30 to-[#1F2937]/30 backdrop-blur-sm rounded-2xl md:rounded-3xl p-4 md:p-6 border border-[#4B5563]/30 group-hover:scale-105 transition-transform duration-300">
-              <div className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-2">100+</div>
+              <div className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-2">25+</div>
               <div className="text-sm md:text-base text-white/80 font-semibold">Toplam Soru</div>
             </div>
           </div>
@@ -225,7 +225,7 @@ const FAQCategories = () => {
           </div>
           <div className="text-center group">
             <div className="bg-gradient-to-br from-[#9CA3AF]/30 to-[#6B7280]/30 backdrop-blur-sm rounded-2xl md:rounded-3xl p-4 md:p-6 border border-[#D1D5DB]/30 group-hover:scale-105 transition-transform duration-300">
-              <div className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-2">15+</div>
+              <div className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-2">1+</div>
               <div className="text-sm md:text-base text-white/80 font-semibold">Kategori</div>
             </div>
           </div>

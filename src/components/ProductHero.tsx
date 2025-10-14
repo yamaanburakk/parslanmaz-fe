@@ -65,7 +65,7 @@ const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroPro
               
               {/* Floating Cards */}
               <div className="absolute -top-6 -right-6 bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-[#66B2FF]/30 shadow-lg">
-                <div className="text-2xl font-bold text-[#66B2FF]">500+</div>
+                <div className="text-2xl font-bold text-[#66B2FF]">12+</div>
                 <div className="text-sm text-[#F1F5F9]">Proje</div>
               </div>
               

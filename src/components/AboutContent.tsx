@@ -95,11 +95,11 @@ const AboutContent = () => {
                       {/* Stats Grid - Responsive */}
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-2xl mx-auto">
                         <div className="bg-white/10 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/20">
-                          <div className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-1 md:mb-2">500+</div>
+                          <div className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-1 md:mb-2">12+</div>
                           <div className="text-white/70 text-sm md:text-base lg:text-lg">Proje</div>
                         </div>
                         <div className="bg-white/10 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/20">
-                          <div className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-1 md:mb-2">20+</div>
+                          <div className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-1 md:mb-2">1+</div>
                           <div className="text-white/70 text-sm md:text-base lg:text-lg">Yıl</div>
                         </div>
                         <div className="bg-white/10 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/20">
@@ -145,11 +145,11 @@ const AboutContent = () => {
                         {/* Stats */}
                         <div className="grid grid-cols-2 gap-2 md:gap-3 lg:gap-4">
                           <div className="bg-white/10 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 border border-white/20">
-                            <div className="text-lg md:text-xl lg:text-2xl font-black text-white">25+</div>
+                          <div className="text-lg md:text-xl lg:text-2xl font-black text-white">3+</div>
                             <div className="text-white/70 text-xs md:text-sm">Ülke</div>
                           </div>
                           <div className="bg-white/10 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 border border-white/20">
-                            <div className="text-lg md:text-xl lg:text-2xl font-black text-white">1000+</div>
+                            <div className="text-lg md:text-xl lg:text-2xl font-black text-white">25+</div>
                             <div className="text-white/70 text-xs md:text-sm">Müşteri</div>
                           </div>
                         </div>

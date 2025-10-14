@@ -3,27 +3,27 @@ import { memo, useMemo } from "react";
 const ProjectsStats = memo(() => {
   const stats = useMemo(() => [
     {
-      number: "2,500+",
+      number: "12+",
       label: "Tamamlanan Proje",
       description: "Başarıyla teslim edilen projeler",
       color: "from-[#60A5FA] to-[#3B82F6]"
     },
     {
-      number: "85+",
+      number: "3+",
       label: "Ülkeye İhracat",
-      description: "Dünya çapında hizmet verdiğimiz ülkeler",
+      description: "Hizmet verdiğimiz ülkeler",
       color: "from-[#9CA3AF] to-[#6B7280]"
     },
     {
-      number: "25+",
+      number: "1+",
       label: "Yıllık Tecrübe",
-      description: "Sektörde uzmanlık süremiz",
+      description: "Genç ve dinamik ekibimiz",
       color: "from-[#64748B] to-[#374151]"
     },
     {
-      number: "98.7%",
+      number: "%95",
       label: "Müşteri Memnuniyeti",
-      description: "Memnun müşteri oranımız",
+      description: "Geri bildirimlere göre",
       color: "from-[#60A5FA] to-[#3B82F6]"
     }
   ], []);

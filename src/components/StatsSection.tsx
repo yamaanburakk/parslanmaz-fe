@@ -3,24 +3,24 @@ import { memo, useMemo } from "react";
 const StatsSection = memo(() => {
   const stats = useMemo(() => [
     {
-      number: "3,200+",
+      number: "25+",
       label: "Mutlu Müşteri",
-      description: "Türkiye ve dünya genelinde"
+      description: "Yerel ve bölgesel"
     },
     {
-      number: "2,500+",
+      number: "12+",
       label: "Tamamlanan Proje",
       description: "Başarıyla teslim edilen"
     },
     {
-      number: "25+",
+      number: "1+",
       label: "Yıllık Tecrübe",
-      description: "Sektörde uzmanlık"
+      description: "Dinamik ve yenilikçi"
     },
     {
-      number: "85+",
+      number: "3+",
       label: "Ülkeye İhracat",
-      description: "Global hizmet ağı"
+      description: "Büyüyen ağımız"
     }
   ], []);
 

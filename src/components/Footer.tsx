@@ -65,7 +65,13 @@ const Footer = memo(() => {
           <div className="text-center sm:text-left">
             <h4 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-white">İletişim Bilgileri</h4>
             <div className="space-y-3 sm:space-y-4">
-              <div className="flex items-start justify-center sm:justify-start space-x-3">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Maltepe%20Mah.%20G%C3%BCm%C3%BC%C5%9Fsuyu%20Cad.%20Hac%C4%B1o%C4%9Flu%20Sanayi%20Sitesi%20No%3A%2051%2C%20Zeytinburnu%2C%20%C4%B0stanbul"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Haritada adresi aç"
+                className="flex items-start justify-center sm:justify-start space-x-3 hover:text-[#66B2FF] transition-colors"
+              >
                 <svg className="w-5 h-5 text-[#66B2FF] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -77,7 +83,7 @@ const Footer = memo(() => {
                     Zeytinburnu / İstanbul
                   </p>
                 </div>
-              </div>
+              </a>
               
               <div className="flex items-start justify-center sm:justify-start space-x-3">
                 <svg className="w-5 h-5 text-[#66B2FF] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

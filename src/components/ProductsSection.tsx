@@ -33,56 +33,56 @@ const ProductsSection = memo(() => {
     {
       title: "Açık Büfe Ekipmanları & Servis Üniteleri",
       description: "Büfe ve servis alanları için modern çözümler",
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-        </svg>
-      )
+      image: {
+        src: "/acik-bufe.jpeg",
+        alt: "Açık Büfe Ekipmanları ve Servis Üniteleri"
+      },
+      href: "/urun-kategori/acik-bufe-ekipmanlari-servis-uniteleri-paslanmaz-celik-bufe-tezgah-ve-vitrin-modelleri"
     },
     {
       title: "Ekmek & Unlu Mamuller Dolapları",
       description: "Fırın ve pastaneler için özel dolaplar",
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
-        </svg>
-      )
+      image: {
+        src: "/ekmek-unlu-mamul.jpeg",
+        alt: "Ekmek ve Unlu Mamuller Dolapları"
+      },
+      href: "/urun-kategori/ekmek-unlu-mamuller-dolaplari-paslanmaz-celik-firin-vitrin-ve-tezgah-modelleri"
     },
     {
       title: "Pasta & Şarküteri Dolapları",
       description: "Pasta ve şarküteri ürünleri için vitrin dolapları",
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
-      )
+      image: {
+        src: "/pasta.jpeg",
+        alt: "Pasta ve Şarküteri Dolapları"
+      },
+      href: "/urun-kategori/pasta-sarkuteri-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri"
     },
     {
       title: "Waffle & Kumpir Dolapları",
       description: "Waffle ve kumpir satış noktaları için özel dolaplar",
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-        </svg>
-      )
+      image: {
+        src: "/waffle.jpeg",
+        alt: "Waffle ve Kumpir Dolapları"
+      },
+      href: "/urun-kategori/waffle-kumpir-dolaplari-paslanmaz-celik-tezgah-vitrin-ve-dolap-modelleri"
     },
     {
       title: "Çikolata & Lokum Dolapları",
       description: "Çikolata ve lokum satışı için vitrin dolapları",
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      )
+      image: {
+        src: "/cikolata.jpeg",
+        alt: "Çikolata ve Lokum Dolapları"
+      },
+      href: "/urun-kategori/cikolata-lokum-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri"
     },
     {
       title: "Börek & Baklava Dolapları",
       description: "Börek ve baklava satışı için özel dolaplar",
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
-        </svg>
-      )
+      image: {
+        src: "/borek.jpeg",
+        alt: "Börek ve Baklava Dolapları"
+      },
+      href: "/urun-kategori/borek-baklava-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri"
     }
   ], []);
 
@@ -119,35 +119,43 @@ const ProductsSection = memo(() => {
           {productCategories.map((product, index) => (
             <div
               key={index}
-              className="group relative bg-gradient-to-br from-[#1E293B] via-[#334155] to-[#0F172A] p-6 sm:p-8 rounded-2xl sm:rounded-3xl hover:shadow-2xl transition-all duration-500 cursor-pointer border border-[#334155]/50 hover:border-[#66B2FF]/50 shadow-2xl hover:shadow-[#66B2FF]/20 backdrop-blur-sm overflow-hidden"
+              className="group relative bg-gradient-to-br from-[#1E293B] via-[#334155] to-[#0F172A] p-6 sm:p-8 rounded-2xl sm:rounded-3xl hover:shadow-2xl transition-all duration-700 cursor-pointer border border-[#334155]/50 hover:border-[#66B2FF]/50 shadow-2xl hover:shadow-[#66B2FF]/30 backdrop-blur-sm overflow-hidden hover:scale-[1.02]"
             >
               {/* Hover Effect Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#66B2FF]/5 to-[#FFD700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               {/* Media: Prefer photo when available, else show icon */}
               {"image" in product ? (
-                <Link href={product.href} className="block relative mb-6 sm:mb-8 w-full overflow-hidden rounded-xl aspect-[16/9] border border-white/5 shadow-lg focus:outline-none focus:ring-2 focus:ring-[#66B2FF]/60">
+                <Link href={product.href} className="block relative mb-6 sm:mb-8 w-full overflow-hidden rounded-xl aspect-[16/9] border border-white/10 shadow-2xl hover:shadow-[#66B2FF]/20 focus:outline-none focus:ring-2 focus:ring-[#66B2FF]/60 transition-all duration-500 group-hover:border-[#66B2FF]/30">
                   <Image
                     src={product.image.src}
                     alt={product.image.alt}
                     fill
                     priority={index === 0}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover object-center will-change-transform transition-transform duration-700 group-hover:scale-[1.03]"
+                    className="object-cover object-center will-change-transform transition-transform duration-700 group-hover:scale-[1.02]"
                     placeholder="blur"
                     blurDataURL="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Crect width='10' height='6' fill='%23222'/%3E%3C/svg%3E"
-                    quality={82}
+                    quality={90}
                     aria-label={product.title}
                     decoding="async"
+                    unoptimized={false}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "auto"}
                   />
-                  {/* Subtle gradient only for contrast; text is placed below */}
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
-                  {/* Accent badge */}
+                  {/* Enhanced gradient overlay for better contrast */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/70 group-hover:via-black/30 transition-all duration-500" />
+                  
+                  {/* Premium accent badge */}
                   <div className="absolute right-3 top-3 sm:right-4 sm:top-4">
-                    <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-white/10 text-white/90 backdrop-blur-md border border-white/20">
+                    <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-bold bg-gradient-to-r from-[#66B2FF]/20 to-[#FFD700]/20 text-white backdrop-blur-lg border border-white/30 shadow-lg group-hover:scale-110 transition-all duration-300">
+                      <div className="w-1.5 h-1.5 bg-[#66B2FF] rounded-full animate-pulse"></div>
                       Öne Çıkan
                     </span>
                   </div>
+                  
+                  {/* Subtle shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </Link>
               ) : (
                 <div className="relative mb-6 sm:mb-8">
@@ -174,22 +182,25 @@ const ProductsSection = memo(() => {
                   </>
                 )}
 
-                {/* Action Button */}
-                <div className="flex items-center justify-between mt-2">
-                  <Link href={"image" in product ? product.href : "#"} className="text-sm sm:text-base text-[#66B2FF] font-bold hover:text-[#FFD700] transition-colors duration-500 inline-flex items-center gap-2 group-hover:gap-3">
+                {/* Enhanced Action Button */}
+                <div className="flex items-center justify-between mt-4">
+                  <Link href={"image" in product ? product.href : "#"} className="text-sm sm:text-base text-[#66B2FF] font-bold hover:text-[#FFD700] transition-all duration-500 inline-flex items-center gap-2 group-hover:gap-3 bg-gradient-to-r from-[#66B2FF]/10 to-[#FFD700]/10 px-4 py-2 rounded-lg group-hover:from-[#66B2FF]/20 group-hover:to-[#FFD700]/20 backdrop-blur-sm border border-[#66B2FF]/20 group-hover:border-[#66B2FF]/40">
                     Detayları Gör 
                     <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </Link>
                   
-                  {/* Status Indicator */}
-                  <div className="w-2 h-2 bg-[#66B2FF] rounded-full opacity-60 group-hover:opacity-100 group-hover:bg-[#FFD700] transition-all duration-500"></div>
+                  {/* Enhanced Status Indicator */}
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-[#66B2FF] rounded-full opacity-60 group-hover:opacity-100 group-hover:bg-[#FFD700] transition-all duration-500 group-hover:scale-125"></div>
+                    <div className="w-1 h-1 bg-[#66B2FF]/40 rounded-full opacity-40 group-hover:opacity-80 group-hover:bg-[#FFD700]/60 transition-all duration-500 group-hover:scale-110"></div>
+                  </div>
                 </div>
                 
-                {/* Progress Bar */}
-                <div className="mt-4 sm:mt-5 h-1 bg-[#334155] rounded-full overflow-hidden">
-                  <div className="h-full w-0 bg-gradient-to-r from-[#66B2FF] to-[#FFD700] rounded-full group-hover:w-full transition-all duration-700"></div>
+                {/* Enhanced Progress Bar */}
+                <div className="mt-4 sm:mt-5 h-1.5 bg-[#334155] rounded-full overflow-hidden shadow-inner">
+                  <div className="h-full w-0 bg-gradient-to-r from-[#66B2FF] via-[#FFD700] to-[#66B2FF] rounded-full group-hover:w-full transition-all duration-700 shadow-lg"></div>
                 </div>
               </div>
             </div>

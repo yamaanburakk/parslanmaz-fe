@@ -11,23 +11,38 @@ const HeroSection = memo(() => {
         willChange: 'transform',
       }}
     >
-      {/* Professional Background Image - Optimized with Next Image */}
-      <div className="absolute inset-0 z-0">
+      {/* Professional Background Image - Crystal Clear Glass Effect */}
+              <div className="absolute inset-0 z-0" style={{
+                backfaceVisibility: 'hidden',
+                transform: 'translateZ(0)',
+                willChange: 'transform',
+                imageRendering: 'auto',
+                filter: 'contrast(1.1) brightness(1.02)',
+              } as React.CSSProperties}>
         <Image
           src="/paslanmaz-celik-endustriyel-mutfak.jpeg"
           alt="Pars Endüstriyel Mutfak - Paslanmaz Çelik Ekipmanlar"
           fill
           priority
-          quality={85}
+          quality={100}
           sizes="100vw"
           className="object-cover object-center hero-background"
-          style={{
-            objectPosition: 'center 20%',
-            filter: 'contrast(1.2) brightness(0.95) saturate(1.15)',
-          }}
+                  style={{
+                    objectPosition: 'center 20%',
+                    filter: 'contrast(1.2) brightness(1.05) saturate(1.1) hue-rotate(0deg)',
+                    imageRendering: 'auto',
+                    transform: 'scale(1.001)',
+                    backfaceVisibility: 'hidden',
+                    willChange: 'transform',
+                  } as React.CSSProperties}
+          placeholder="empty"
+          unoptimized={true}
         />
-        {/* Minimal overlay for text visibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30"></div>
+        {/* Crystal clear overlay for professional text visibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20" style={{
+          backfaceVisibility: 'hidden',
+          transform: 'translateZ(0)',
+        } as React.CSSProperties}></div>
         
       </div>
       
