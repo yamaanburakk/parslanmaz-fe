@@ -1,22 +1,22 @@
 import dynamic from 'next/dynamic';
+import BlogHero from '@/components/BlogHero';
+import BlogCategories from '@/components/BlogCategories';
 
-// Dynamic imports for client components
-const BlogHero = dynamic(() => import('@/components/BlogHero'), {
-  ssr: true,
-});
-
+// Lazy load below-the-fold content
 const BlogGrid = dynamic(() => import('@/components/BlogGrid'), {
-  ssr: true,
+  loading: () => <div className="h-96 bg-white animate-pulse rounded-2xl" />,
 });
 
 const BlogSidebar = dynamic(() => import('@/components/BlogSidebar'), {
-  ssr: true,
+  loading: () => <div className="h-96 bg-white animate-pulse rounded-2xl" />,
 });
 
+export const metadata = {
+  title: "Blog - Pars Endüstriyel Mutfak",
+  description: "Endüstriyel mutfak ekipmanları, paslanmaz çelik ürünler ve mutfak tasarımı hakkında bilgilendirici makaleler.",
+};
 
-const BlogCategories = dynamic(() => import('@/components/BlogCategories'), {
-  ssr: true,
-});
+export const revalidate = 1800; // Revalidate every 30 minutes for blog content
 
 export default function BlogPage() {
   return (

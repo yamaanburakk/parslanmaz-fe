@@ -1,5 +1,7 @@
-const WhyChooseUsSection = () => {
-  const features = [
+import { memo, useMemo } from "react";
+
+const WhyChooseUsSection = memo(() => {
+  const features = useMemo(() => [
     {
       icon: "🛠️",
       title: "Özel Üretim",
@@ -35,7 +37,7 @@ const WhyChooseUsSection = () => {
       title: "100 Yerli Üretim – Uluslararası Standartlarda Kalite",
       description: "Tüm ürünlerimiz yerli üretim olup uluslararası kalite standartlarında üretilmektedir."
     }
-  ];
+  ], []);
 
   return (
     <section className="py-20 bg-gradient-to-br from-[#324468] to-[#3A4E73]">
@@ -104,6 +106,8 @@ const WhyChooseUsSection = () => {
       </div>
     </section>
   );
-};
+});
+
+WhyChooseUsSection.displayName = 'WhyChooseUsSection';
 
 export default WhyChooseUsSection;

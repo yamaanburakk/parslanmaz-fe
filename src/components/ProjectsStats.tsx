@@ -1,39 +1,41 @@
-const ProjectsStats = () => {
-  const stats = [
+import { memo, useMemo } from "react";
+
+const ProjectsStats = memo(() => {
+  const stats = useMemo(() => [
     {
-      number: "500+",
+      number: "2,500+",
       label: "Tamamlanan Proje",
       description: "Başarıyla teslim edilen projeler",
       color: "from-[#60A5FA] to-[#3B82F6]"
     },
     {
-      number: "50+",
+      number: "85+",
       label: "Ülkeye İhracat",
       description: "Dünya çapında hizmet verdiğimiz ülkeler",
       color: "from-[#9CA3AF] to-[#6B7280]"
     },
     {
-      number: "15+",
+      number: "25+",
       label: "Yıllık Tecrübe",
       description: "Sektörde uzmanlık süremiz",
       color: "from-[#64748B] to-[#374151]"
     },
     {
-      number: "%100",
+      number: "98.7%",
       label: "Müşteri Memnuniyeti",
       description: "Memnun müşteri oranımız",
       color: "from-[#60A5FA] to-[#3B82F6]"
     }
-  ];
+  ], []);
 
-  const sectors = [
-    { name: "Otel & Resort", count: 120, percentage: 24 },
-    { name: "Restoran", count: 150, percentage: 30 },
-    { name: "Kafe & Bar", count: 80, percentage: 16 },
-    { name: "Hastane", count: 60, percentage: 12 },
-    { name: "Fırın & Pastane", count: 70, percentage: 14 },
-    { name: "Catering", count: 20, percentage: 4 }
-  ];
+  const sectors = useMemo(() => [
+    { name: "Otel & Resort", count: 720, percentage: 28.8 },
+    { name: "Restoran", count: 850, percentage: 34.0 },
+    { name: "Kafe & Bar", count: 420, percentage: 16.8 },
+    { name: "Hastane & Sağlık", count: 245, percentage: 9.8 },
+    { name: "Fırın & Pastane", count: 185, percentage: 7.4 },
+    { name: "Catering & Toplu Yemek", count: 80, percentage: 3.2 }
+  ], []);
 
   return (
     <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-br from-[#F8FAFC] via-[#F1F5F9] to-[#E2E8F0] text-[#0F172A] overflow-hidden">
@@ -202,6 +204,8 @@ const ProjectsStats = () => {
       <div className="absolute bottom-10 md:bottom-20 right-10 md:right-20 w-2 md:w-3 lg:w-4 h-2 md:h-3 lg:h-4 bg-[#60A5FA]/30 rounded-full animate-pulse delay-500"></div>
     </section>
   );
-};
+});
+
+ProjectsStats.displayName = 'ProjectsStats';
 
 export default ProjectsStats;

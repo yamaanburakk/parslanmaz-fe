@@ -1,32 +1,29 @@
-const HeroSection = () => {
+import Image from "next/image";
+import { memo } from "react";
+
+const HeroSection = memo(() => {
   return (
     <section 
       className="relative text-white pt-20 pb-24 overflow-hidden min-h-screen flex items-center hero-section" 
       style={{ 
-        imageRendering: 'auto',
-        imageOrientation: 'from-image',
         backfaceVisibility: 'hidden',
         transform: 'translateZ(0)',
-        willChange: 'transform, opacity',
-        textRendering: 'geometricPrecision'
+        willChange: 'transform',
       }}
     >
-      {/* Professional Background Image - Photo First */}
+      {/* Professional Background Image - Optimized with Next Image */}
       <div className="absolute inset-0 z-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat hero-background"
+        <Image
+          src="/paslanmaz-celik-endustriyel-mutfak.jpeg"
+          alt="Pars Endüstriyel Mutfak - Paslanmaz Çelik Ekipmanlar"
+          fill
+          priority
+          quality={85}
+          sizes="100vw"
+          className="object-cover object-center hero-background"
           style={{
-            backgroundImage: 'url(/paslanmaz-celik-endustriyel-mutfak.jpeg)',
-            backgroundPosition: 'center -20%',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            imageRendering: 'auto',
-            imageOrientation: 'from-image',
-            backfaceVisibility: 'hidden',
-            transform: 'translateZ(0)',
+            objectPosition: 'center 20%',
             filter: 'contrast(1.2) brightness(0.95) saturate(1.15)',
-            perspective: '1000px',
-            textRendering: 'geometricPrecision'
           }}
         />
         {/* Minimal overlay for text visibility */}
@@ -110,6 +107,8 @@ const HeroSection = () => {
       </div>
     </section>
   );
-};
+});
+
+HeroSection.displayName = 'HeroSection';
 
 export default HeroSection;

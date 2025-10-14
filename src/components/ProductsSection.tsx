@@ -1,5 +1,7 @@
-const ProductsSection = () => {
-  const productCategories = [
+import { memo, useMemo } from "react";
+
+const ProductsSection = memo(() => {
+  const productCategories = useMemo(() => [
     {
       title: "Endüstriyel Mutfak Ekipmanları",
       description: "Profesyonel mutfaklar için özel tasarım ekipmanlar",
@@ -63,7 +65,7 @@ const ProductsSection = () => {
         </svg>
       )
     }
-  ];
+  ], []);
 
   return (
     <section id="products" className="relative py-24 sm:py-32 bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#334155] overflow-hidden">
@@ -146,6 +148,8 @@ const ProductsSection = () => {
       </div>
     </section>
   );
-};
+});
+
+ProductsSection.displayName = 'ProductsSection';
 
 export default ProductsSection;

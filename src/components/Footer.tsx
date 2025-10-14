@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import { memo } from 'react';
 
-const Footer = () => {
+const Footer = memo(() => {
   return (
     <footer className="bg-gradient-to-br from-[#131C3C] to-[#1A2647] text-white">
       {/* Contact Section */}
@@ -161,6 +162,8 @@ const Footer = () => {
 
     </footer>
   );
-};
+});
+
+Footer.displayName = 'Footer';
 
 export default Footer;

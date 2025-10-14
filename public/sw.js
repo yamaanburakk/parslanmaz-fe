@@ -1,142 +1,125 @@
-const CACHE_NAME = 'parslanmaz-v1';
-const STATIC_CACHE = 'static-v1';
-const DYNAMIC_CACHE = 'dynamic-v1';
+const CACHE_VERSION = 'v2.0.0';
+const STATIC_CACHE = `static-${CACHE_VERSION}`;
+const DYNAMIC_CACHE = `dynamic-${CACHE_VERSION}`;
+const IMAGE_CACHE = `images-${CACHE_VERSION}`;
 
-// Static assets to cache
+// Static assets to cache on install
 const STATIC_ASSETS = [
   '/',
-  '/hakkimizda',
-  '/projeler',
-  '/blog',
-  '/sss',
-  '/iletisim',
-  '/hemen-teklif-al',
   '/manifest.json',
   '/offline.html',
 ];
 
-// Install event - cache static assets
+// Max cache sizes
+const MAX_DYNAMIC_CACHE = 50;
+const MAX_IMAGE_CACHE = 30;
+
+// Install event - cache critical assets only
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(STATIC_CACHE)
-      .then((cache) => {
-        return cache.addAll(STATIC_ASSETS);
-      })
-      .then(() => {
-        return self.skipWaiting();
-      })
+      .then((cache) => cache.addAll(STATIC_ASSETS))
+      .then(() => self.skipWaiting())
   );
 });
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
+  const currentCaches = [STATIC_CACHE, DYNAMIC_CACHE, IMAGE_CACHE];
   event.waitUntil(
     caches.keys()
-      .then((cacheNames) => {
-        return Promise.all(
-          cacheNames.map((cacheName) => {
-            if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
-              return caches.delete(cacheName);
-            }
-          })
-        );
-      })
-      .then(() => {
-        return self.clients.claim();
-      })
+      .then((cacheNames) => Promise.all(
+        cacheNames
+          .filter((cacheName) => !currentCaches.includes(cacheName))
+          .map((cacheName) => caches.delete(cacheName))
+      ))
+      .then(() => self.clients.claim())
   );
 });
 
-// Fetch event - serve from cache, fallback to network
+// Fetch event - optimized caching strategies
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
-  // Skip non-GET requests
-  if (request.method !== 'GET') {
-    return;
-  }
+  if (request.method !== 'GET') return;
+  if (url.origin !== location.origin && !url.href.includes('/_next/')) return;
 
-  // Skip external requests
-  if (url.origin !== location.origin) {
-    return;
-  }
-
-  event.respondWith(
-    caches.match(request)
-      .then((cachedResponse) => {
-        // Return cached version if available
-        if (cachedResponse) {
-          return cachedResponse;
-        }
-
-        // Fetch from network
-        return fetch(request)
-          .then((response) => {
-            // Don't cache non-successful responses
-            if (!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
+  // Image caching strategy
+  if (request.destination === 'image') {
+    event.respondWith(
+      caches.open(IMAGE_CACHE).then((cache) =>
+        cache.match(request).then((cached) => {
+          const fetchPromise = fetch(request).then((response) => {
+            if (response && response.status === 200) {
+              cache.put(request, response.clone());
+              limitCacheSize(IMAGE_CACHE, MAX_IMAGE_CACHE);
             }
-
-            // Clone the response
-            const responseToCache = response.clone();
-
-            // Cache the response
-            caches.open(DYNAMIC_CACHE)
-              .then((cache) => {
-                cache.put(request, responseToCache);
-              });
-
             return response;
-          })
-          .catch(() => {
-            // Return offline page for navigation requests
-            if (request.destination === 'document') {
-              return caches.match('/offline.html');
-            }
           });
-      })
+          return cached || fetchPromise;
+        })
+      )
+    );
+    return;
+  }
+
+  // Network first for API calls
+  if (url.pathname.startsWith('/api/')) {
+    event.respondWith(
+      fetch(request).catch(() => caches.match(request))
+    );
+    return;
+  }
+
+  // Cache first for static resources
+  event.respondWith(
+    caches.match(request).then((cached) => {
+      if (cached) return cached;
+
+      return fetch(request).then((response) => {
+        if (!response || response.status !== 200) return response;
+
+        const cacheName = request.destination === 'document' ? STATIC_CACHE : DYNAMIC_CACHE;
+        const responseToCache = response.clone();
+        
+        caches.open(cacheName).then((cache) => {
+          cache.put(request, responseToCache);
+          if (cacheName === DYNAMIC_CACHE) {
+            limitCacheSize(DYNAMIC_CACHE, MAX_DYNAMIC_CACHE);
+          }
+        });
+
+        return response;
+      }).catch(() => {
+        if (request.destination === 'document') {
+          return caches.match('/offline.html');
+        }
+      });
+    })
   );
 });
 
-// Background sync for form submissions
-self.addEventListener('sync', (event) => {
-  if (event.tag === 'contact-form') {
+// Limit cache size
+async function limitCacheSize(cacheName, maxItems) {
+  const cache = await caches.open(cacheName);
+  const keys = await cache.keys();
+  if (keys.length > maxItems) {
+    await cache.delete(keys[0]);
+    await limitCacheSize(cacheName, maxItems);
+  }
+}
+
+// Message event for cache management
+self.addEventListener('message', (event) => {
+  if (event.data.action === 'skipWaiting') {
+    self.skipWaiting();
+  }
+  if (event.data.action === 'clearCache') {
     event.waitUntil(
-      // Handle form submission sync
-      handleFormSync()
+      caches.keys().then((cacheNames) =>
+        Promise.all(cacheNames.map((cacheName) => caches.delete(cacheName)))
+      )
     );
   }
 });
-
-async function handleFormSync() {
-  // Get pending form data from IndexedDB
-  const pendingForms = await getPendingForms();
-  
-  for (const form of pendingForms) {
-    try {
-      await fetch('/api/contact', {
-        method: 'POST',
-        body: JSON.stringify(form.data),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      
-      // Remove from pending list
-      await removePendingForm(form.id);
-    } catch (error) {
-      console.error('Form sync failed:', error);
-    }
-  }
-}
-
-// IndexedDB helpers
-async function getPendingForms() {
-  // Implementation for getting pending forms
-  return [];
-}
-
-async function removePendingForm(id) {
-  // Implementation for removing pending form
-}

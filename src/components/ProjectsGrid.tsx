@@ -1,7 +1,8 @@
 import Image from "next/image";
+import { memo, useMemo } from "react";
 
-const ProjectsGrid = () => {
-  const projects = [
+const ProjectsGrid = memo(() => {
+  const projects = useMemo(() => [
     {
       id: 1,
       title: "Lüks Otel Mutfak Projesi",
@@ -61,8 +62,98 @@ const ProjectsGrid = () => {
       image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       features: ["Özel Tasarım", "Tazelik Koruma", "Görsel Sunum"],
       year: "2022"
+    },
+    {
+      id: 7,
+      title: "Havalimanı Lounge Mutfağı",
+      category: "Havacılık",
+      location: "İstanbul, Türkiye",
+      description: "Uluslararası havalimanı VIP lounge için premium mutfak ekipmanları ve servis sistemleri.",
+      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      features: ["Premium Kalite", "Sessiz Çalışma", "Hızlı Servis"],
+      year: "2024"
+    },
+    {
+      id: 8,
+      title: "AVM Food Court Projesi",
+      category: "AVM & Food Court",
+      location: "İzmir, Türkiye",
+      description: "Büyük AVM food court için 25+ restoran mutfağı tasarımı ve kurulumu.",
+      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      features: ["Merkezi Sistem", "Yüksek Kapasite", "Standart Kalite"],
+      year: "2024"
+    },
+    {
+      id: 9,
+      title: "Otel Zinciri Standartlaşma",
+      category: "Otel & Resort",
+      location: "Türkiye Geneli",
+      description: "35 otelli zincir için standart mutfak ekipmanları tedariki ve kurulumu.",
+      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      features: ["Standart Tasarım", "Toplu Üretim", "Kalite Garantisi"],
+      year: "2023"
+    },
+    {
+      id: 10,
+      title: "Michelin Yıldızlı Restoran",
+      category: "Fine Dining",
+      location: "İstanbul, Türkiye",
+      description: "Michelin yıldızlı restoran için özel tasarım mutfak ekipmanları ve aksesuarlar.",
+      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      features: ["Özel Tasarım", "Premium Malzeme", "Mükemmellik"],
+      year: "2023"
+    },
+    {
+      id: 11,
+      title: "Üniversite Yemekhane Sistemi",
+      category: "Eğitim",
+      location: "Ankara, Türkiye",
+      description: "15,000 öğrenci kapasiteli üniversite yemekhanesi için tam donanımlı mutfak.",
+      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      features: ["Yüksek Kapasite", "Dayanıklılık", "Hijyen Standartları"],
+      year: "2023"
+    },
+    {
+      id: 12,
+      title: "Endüstriyel Catering Merkezi",
+      category: "Catering",
+      location: "Kocaeli, Türkiye",
+      description: "Günlük 50,000 porsiyon kapasiteli endüstriyel catering mutfağı kurulumu.",
+      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      features: ["Endüstriyel Kapasite", "Otomasyon", "Verimlilik"],
+      year: "2023"
+    },
+    {
+      id: 13,
+      title: "Boutique Otel Konsept Mutfak",
+      category: "Otel & Resort",
+      location: "Bodrum, Türkiye",
+      description: "Lüks boutique otel için açık mutfak konsepti ve özel tasarım ekipmanlar.",
+      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      features: ["Açık Mutfak", "Estetik Tasarım", "Show Cooking"],
+      year: "2022"
+    },
+    {
+      id: 14,
+      title: "Fast Food Zinciri Franchise",
+      category: "Fast Food",
+      location: "Türkiye & Yurt Dışı",
+      description: "120+ şubeli fast food zinciri için standart mutfak ekipmanları tedariki.",
+      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      features: ["Hızlı Kurulum", "Standart Sistem", "Global Kalite"],
+      year: "2022"
+    },
+    {
+      id: 15,
+      title: "Pastane & Kafe Zinciri",
+      category: "Fırın & Pastane",
+      location: "İstanbul, Türkiye",
+      description: "45 şubeli pastane ve kafe zinciri için özel vitrin ve teşhir dolapları.",
+      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      features: ["Özel Vitrinler", "Soğutma Sistemleri", "LED Aydınlatma"],
+      year: "2022"
     }
-  ];
+  ], []);
 
   return (
     <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#334155] text-white overflow-hidden">
@@ -192,6 +283,8 @@ const ProjectsGrid = () => {
       <div className="absolute bottom-10 md:bottom-20 right-10 md:right-20 w-2 md:w-3 lg:w-4 h-2 md:h-3 lg:h-4 bg-[#60A5FA]/30 rounded-full animate-pulse delay-500"></div>
     </section>
   );
-};
+});
+
+ProjectsGrid.displayName = 'ProjectsGrid';
 
 export default ProjectsGrid;

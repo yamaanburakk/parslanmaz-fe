@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo, memo } from 'react';
 import Link from 'next/link';
 
 interface BlogPost {
@@ -18,12 +18,12 @@ interface BlogPost {
   featured: boolean;
 }
 
-const BlogGrid = () => {
+const BlogGrid = memo(() => {
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 6;
+  const postsPerPage = 9;
 
   // Sample blog posts data
-  const blogPosts: BlogPost[] = [
+  const blogPosts: BlogPost[] = useMemo(() => [
     {
       id: 1,
       slug: "paslanmaz-celik-mutfak-ekipmanlarinda-bakim-ve-temizlik-rehberi",
@@ -107,8 +107,134 @@ const BlogGrid = () => {
       image: "/api/placeholder/400/250",
       tags: ["atık yönetimi", "sürdürülebilirlik", "çevre"],
       featured: false
+    },
+    {
+      id: 7,
+      slug: "endustriyel-mutfak-ekipman-secimi-2024-rehberi",
+      title: "2024 Endüstriyel Mutfak Ekipman Seçimi Rehberi",
+      excerpt: "Profesyonel mutfaklar için en uygun ekipmanları seçmenize yardımcı olacak kapsamlı rehber.",
+      content: "Detaylı içerik...",
+      author: "Elif Yıldırım",
+      date: "2024-01-20",
+      category: "Ekipman",
+      readTime: "12 dk",
+      image: "/api/placeholder/400/250",
+      tags: ["ekipman", "rehber", "2024"],
+      featured: false
+    },
+    {
+      id: 8,
+      slug: "paslanmaz-celik-kalite-standartlari",
+      title: "Paslanmaz Çelik Kalite Standartları ve Sertifikasyon",
+      excerpt: "304 ve 316 kalite paslanmaz çelik arasındaki farklar ve kullanım alanları.",
+      content: "Detaylı içerik...",
+      author: "Murat Acar",
+      date: "2024-01-18",
+      category: "Malzeme Bilgisi",
+      readTime: "9 dk",
+      image: "/api/placeholder/400/250",
+      tags: ["paslanmaz çelik", "kalite", "standart"],
+      featured: false
+    },
+    {
+      id: 9,
+      slug: "otel-mutfagi-tasarim-ipuclari",
+      title: "Otel Mutfağı Tasarım İpuçları ve Öneriler",
+      excerpt: "Otel mutfaklarında ergonomi, verimlilik ve hijyen için tasarım önerileri.",
+      content: "Detaylı içerik...",
+      author: "Selin Koç",
+      date: "2024-01-16",
+      category: "Tasarım",
+      readTime: "11 dk",
+      image: "/api/placeholder/400/250",
+      tags: ["otel", "tasarım", "mutfak"],
+      featured: true
+    },
+    {
+      id: 10,
+      slug: "haccp-sistemleri-ve-uygulamasi",
+      title: "HACCP Sistemleri ve Mutfaklarda Uygulanması",
+      excerpt: "Gıda güvenliği için HACCP sistemlerinin mutfaklarda nasıl uygulanacağı.",
+      content: "Detaylı içerik...",
+      author: "Dr. Ayşe Demir",
+      date: "2024-01-14",
+      category: "Gıda Güvenliği",
+      readTime: "15 dk",
+      image: "/api/placeholder/400/250",
+      tags: ["HACCP", "gıda güvenliği", "hijyen"],
+      featured: false
+    },
+    {
+      id: 11,
+      slug: "endustriyel-sogutma-sistemleri",
+      title: "Endüstriyel Soğutma Sistemleri ve Enerji Verimliliği",
+      excerpt: "Mutfaklarda kullanılan soğutma sistemlerinin enerji verimliliği ve bakımı.",
+      content: "Detaylı içerik...",
+      author: "Ahmet Yılmaz",
+      date: "2024-01-11",
+      category: "Soğutma",
+      readTime: "10 dk",
+      image: "/api/placeholder/400/250",
+      tags: ["soğutma", "enerji", "verimlilik"],
+      featured: false
+    },
+    {
+      id: 12,
+      slug: "restoran-acilis-kontrol-listesi",
+      title: "Restoran Açılış Kontrol Listesi: Mutfak Ekipmanları",
+      excerpt: "Yeni restoran açarken mutfak ekipmanları için gerekli kontrol listesi.",
+      content: "Detaylı içerik...",
+      author: "Can Özkan",
+      date: "2024-01-09",
+      category: "İşletme",
+      readTime: "13 dk",
+      image: "/api/placeholder/400/250",
+      tags: ["restoran", "açılış", "checklist"],
+      featured: false
+    },
+    {
+      id: 13,
+      slug: "endustriyel-firinlar-ve-pisirme-teknikleri",
+      title: "Endüstriyel Fırınlar ve Modern Pişirme Teknikleri",
+      excerpt: "Konveksiyonel, kombi ve deck fırınların karşılaştırması ve kullanım alanları.",
+      content: "Detaylı içerik...",
+      author: "Mehmet Kaya",
+      date: "2024-01-07",
+      category: "Pişirme Ekipmanları",
+      readTime: "14 dk",
+      image: "/api/placeholder/400/250",
+      tags: ["fırın", "pişirme", "ekipman"],
+      featured: false
+    },
+    {
+      id: 14,
+      slug: "mutfak-havalandirma-sistemleri",
+      title: "Mutfak Havalandırma Sistemleri ve Davlumbaz Seçimi",
+      excerpt: "Profesyonel mutfaklarda doğru havalandırma sistemi ve davlumbaz seçimi.",
+      content: "Detaylı içerik...",
+      author: "Fatma Demir",
+      date: "2024-01-04",
+      category: "Havalandırma",
+      readTime: "11 dk",
+      image: "/api/placeholder/400/250",
+      tags: ["havalandırma", "davlumbaz", "sistem"],
+      featured: false
+    },
+    {
+      id: 15,
+      slug: "kurumsal-catering-mutfak-planlamasi",
+      title: "Kurumsal Catering Mutfak Planlaması",
+      excerpt: "Büyük ölçekli catering işletmeleri için mutfak planlaması ve ekipman seçimi.",
+      content: "Detaylı içerik...",
+      author: "Zeynep Aydın",
+      date: "2024-01-02",
+      category: "Catering",
+      readTime: "16 dk",
+      image: "/api/placeholder/400/250",
+      tags: ["catering", "planlama", "büyük ölçek"],
+      featured: false
     }
-  ];
+  ], []);
 
   const totalPages = Math.ceil(blogPosts.length / postsPerPage);
   const startIndex = (currentPage - 1) * postsPerPage;
@@ -341,6 +467,8 @@ const BlogGrid = () => {
       <div className="absolute bottom-10 md:bottom-20 right-10 md:right-20 w-2 md:w-3 lg:w-4 h-2 md:h-3 lg:h-4 bg-[#60A5FA]/30 rounded-full animate-pulse delay-500"></div>
     </div>
   );
-};
+});
+
+BlogGrid.displayName = 'BlogGrid';
 
 export default BlogGrid;

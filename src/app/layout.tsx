@@ -3,28 +3,26 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import dynamic from "next/dynamic";
 import StructuredData from "@/components/StructuredData";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
-// Lazy load components for better performance
-const Header = dynamic(() => import("@/components/Header"), {
-  loading: () => <div className="h-16 bg-[#131C3C] animate-pulse" />,
-  ssr: true,
-});
-
-const Footer = dynamic(() => import("@/components/Footer"), {
-  loading: () => <div className="h-32 bg-gray-900 animate-pulse" />,
-  ssr: true,
-});
-
+// Lazy load only non-critical components (client-side only)
 const PerformanceMonitor = dynamic(() => import("@/components/PerformanceMonitor"), {
   loading: () => null,
 });
 
-// Optimized font loading
+const WhatsAppFloat = dynamic(() => import("@/components/WhatsAppFloat"), {
+  loading: () => null,
+});
+
+// Optimized font loading with variable font
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   preload: true,
   fallback: ["system-ui", "arial"],
+  variable: "--font-inter",
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
@@ -166,64 +164,20 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased text-optimized`} suppressHydrationWarning>
         <StructuredData type="Organization" />
         <StructuredData type="LocalBusiness" />
-        <PerformanceMonitor />
         <Header />
         <main className="relative">
           {children}
         </main>
         <Footer />
+        <WhatsAppFloat />
+        <PerformanceMonitor />
         
-        {/* Performance hints */}
+        {/* Minimal performance script */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              // Preload critical resources
-              if ('requestIdleCallback' in window) {
-                requestIdleCallback(() => {
-                  // Preload next page resources
-                  const pagesToPrefetch = ['/hakkimizda', '/projeler', '/iletisim', '/sss'];
-                  pagesToPrefetch.forEach(page => {
-                    const link = document.createElement('link');
-                    link.rel = 'prefetch';
-                    link.href = page;
-                    document.head.appendChild(link);
-                  });
-                });
-              }
-              
-              // Service Worker registration
-              if ('serviceWorker' in navigator) {
-                window.addEventListener('load', () => {
-                  navigator.serviceWorker.register('/sw.js').catch(() => {});
-                });
-              }
-              
-              // Performance monitoring
-              if ('PerformanceObserver' in window) {
-                const observer = new PerformanceObserver((list) => {
-                  for (const entry of list.getEntries()) {
-                    if (entry.entryType === 'largest-contentful-paint') {
-                      console.log('LCP:', entry.startTime);
-                    }
-                  }
-                });
-                observer.observe({ entryTypes: ['largest-contentful-paint'] });
-              }
-              
-              // Critical resource hints
-              const criticalResources = [
-                { href: '/parslanmaz-logo.jpeg', as: 'image' },
-                { href: 'https://fonts.googleapis.com', as: 'font', crossorigin: 'anonymous' }
-              ];
-              
-              criticalResources.forEach(resource => {
-                const link = document.createElement('link');
-                link.rel = 'preload';
-                link.href = resource.href;
-                link.as = resource.as;
-                if (resource.crossorigin) link.crossOrigin = resource.crossorigin;
-                document.head.appendChild(link);
-              });
+              if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js').catch(()=>{})});}
+              if('requestIdleCallback' in window){requestIdleCallback(()=>{['/hakkimizda','/projeler','/iletisim','/sss'].forEach(p=>{const l=document.createElement('link');l.rel='prefetch';l.href=p;document.head.appendChild(l);});});}
             `,
           }}
         />

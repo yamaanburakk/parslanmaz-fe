@@ -1,10 +1,21 @@
+import dynamic from "next/dynamic";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import ProductsSection from "@/components/ProductsSection";
-import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import { Metadata } from "next";
 
-// Static generation for better performance
+// Lazy load non-critical sections for better initial load
+const AboutSection = dynamic(() => import("@/components/AboutSection"), {
+  loading: () => <div className="h-96 bg-gradient-to-br from-primary-100 to-primary-200 animate-pulse" />,
+});
+
+const ProductsSection = dynamic(() => import("@/components/ProductsSection"), {
+  loading: () => <div className="h-96 bg-gradient-to-br from-[#0F172A] to-[#1E293B] animate-pulse" />,
+});
+
+const WhyChooseUsSection = dynamic(() => import("@/components/WhyChooseUsSection"), {
+  loading: () => <div className="h-96 bg-white animate-pulse" />,
+});
+
+// Aggressive caching for static content
 export const revalidate = 3600; // Revalidate every hour
 
 export const metadata: Metadata = {

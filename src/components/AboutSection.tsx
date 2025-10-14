@@ -1,4 +1,6 @@
-const AboutSection = () => {
+import { memo } from "react";
+
+const AboutSection = memo(() => {
   return (
     <section id="about" className="py-20 bg-gradient-to-br from-primary-100 to-primary-200">
       <div className="container mx-auto px-4">
@@ -65,6 +67,8 @@ const AboutSection = () => {
       </div>
     </section>
   );
-};
+});
+
+AboutSection.displayName = 'AboutSection';
 
 export default AboutSection;

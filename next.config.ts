@@ -17,27 +17,34 @@ const nextConfig: NextConfig = {
   // Production source maps
   productionBrowserSourceMaps: false,
   
+  // Turbopack configuration (moved from experimental)
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
+  },
+
   // Experimental features for better performance
   experimental: {
     optimizePackageImports: ['react', 'react-dom', 'next'],
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
-      },
-    },
     // Enable static generation optimization
     staticGenerationRetryCount: 3,
     // Enable modern bundling
     esmExternals: true,
     // Parallel server compilation
     webpackBuildWorker: true,
-    // Parallel server compilation
     parallelServerCompiles: true,
-    // Parallel build worker
     parallelServerBuildTraces: true,
+    // Performance monitoring
+    gzipSize: true,
+    scrollRestoration: true,
+    // Note: These features require Next.js canary or are incompatible with Turbopack:
+    // optimizeCss: true, (requires critters module, incompatible with Turbopack)
+    // reactCompiler: true, (canary only)
+    // ppr: 'incremental', (canary only)
   },
 
   // Image optimization

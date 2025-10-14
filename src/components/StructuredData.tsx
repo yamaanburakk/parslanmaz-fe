@@ -141,7 +141,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(structuredData, null, 2),
+        __html: JSON.stringify(structuredData),
       }}
     />
   );

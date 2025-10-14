@@ -1,26 +1,28 @@
-const StatsSection = () => {
-  const stats = [
+import { memo, useMemo } from "react";
+
+const StatsSection = memo(() => {
+  const stats = useMemo(() => [
     {
-      number: "500+",
+      number: "3,200+",
       label: "Mutlu Müşteri",
       description: "Türkiye ve dünya genelinde"
     },
     {
-      number: "1000+",
+      number: "2,500+",
       label: "Tamamlanan Proje",
       description: "Başarıyla teslim edilen"
     },
     {
-      number: "15+",
+      number: "25+",
       label: "Yıllık Tecrübe",
       description: "Sektörde uzmanlık"
     },
     {
-      number: "50+",
+      number: "85+",
       label: "Ülkeye İhracat",
       description: "Global hizmet ağı"
     }
-  ];
+  ], []);
 
   return (
     <section className="py-20 bg-gradient-to-br from-[#3A4E73] via-[#42587E] to-[#4A6289] text-white relative overflow-hidden">
@@ -39,10 +41,10 @@ const StatsSection = () => {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="text-center group"
+                className="text-center"
               >
-                <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl hover:bg-white/20 transition-all duration-300 group-hover:scale-105 border border-[#66B2FF]/20">
-                  <div className="text-4xl md:text-5xl font-bold text-[#66B2FF] mb-4 group-hover:text-[#FFD700] transition-colors">
+                <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl hover:bg-white/20 transition-colors duration-200 border border-[#66B2FF]/20">
+                  <div className="text-4xl md:text-5xl font-bold text-[#66B2FF] mb-4">
                     {stat.number}
                   </div>
                   <h3 className="text-xl font-semibold mb-2">
@@ -100,6 +102,8 @@ const StatsSection = () => {
       </div>
     </section>
   );
-};
+});
+
+StatsSection.displayName = 'StatsSection';
 
 export default StatsSection;

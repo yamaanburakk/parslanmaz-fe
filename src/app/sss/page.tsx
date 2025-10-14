@@ -1,7 +1,22 @@
+import dynamic from 'next/dynamic';
 import FAQHero from '@/components/FAQHero';
 import FAQCategories from '@/components/FAQCategories';
-import FAQAccordion from '@/components/FAQAccordion';
-import FAQSidebar from '@/components/FAQSidebar';
+
+// Lazy load non-critical components
+const FAQAccordion = dynamic(() => import('@/components/FAQAccordion'), {
+  loading: () => <div className="h-96 bg-gradient-to-br from-[#0F172A] to-[#1E293B] animate-pulse rounded-2xl" />,
+});
+
+const FAQSidebar = dynamic(() => import('@/components/FAQSidebar'), {
+  loading: () => <div className="h-96 bg-gradient-to-br from-[#0F172A] to-[#1E293B] animate-pulse rounded-2xl" />,
+});
+
+export const metadata = {
+  title: "Sıkça Sorulan Sorular - Pars Endüstriyel Mutfak",
+  description: "Endüstriyel mutfak ekipmanları hakkında merak ettiğiniz her şey. Uzman cevapları ve detaylı açıklamalar.",
+};
+
+export const revalidate = 7200; // Revalidate every 2 hours
 
 export default function FAQPage() {
   return (
