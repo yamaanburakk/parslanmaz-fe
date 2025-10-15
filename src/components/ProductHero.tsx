@@ -27,9 +27,6 @@ const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroPro
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div className="space-y-8">
-              <div className="inline-flex items-center bg-gradient-to-r from-[#66B2FF]/20 to-[#FF6B35]/20 backdrop-blur-md rounded-full border border-[#66B2FF]/40 shadow-xl" style={{ padding: '25px 50px !important', minHeight: '70px !important', display: 'flex !important', alignItems: 'center !important', justifyContent: 'center !important', width: 'auto !important' }}>
-                <span className="text-[#66B2FF] text-sm font-bold tracking-wide" style={{ padding: '0 !important', margin: '0 !important' }}>Ürün Kategorisi</span>
-              </div>
               
               <div>
                 <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -43,11 +40,6 @@ const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroPro
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/hemen-teklif-al" className="bg-gradient-to-r from-[#66B2FF] to-[#4E9EFF] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-[#4E9EFF] hover:to-[#66B2FF] transition-all duration-300 transform hover:scale-105 inline-block text-center shadow-lg">
-                  Ücretsiz Teklif Al
-                </a>
-              </div>
             </div>
             
             {/* Image */}

@@ -48,21 +48,27 @@ const BlogPostHeader = ({ post }: BlogPostHeaderProps) => {
   };
 
   return (
-    <section className="bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700 text-white py-16">
+    <section className="bg-gradient-to-br from-[#3A4E73] via-[#42587E] to-[#4A6289] text-white py-16" style={{
+      background: 'linear-gradient(135deg, #3A4E73 0%, #42587E 50%, #4A6289 100%)'
+    }}>
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Breadcrumb */}
-          <nav className="flex items-center space-x-2 text-primary-200 text-sm mb-6">
-            <Link href="/" className="hover:text-white transition-colors">Anasayfa</Link>
-            <span>/</span>
-            <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
-            <span>/</span>
-            <span className="text-white">{post.category}</span>
+          <nav className="mb-6">
+            <div className="flex items-baseline justify-start text-white/80 text-sm" style={{ lineHeight: '1.5' }}>
+              <Link href="/" className="hover:text-white transition-colors duration-300 font-medium px-2 py-1 rounded-md hover:bg-white/10" style={{ display: 'inline-block', verticalAlign: 'baseline' }}>Anasayfa</Link>
+              <span className="text-white/60 mx-2" style={{ display: 'inline-block', verticalAlign: 'baseline' }}>/</span>
+              <Link href="/blog" className="hover:text-white transition-colors duration-300 font-medium px-2 py-1 rounded-md hover:bg-white/10" style={{ display: 'inline-block', verticalAlign: 'baseline' }}>Blog</Link>
+              <span className="text-white/60 mx-2" style={{ display: 'inline-block', verticalAlign: 'baseline' }}>/</span>
+              <span className="text-white font-semibold px-2 py-1 bg-white/10 rounded-md" style={{ display: 'inline-block', verticalAlign: 'baseline' }}>{post.category}</span>
+            </div>
           </nav>
 
           {/* Category Badge */}
           <div className="mb-6">
-            <span className="bg-accent-500 text-white px-4 py-2 rounded-full text-sm font-medium">
+            <span className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium" style={{
+              backgroundColor: '#2A80FF'
+            }}>
               {post.category}
             </span>
           </div>
@@ -73,7 +79,7 @@ const BlogPostHeader = ({ post }: BlogPostHeaderProps) => {
           </h1>
 
           {/* Excerpt */}
-          <p className="text-xl text-primary-100 mb-8 leading-relaxed">
+          <p className="text-xl text-white/90 mb-8 leading-relaxed">
             {post.excerpt}
           </p>
 
@@ -88,12 +94,12 @@ const BlogPostHeader = ({ post }: BlogPostHeaderProps) => {
               </div>
               <div>
                 <div className="font-semibold">{post.author.name}</div>
-                <div className="text-sm text-primary-200">{post.author.bio}</div>
+                <div className="text-sm text-white/80">{post.author.bio}</div>
               </div>
             </div>
 
             {/* Post Stats */}
-            <div className="flex items-center space-x-6 text-sm text-primary-200">
+            <div className="flex items-center space-x-6 text-sm text-white/80">
               <div className="flex items-center space-x-1">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -134,7 +140,7 @@ const BlogPostHeader = ({ post }: BlogPostHeaderProps) => {
               onClick={handleLike}
               className={`flex items-center space-x-2 px-6 py-3 rounded-lg transition-colors ${
                 isLiked
-                  ? 'bg-accent-500 text-white'
+                  ? 'bg-blue-500 text-white'
                   : 'bg-white/20 text-white hover:bg-white/30'
               }`}
             >
@@ -163,7 +169,9 @@ const BlogPostHeader = ({ post }: BlogPostHeaderProps) => {
 
       {/* Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent-400/10 rounded-full blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl" style={{
+          backgroundColor: 'rgba(54, 138, 255, 0.1)'
+        }}></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
       </div>
     </section>

@@ -19,9 +19,9 @@ const ProductCTA = ({ title, description }: ProductCTAProps) => {
             <a href="/hemen-teklif-al" className="bg-gradient-to-r from-[#66B2FF] to-[#4E9EFF] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-[#4E9EFF] hover:to-[#66B2FF] transition-all duration-300 transform hover:scale-105 inline-block text-center shadow-lg hover:shadow-[#66B2FF]/25">
               Ücretsiz Teklif Al
             </a>
-            <button className="border-2 border-[#66B2FF]/60 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#66B2FF]/20 hover:border-[#66B2FF] transition-all duration-300 backdrop-blur-sm shadow-lg hover:shadow-[#66B2FF]/25">
+            <a href="https://wa.me/905412288366" target="_blank" rel="noopener noreferrer" className="border-2 border-[#66B2FF]/60 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#66B2FF]/20 hover:border-[#66B2FF] transition-all duration-300 backdrop-blur-sm shadow-lg hover:shadow-[#66B2FF]/25 inline-block text-center">
               WhatsApp&apos;tan Yaz
-            </button>
+            </a>
           </div>
           
         </div>

@@ -15,7 +15,7 @@ const ProjectsStats = memo(() => {
       color: "from-[#9CA3AF] to-[#6B7280]"
     },
     {
-      number: "1+",
+      number: "5+",
       label: "Yıllık Tecrübe",
       description: "Genç ve dinamik ekibimiz",
       color: "from-[#64748B] to-[#374151]"

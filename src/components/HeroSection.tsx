@@ -17,7 +17,7 @@ const HeroSection = memo(() => {
                 transform: 'translateZ(0)',
                 willChange: 'transform',
                 imageRendering: 'auto',
-                filter: 'contrast(1.1) brightness(1.02)',
+                filter: 'contrast(1.08) brightness(1.01)',
               } as React.CSSProperties}>
         <Image
           src="/paslanmaz-celik-endustriyel-mutfak.jpeg"
@@ -26,12 +26,12 @@ const HeroSection = memo(() => {
           priority
           quality={100}
           sizes="100vw"
-          className="object-cover object-center hero-background"
+          className="object-cover hero-background"
                   style={{
-                    objectPosition: 'center 20%',
-                    filter: 'contrast(1.2) brightness(1.05) saturate(1.1) hue-rotate(0deg)',
+                    objectPosition: 'center 30%',
+                    filter: 'contrast(1.15) brightness(1.03) saturate(1.05) hue-rotate(0deg)',
                     imageRendering: 'auto',
-                    transform: 'scale(1.001)',
+                    transform: 'scale(1.05)',
                     backfaceVisibility: 'hidden',
                     willChange: 'transform',
                   } as React.CSSProperties}
@@ -39,7 +39,7 @@ const HeroSection = memo(() => {
           unoptimized={true}
         />
         {/* Crystal clear overlay for professional text visibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20" style={{
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/15" style={{
           backfaceVisibility: 'hidden',
           transform: 'translateZ(0)',
         } as React.CSSProperties}></div>
@@ -68,19 +68,32 @@ const HeroSection = memo(() => {
             <div className="absolute right-1.5 top-1/2 transform -translate-y-1/2 w-0.5 h-0.5 bg-[#B8860B]/50 rounded-full"></div>
           </div>
           
-          {/* Main Headline - Ultra Professional Typography */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-8 leading-tight text-white" style={{
-            textShadow: '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 3px rgba(0,0,0,0.7)',
-            filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.8))'
+          {/* Main Headline - Premium Professional Typography */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-10 leading-tight text-white" style={{
+            textShadow: '4px 4px 8px rgba(0,0,0,0.95), 2px 2px 6px rgba(0,0,0,0.8)',
+            filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.9))',
+            letterSpacing: '-0.02em'
           }}>
-            Paslanmaz Çelik Ekipman
-            <span className="block" style={{ textShadow: '3px 3px 6px rgba(0,0,0,0.9)' }}>Üretiminde</span>
+            <span className="block tracking-tight" style={{ 
+              textShadow: '4px 4px 8px rgba(0,0,0,0.95)',
+              WebkitTextStroke: '0.5px rgba(255,255,255,0.2)'
+            }}>
+              Paslanmaz Çelik Ekipman
+            </span>
+            <span className="block tracking-tight" style={{ 
+              textShadow: '4px 4px 8px rgba(0,0,0,0.95)',
+              WebkitTextStroke: '0.5px rgba(255,255,255,0.2)'
+            }}>
+              Üretiminde
+            </span>
             <span 
-              className="block bg-gradient-to-r from-[#B8860B] to-[#CD853F] bg-clip-text text-transparent"
+              className="block bg-gradient-to-r from-[#D4AF37] via-[#B8860B] to-[#CD853F] bg-clip-text text-transparent tracking-tight"
               style={{
-                textShadow: '3px 3px 6px rgba(0,0,0,0.9)',
-                WebkitTextStroke: '0.8px rgba(255,255,255,0.4)',
-                filter: 'drop-shadow(0 4px 8px rgba(184,134,11,0.6))'
+                textShadow: '4px 4px 8px rgba(0,0,0,0.95), 2px 2px 6px rgba(184,134,11,0.8)',
+                WebkitTextStroke: '1px rgba(255,255,255,0.3)',
+                filter: 'drop-shadow(0 6px 12px rgba(184,134,11,0.8)) brightness(1.1)',
+                backgroundSize: '200% 200%',
+                animation: 'gradient-shift 3s ease-in-out infinite'
               }}
             >
               Uzmanız
@@ -100,22 +113,35 @@ const HeroSection = memo(() => {
             </p>
           </div>
           
-          {/* Button - Professional Compact Design */}
+          {/* Button - Ultra Premium Professional Design */}
           <div className="flex justify-center items-center">
             <a 
               href="/hemen-teklif-al" 
-              className="bg-gradient-to-r from-[#B8860B] to-[#CD853F] text-white px-8 py-4 rounded-xl font-semibold text-base hover:from-[#CD853F] hover:to-[#B8860B] transition-all duration-300 shadow-lg hover:shadow-[#B8860B]/40 border border-[#B8860B]/60 inline-flex items-center justify-center gap-2.5 hover:scale-105 transform hover:brightness-110 relative overflow-hidden group"
+              className="bg-gradient-to-r from-[#D4AF37] via-[#B8860B] to-[#CD853F] text-white px-10 py-5 rounded-2xl font-bold text-lg hover:from-[#CD853F] hover:via-[#B8860B] hover:to-[#D4AF37] transition-all duration-500 shadow-2xl hover:shadow-[#B8860B]/50 border border-[#B8860B]/80 inline-flex items-center justify-center gap-3 hover:scale-110 transform hover:brightness-115 relative overflow-hidden group backdrop-blur-sm"
               style={{
-                boxShadow: '0 8px 20px rgba(184,134,11,0.3), inset 0 1px 0 rgba(255,255,255,0.15)'
+                boxShadow: '0 12px 30px rgba(184,134,11,0.4), inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.1)',
+                backgroundSize: '200% 200%',
+                animation: 'gradient-shift 3s ease-in-out infinite'
               }}
             >
-              {/* Subtle Shine Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              {/* Premium Shine Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               
-              <svg className="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/20 to-[#CD853F]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              
+              {/* Premium Plus Icon */}
+              <svg className="w-6 h-6 relative z-10 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{
+                filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))'
+              }}>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
               </svg>
-              <span className="relative z-10">Hemen Teklif Al</span>
+              <span className="relative z-10 drop-shadow-lg tracking-wide" style={{
+                textShadow: '1px 1px 3px rgba(0,0,0,0.5)',
+                filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))'
+              }}>
+                Hemen Teklif Al
+              </span>
             </a>
           </div>
         </div>

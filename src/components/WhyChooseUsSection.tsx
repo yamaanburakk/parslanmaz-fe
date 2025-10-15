@@ -81,7 +81,7 @@ const WhyChooseUsSection = memo(() => {
         <div className="mt-16 sm:mt-20 bg-gradient-to-r from-[#131C3C] to-[#1A2647] rounded-2xl p-6 sm:p-10 text-white shadow-2xl border border-[#66B2FF]/30">
           <div className="text-center mb-6 sm:mb-8">
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#66B2FF] mb-2">Rakamlarla Başarımız</h3>
-            <p className="text-sm sm:text-base text-[#F1F5F9]">1 yıllık tecrübemizle güven inşa ediyoruz</p>
+            <p className="text-sm sm:text-base text-[#F1F5F9]">5+ yıllık tecrübemizle güven inşa ediyoruz</p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
@@ -94,7 +94,7 @@ const WhyChooseUsSection = memo(() => {
               <div className="text-xs sm:text-sm text-[#F1F5F9] font-medium">Tamamlanan Proje</div>
             </div>
             <div className="group">
-              <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 text-[#66B2FF] group-hover:scale-110 transition-transform duration-300">1+</div>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 text-[#66B2FF] group-hover:scale-110 transition-transform duration-300">5+</div>
               <div className="text-xs sm:text-sm text-[#F1F5F9] font-medium">Yıllık Tecrübe</div>
             </div>
             <div className="group">

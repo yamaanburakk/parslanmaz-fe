@@ -12,6 +12,7 @@ img{image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges}
 /* Optimized Animations - GPU accelerated */
 @keyframes loading{0%{background-position:200% 0}100%{background-position:-200% 0}}
 @keyframes gradient{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes gradient-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 .skeleton{background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:200% 100%;animation:loading 1.5s infinite;will-change:background-position}
 .animate-gradient{background-size:200% 200%;animation:gradient 3s ease infinite;will-change:background-position}
 
@@ -172,6 +173,7 @@ p{font-size:.875rem;line-height:1.6;font-weight:400}
 .hero-section{backface-visibility:hidden;transform:translateZ(0)}
 .hero-background{backface-visibility:hidden;transform:translateZ(0)}
 .lazy-load{content-visibility:auto;contain-intrinsic-size:0 400px}
+
 
 /* Touch & Accessibility */
 @media(hover:none)and (pointer:coarse){button,a,input,select,textarea{min-height:44px;min-width:44px}}

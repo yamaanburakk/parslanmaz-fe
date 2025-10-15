@@ -60,7 +60,7 @@ const BlogHero = () => {
                   <div className="absolute top-4 right-4 w-16 h-16 bg-[#9CA3AF]/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-1000"></div>
                 </div>
                 <div className="relative z-10 text-center">
-                  <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-2 md:mb-3">1+</div>
+                  <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-2 md:mb-3">5+</div>
                   <div className="text-white/90 text-sm md:text-base lg:text-lg font-medium">Kategori</div>
                 </div>
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#9CA3AF] via-[#6B7280] to-[#4B5563] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>

@@ -13,7 +13,7 @@ const StatsSection = memo(() => {
       description: "Başarıyla teslim edilen"
     },
     {
-      number: "1+",
+      number: "5+",
       label: "Yıllık Tecrübe",
       description: "Dinamik ve yenilikçi"
     },
