@@ -32,7 +32,7 @@ export default function EkmekUnluMamullerPage() {
     title: "Ekmek & Unlu Mamuller Dolapları",
     subtitle: "Paslanmaz Çelik Fırın Vitrin ve Tezgah Modelleri",
     description: "Fırın ve pastaneler için özel olarak tasarlanmış, taze ekmek ve unlu mamullerin korunması için ideal dolaplar. Hijyen ve tazelik garantisi.",
-    heroImage: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    heroImage: "/unlu-mamul-ürün-kategori/unlu-1.jpeg",
     features: [
       {
         title: "Tazelik Koruma",
@@ -57,19 +57,19 @@ export default function EkmekUnluMamullerPage() {
     ],
     gallery: [
       {
-        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/unlu-mamul-ürün-kategori/unlu-2.jpeg",
         alt: "Ekmek Dolabı Vitrin"
       },
       {
-        src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/unlu-mamul-ürün-kategori/unlu-3.jpeg",
         alt: "Fırın Tezgahı"
       },
       {
-        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/unlu-mamul-ürün-kategori/unlu-4.jpeg",
         alt: "Unlu Mamul Vitrini"
       },
       {
-        src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/unlu-mamul-ürün-kategori/unlu-5.jpeg",
         alt: "Pastane Dolabı"
       }
     ]

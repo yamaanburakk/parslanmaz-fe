@@ -33,7 +33,7 @@ export default function AcikBufePage() {
     title: "Açık Büfe Ekipmanları",
     subtitle: "Servis Üniteleri - Paslanmaz Çelik Büfe Tezgah ve Vitrin Modelleri",
     description: "Modern açık büfe tasarımları için özel olarak geliştirilmiş, paslanmaz çelik servis üniteleri. Estetik ve fonksiyonellik bir arada.",
-    heroImage: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    heroImage: "/acik-bufe-ürün-kategori/acik-bufe-1.jpeg",
     features: [
       {
         title: "Modern Tasarım",
@@ -58,20 +58,16 @@ export default function AcikBufePage() {
     ],
     gallery: [
       {
-        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/acik-bufe-ürün-kategori/acik-bufe-2.jpeg",
         alt: "Açık Büfe Servis Ünitesi"
       },
       {
-        src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/acik-bufe-ürün-kategori/acik-bufe-3.jpeg",
         alt: "Paslanmaz Çelik Büfe Tezgahı"
       },
       {
-        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/acik-bufe-ürün-kategori/acik-bufe-4.jpeg",
         alt: "Modern Vitrin Modelleri"
-      },
-      {
-        src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        alt: "Servis Ünitesi Detayı"
       }
     ]
   };
