@@ -44,24 +44,6 @@ const ProductFeatures = ({ features }: ProductFeaturesProps) => {
               </div>
             ))}
           </div>
-          
-          {/* Additional Info */}
-          <div className="mt-16 bg-gradient-to-r from-primary-50 to-accent-50 p-8 rounded-2xl border border-primary-100">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-primary-600 mb-2">100%</div>
-                <div className="text-gray-700">Paslanmaz Çelik</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary-600 mb-2">ISO</div>
-                <div className="text-gray-700">Kalite Sertifikası</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary-600 mb-2">24/7</div>
-                <div className="text-gray-700">Teknik Destek</div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

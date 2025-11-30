@@ -9,7 +9,8 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
-  output: 'standalone',
+  // Only use standalone output in production builds
+  ...(process.env.NODE_ENV === 'production' && { output: 'standalone' }),
   
   // React compiler optimization
   reactStrictMode: true,
@@ -46,6 +47,8 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60 * 60 * 24 * 365, // 1 year
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // Quality settings for Next.js 16 compatibility
+    qualities: [75, 90, 100],
     // Remote patterns
     remotePatterns: [
       {

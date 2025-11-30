@@ -36,7 +36,7 @@ const HeroSection = memo(() => {
                     willChange: 'transform',
                   } as React.CSSProperties}
           placeholder="empty"
-          unoptimized={true}
+          unoptimized={false}
         />
         {/* Crystal clear overlay for professional text visibility */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/15" style={{

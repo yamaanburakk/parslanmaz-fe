@@ -18,6 +18,8 @@ const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroPro
           fill
           className="object-cover opacity-20"
           priority
+          quality={100}
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#131C3C]/80 via-[#1A2647]/80 to-[#223052]/80"></div>
       </div>
@@ -51,6 +53,8 @@ const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroPro
                   fill
                   className="object-cover"
                   priority
+                  quality={100}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>

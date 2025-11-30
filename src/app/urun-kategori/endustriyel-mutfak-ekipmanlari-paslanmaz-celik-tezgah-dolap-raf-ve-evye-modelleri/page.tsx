@@ -32,7 +32,7 @@ export default function EndustriyelMutfakPage() {
     title: "Endüstriyel Mutfak Ekipmanları",
     subtitle: "Paslanmaz Çelik Tezgah, Dolap, Raf ve Evye Modelleri",
     description: "Profesyonel mutfaklar için tasarlanmış, yüksek kaliteli paslanmaz çelik ekipmanlar. Dayanıklılık, hijyen ve fonksiyonellik bir arada.",
-    heroImage: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    heroImage: "/endustriyel-mutfak-ürün-kategori/endustiyel-1.jpeg",
     features: [
       {
         title: "Paslanmaz Çelik 304 Kalite",
@@ -57,20 +57,20 @@ export default function EndustriyelMutfakPage() {
     ],
     gallery: [
       {
-        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        alt: "Endüstriyel Mutfak Tezgahı"
+        src: "/endustriyel-mutfak-ürün-kategori/endustriyel-2.jpeg",
+        alt: "Endüstriyel Mutfak Ekipmanı"
       },
       {
-        src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        alt: "Paslanmaz Çelik Dolap"
+        src: "/endustriyel-mutfak-ürün-kategori/endustriyel-3.jpeg",
+        alt: "Paslanmaz Çelik Endüstriyel Mutfak Ürünü"
       },
       {
-        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        alt: "Profesyonel Mutfak Rafı"
+        src: "/endustriyel-mutfak-ürün-kategori/endustriyel-4.jpeg",
+        alt: "Profesyonel Endüstriyel Mutfak Ekipmanı"
       },
       {
-        src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        alt: "Endüstriyel Evye"
+        src: "/endustriyel-mutfak-ürün-kategori/endustriyel-5.jpeg",
+        alt: "Endüstriyel Mutfak Tezgah ve Dolap"
       }
     ]
   };
