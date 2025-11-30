@@ -32,7 +32,7 @@ export default function PastaSarkuteriPage() {
     title: "Pasta & Şarküteri Dolapları",
     subtitle: "Paslanmaz Çelik Vitrin, Tezgah ve Dolap Modelleri",
     description: "Pasta ve şarküteri ürünleri için özel olarak tasarlanmış, taze ürünlerin korunması ve sunumu için ideal dolaplar. Estetik ve fonksiyonellik.",
-    heroImage: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    heroImage: "/pasta-ürün-kategori/pasta-1.jpeg",
     features: [
       {
         title: "Soğuk Hava Sistemi",
@@ -57,19 +57,19 @@ export default function PastaSarkuteriPage() {
     ],
     gallery: [
       {
-        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/pasta-ürün-kategori/pasta-2.jpeg",
         alt: "Pasta Vitrin Dolabı"
       },
       {
-        src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/pasta-ürün-kategori/pasta-3.jpeg",
         alt: "Şarküteri Tezgahı"
       },
       {
-        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/pasta-ürün-kategori/pasta-4.jpeg",
         alt: "Pasta Dolabı Detayı"
       },
       {
-        src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/pasta-ürün-kategori/pasta-5.jpeg",
         alt: "Vitrin Aydınlatması"
       }
     ]
