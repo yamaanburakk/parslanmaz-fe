@@ -78,7 +78,6 @@ export default function CikolataLokumPage() {
           { label: "Sıcaklık", value: "18-22°C" },
           { label: "Aydınlatma", value: "LED" },
           { label: "Kapak", value: "Şeffaf Cam" },
-          { label: "Garanti", value: "5 Yıl" },
           { label: "Üretim", value: "Yerli Üretim" }
         ]}
       />

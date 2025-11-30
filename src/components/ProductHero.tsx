@@ -64,11 +64,6 @@ const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroPro
                 <div className="text-2xl font-bold text-[#66B2FF]">12+</div>
                 <div className="text-sm text-[#F1F5F9]">Proje</div>
               </div>
-              
-              <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-[#FF6B35]/30 shadow-lg">
-                <div className="text-2xl font-bold text-[#FF6B35]">5 Yıl</div>
-                <div className="text-sm text-[#F1F5F9]">Garanti</div>
-              </div>
             </div>
           </div>
         </div>

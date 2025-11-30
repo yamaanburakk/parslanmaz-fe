@@ -18,7 +18,7 @@ export default function WaffleKumpirPage() {
     title: "Waffle & Kumpir Dolapları",
     subtitle: "Paslanmaz Çelik Tezgah, Vitrin ve Dolap Modelleri",
     description: "Waffle ve kumpir satış noktaları için özel olarak tasarlanmış, mobil ve sabit kullanım için ideal dolaplar. Pratik ve fonksiyonel tasarım.",
-    heroImage: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    heroImage: "/waffle-ürün-kategori/waffle-1.jpeg",
     features: [
       {
         title: "Mobil Tasarım",
@@ -43,19 +43,19 @@ export default function WaffleKumpirPage() {
     ],
     gallery: [
       {
-        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/waffle-ürün-kategori/waffle-2.jpeg",
         alt: "Waffle Dolabı"
       },
       {
-        src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/waffle-ürün-kategori/waffle-3.jpeg",
         alt: "Kumpir Tezgahı"
       },
       {
-        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/waffle-ürün-kategori/waffle-4.jpeg",
         alt: "Mobil Vitrin"
       },
       {
-        src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/waffle-ürün-kategori/waffle-5.jpg",
         alt: "Satış Ünitesi"
       }
     ]
@@ -78,7 +78,6 @@ export default function WaffleKumpirPage() {
           { label: "Tip", value: "Mobil/Sabit" },
           { label: "Isıtma", value: "Elektrikli" },
           { label: "Tekerlek", value: "4 Adet" },
-          { label: "Garanti", value: "5 Yıl" },
           { label: "Üretim", value: "Yerli Üretim" }
         ]}
       />

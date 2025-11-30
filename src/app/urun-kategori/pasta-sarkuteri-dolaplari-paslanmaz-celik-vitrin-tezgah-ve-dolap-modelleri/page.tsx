@@ -92,7 +92,6 @@ export default function PastaSarkuteriPage() {
           { label: "Sıcaklık", value: "0-4°C" },
           { label: "Aydınlatma", value: "LED" },
           { label: "Kapak", value: "Şeffaf Cam" },
-          { label: "Garanti", value: "5 Yıl" },
           { label: "Üretim", value: "Yerli Üretim" }
         ]}
       />

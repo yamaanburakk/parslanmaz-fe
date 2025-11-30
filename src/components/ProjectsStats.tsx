@@ -178,10 +178,6 @@ const ProjectsStats = memo(() => {
                   </h4>
                   <div className="space-y-4 md:space-y-5">
                     <div className="flex items-center">
-                      <div className="w-3 md:w-4 h-3 md:h-4 bg-gradient-to-r from-[#9CA3AF] to-[#6B7280] rounded-full mr-4 md:mr-5 flex-shrink-0"></div>
-                      <span className="text-sm md:text-base lg:text-lg text-[#0F172A]/90 font-medium">5 Yıl Garanti</span>
-                    </div>
-                    <div className="flex items-center">
                       <div className="w-3 md:w-4 h-3 md:h-4 bg-gradient-to-r from-[#6B7280] to-[#374151] rounded-full mr-4 md:mr-5 flex-shrink-0"></div>
                       <span className="text-sm md:text-base lg:text-lg text-[#0F172A]/90 font-medium">7/24 Teknik Destek</span>
                     </div>

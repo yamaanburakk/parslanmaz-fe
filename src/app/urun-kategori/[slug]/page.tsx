@@ -124,7 +124,6 @@ const productDataMap: Record<string, ProductData> = {
       { label: "Kapasite", value: "50-200 Kişi" },
       { label: "Isı Kontrolü", value: "Sıcak/Soğuk" },
       { label: "Boyut", value: "Özelleştirilebilir" },
-      { label: "Garanti", value: "5 Yıl" },
       { label: "Üretim", value: "Yerli Üretim" }
     ]
   },
@@ -150,7 +149,6 @@ const productDataMap: Record<string, ProductData> = {
       { label: "Kalınlık", value: "1.2-2.0 mm" },
       { label: "Yüzey", value: "Fırçalı/Matt" },
       { label: "Boyut", value: "Özelleştirilebilir" },
-      { label: "Garanti", value: "5 Yıl" },
       { label: "Üretim", value: "Yerli Üretim" }
     ]
   }

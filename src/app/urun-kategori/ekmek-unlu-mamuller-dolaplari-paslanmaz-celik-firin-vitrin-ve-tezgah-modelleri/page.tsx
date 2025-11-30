@@ -92,7 +92,6 @@ export default function EkmekUnluMamullerPage() {
           { label: "Kapasite", value: "100-500 Ekmek" },
           { label: "Havalandırma", value: "Otomatik" },
           { label: "Kapak", value: "Şeffaf Cam" },
-          { label: "Garanti", value: "5 Yıl" },
           { label: "Üretim", value: "Yerli Üretim" }
         ]}
       />

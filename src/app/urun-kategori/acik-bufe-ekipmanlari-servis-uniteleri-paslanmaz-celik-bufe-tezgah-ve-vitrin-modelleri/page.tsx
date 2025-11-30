@@ -136,7 +136,6 @@ export default function AcikBufePage() {
             { label: "Kapasite", value: "50-200 Kişi" },
             { label: "Isı Kontrolü", value: "Sıcak/Soğuk" },
             { label: "Boyut", value: "Özelleştirilebilir" },
-            { label: "Garanti", value: "5 Yıl" },
             { label: "Üretim", value: "Yerli Üretim" }
           ]}
         />

@@ -92,7 +92,6 @@ export default function EndustriyelMutfakPage() {
           { label: "Kalınlık", value: "1.2mm - 2.0mm" },
           { label: "Yüzey İşlemi", value: "Fırçalı / Parlak" },
           { label: "Renk", value: "Gümüş Gri" },
-          { label: "Garanti", value: "5 Yıl" },
           { label: "Üretim", value: "Yerli Üretim" }
         ]}
       />

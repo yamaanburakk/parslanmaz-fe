@@ -78,7 +78,6 @@ export default function BorekBaklavaPage() {
           { label: "Sıcaklık", value: "60-80°C" },
           { label: "Raf Sayısı", value: "3-5 Adet" },
           { label: "Kapak", value: "Şeffaf Cam" },
-          { label: "Garanti", value: "5 Yıl" },
           { label: "Üretim", value: "Yerli Üretim" }
         ]}
       />
