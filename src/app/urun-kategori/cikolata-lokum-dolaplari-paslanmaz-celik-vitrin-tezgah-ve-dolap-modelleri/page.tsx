@@ -18,7 +18,7 @@ export default function CikolataLokumPage() {
     title: "Çikolata & Lokum Dolapları",
     subtitle: "Paslanmaz Çelik Vitrin, Tezgah ve Dolap Modelleri",
     description: "Çikolata ve lokum gibi premium ürünler için özel olarak tasarlanmış, şık sunum ve koruma çözümleri. Estetik ve fonksiyonellik bir arada.",
-    heroImage: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    heroImage: "/lokum-ürün-kategori/lokum-1.jpeg",
     features: [
       {
         title: "Premium Tasarım",
@@ -43,19 +43,19 @@ export default function CikolataLokumPage() {
     ],
     gallery: [
       {
-        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/lokum-ürün-kategori/lokum-2.jpeg",
         alt: "Çikolata Vitrin Dolabı"
       },
       {
-        src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/lokum-ürün-kategori/lokum-3.jpeg",
         alt: "Lokum Tezgahı"
       },
       {
-        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/lokum-ürün-kategori/lokum-4.jpeg",
         alt: "Premium Vitrin"
       },
       {
-        src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/lokum-ürün-kategori/lokum-5.jpeg",
         alt: "Çikolata Dolabı Detayı"
       }
     ]

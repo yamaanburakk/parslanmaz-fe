@@ -18,7 +18,7 @@ export default function BorekBaklavaPage() {
     title: "Börek & Baklava Dolapları",
     subtitle: "Paslanmaz Çelik Vitrin, Tezgah ve Dolap Modelleri",
     description: "Börek ve baklava gibi geleneksel lezzetler için özel olarak tasarlanmış, taze ürünlerin korunması ve sunumu için ideal dolaplar.",
-    heroImage: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    heroImage: "/börek-ürün-kategori/börek-1.jpeg",
     features: [
       {
         title: "Geleneksel Tasarım",
@@ -43,19 +43,19 @@ export default function BorekBaklavaPage() {
     ],
     gallery: [
       {
-        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/börek-ürün-kategori/börek-2.jpeg",
         alt: "Börek Dolabı Vitrin"
       },
       {
-        src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/börek-ürün-kategori/börek-3.jpeg",
         alt: "Baklava Tezgahı"
       },
       {
-        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/börek-ürün-kategori/börek-4.jpeg",
         alt: "Geleneksel Vitrin"
       },
       {
-        src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "/börek-ürün-kategori/börek-5.jpeg",
         alt: "Raf Sistemi"
       }
     ]
