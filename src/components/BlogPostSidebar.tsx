@@ -189,30 +189,6 @@ const BlogPostSidebar = ({ post }: BlogPostSidebarProps) => {
         </button>
       </div>
 
-      {/* Social Media */}
-      <div className="bg-white rounded-xl shadow-md p-6">
-        <h3 className="text-lg font-bold text-gray-900 mb-4">Bizi Takip Edin</h3>
-        <p className="text-sm text-gray-600 mb-4">
-          Sosyal medyada güncel içeriklerimizi takip edin
-        </p>
-        <div className="flex space-x-3">
-          {[
-            { name: 'Facebook', icon: '📘', color: 'bg-blue-500' },
-            { name: 'Instagram', icon: '📷', color: 'bg-pink-500' },
-            { name: 'LinkedIn', icon: '💼', color: 'bg-blue-700' },
-            { name: 'YouTube', icon: '📺', color: 'bg-red-500' }
-          ].map((social) => (
-            <a
-              key={social.name}
-              href="#"
-              className={`${social.color} text-white w-10 h-10 rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity`}
-              title={social.name}
-            >
-              <span className="text-lg">{social.icon}</span>
-            </a>
-          ))}
-        </div>
-      </div>
     </div>
   );
 };
