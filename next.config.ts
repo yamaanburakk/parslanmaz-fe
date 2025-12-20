@@ -9,8 +9,7 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
-  // Only use standalone output in production builds
-  ...(process.env.NODE_ENV === 'production' && { output: 'standalone' }),
+  // Note: Vercel handles output automatically, standalone is not needed
   
   // React compiler optimization
   reactStrictMode: true,
@@ -26,17 +25,13 @@ const nextConfig: NextConfig = {
     staticGenerationRetryCount: 3,
     // Enable modern bundling
     esmExternals: true,
-    // Parallel server compilation
-    webpackBuildWorker: true,
-    parallelServerCompiles: true,
-    parallelServerBuildTraces: true,
     // Performance monitoring
     gzipSize: true,
     scrollRestoration: true,
-    // Note: These features require Next.js canary or are incompatible with Turbopack:
-    // optimizeCss: true, (requires critters module, incompatible with Turbopack)
-    // reactCompiler: true, (canary only)
-    // ppr: 'incremental', (canary only)
+    // Note: Disabled parallel compilation features for Vercel compatibility
+    // webpackBuildWorker: true, (can cause issues on Vercel)
+    // parallelServerCompiles: true, (can cause issues on Vercel)
+    // parallelServerBuildTraces: true, (can cause issues on Vercel)
   },
 
   // Image optimization - Maximum Performance
@@ -112,19 +107,22 @@ const nextConfig: NextConfig = {
       };
     }
 
-    // SVG optimization
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    });
+    // SVG optimization - only if @svgr/webpack is installed
+    // config.module.rules.push({
+    //   test: /\.svg$/,
+    //   use: ['@svgr/webpack'],
+    // });
 
     // Better error handling for chunk loading
-    config.optimization = {
-      ...config.optimization,
-      runtimeChunk: {
-        name: 'runtime',
-      },
-    };
+    // Note: runtimeChunk is handled by Next.js by default, only override if needed
+    if (!isServer) {
+      config.optimization = {
+        ...config.optimization,
+        runtimeChunk: {
+          name: 'runtime',
+        },
+      };
+    }
 
     return config;
   },
