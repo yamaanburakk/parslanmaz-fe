@@ -74,11 +74,14 @@ export default function BorekBaklavaPage() {
       <ProductSpecs 
         title="Teknik Özellikler"
         specs={[
-          { label: "Malzeme", value: "Paslanmaz Çelik 304" },
-          { label: "Sıcaklık", value: "60-80°C" },
-          { label: "Raf Sayısı", value: "3-5 Adet" },
-          { label: "Kapak", value: "Şeffaf Cam" },
-          { label: "Üretim", value: "Yerli Üretim" }
+          { label: "Malzeme", value: "Paslanmaz Çelik 304-430 Kalite" },
+          { label: "Isıtma Sistemi", value: "60-80°C (Dijital Termostat Kontrollü)" },
+          { label: "Raf Sistemi", value: "3-5 Adet Ayarlanabilir Paslanmaz Raf" },
+          { label: "Cam Kalınlığı", value: "5mm Temperli Şeffaf Cam" },
+          { label: "Isı Yalıtımı", value: "Poliüretan Köpük İzolasyon" },
+          { label: "Kapı Tipi", value: "Açılır veya Kayar Kapı Sistemi" },
+          { label: "Boyut Seçenekleri", value: "Özelleştirilebilir (80-180cm)" },
+          { label: "Üretim Standardı", value: "ISO 9001:2015 Sertifikalı" }
         ]}
       />
       <ProductCTA 

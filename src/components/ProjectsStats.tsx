@@ -3,19 +3,19 @@ import { memo, useMemo } from "react";
 const ProjectsStats = memo(() => {
   const stats = useMemo(() => [
     {
-      number: "12+",
+      number: "30+",
       label: "Tamamlanan Proje",
       description: "Başarıyla teslim edilen projeler",
       color: "from-[#60A5FA] to-[#3B82F6]"
     },
     {
-      number: "3+",
+      number: "7+",
       label: "Ülkeye İhracat",
       description: "Hizmet verdiğimiz ülkeler",
       color: "from-[#9CA3AF] to-[#6B7280]"
     },
     {
-      number: "5+",
+      number: "10+",
       label: "Yıllık Tecrübe",
       description: "Genç ve dinamik ekibimiz",
       color: "from-[#64748B] to-[#374151]"

@@ -120,7 +120,7 @@ const productDataMap: Record<string, ProductData> = {
       { src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", alt: "Servis Ünitesi Detayı" }
     ],
     specs: [
-      { label: "Malzeme", value: "Paslanmaz Çelik 304" },
+      { label: "Malzeme", value: "Paslanmaz Çelik 304-430 Kalite" },
       { label: "Kapasite", value: "50-200 Kişi" },
       { label: "Isı Kontrolü", value: "Sıcak/Soğuk" },
       { label: "Boyut", value: "Özelleştirilebilir" },
@@ -145,7 +145,7 @@ const productDataMap: Record<string, ProductData> = {
       { src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", alt: "Endüstriyel Evye" }
     ],
     specs: [
-      { label: "Malzeme", value: "Paslanmaz Çelik 304" },
+      { label: "Malzeme", value: "Paslanmaz Çelik 304-430 Kalite" },
       { label: "Kalınlık", value: "1.2-2.0 mm" },
       { label: "Yüzey", value: "Fırçalı/Matt" },
       { label: "Boyut", value: "Özelleştirilebilir" },

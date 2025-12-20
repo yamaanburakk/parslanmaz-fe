@@ -49,11 +49,6 @@ const Footer = memo(() => {
                 </a>
               </li>
               <li>
-                <Link href="/projeler" className="text-[#F1F5F9] hover:text-[#66B2FF] transition-colors text-sm sm:text-base">
-                  Projeler
-                </Link>
-              </li>
-              <li>
                 <Link href="/iletisim" className="text-[#F1F5F9] hover:text-[#66B2FF] transition-colors text-sm sm:text-base">
                   İletişim
                 </Link>

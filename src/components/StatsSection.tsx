@@ -3,22 +3,22 @@ import { memo, useMemo } from "react";
 const StatsSection = memo(() => {
   const stats = useMemo(() => [
     {
-      number: "25+",
+      number: "100+",
       label: "Mutlu Müşteri",
       description: "Yerel ve bölgesel"
     },
     {
-      number: "12+",
+      number: "30+",
       label: "Tamamlanan Proje",
       description: "Başarıyla teslim edilen"
     },
     {
-      number: "5+",
+      number: "10+",
       label: "Yıllık Tecrübe",
       description: "Dinamik ve yenilikçi"
     },
     {
-      number: "3+",
+      number: "7+",
       label: "Ülkeye İhracat",
       description: "Büyüyen ağımız"
     }
@@ -59,34 +59,87 @@ const StatsSection = memo(() => {
           </div>
           
           {/* Additional Info */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-[#66B2FF]/20">
-                <div className="text-3xl mb-4">🏆</div>
-                <h4 className="text-lg font-semibold mb-2">Kalite Sertifikaları</h4>
-                <p className="text-[#F1F5F9] text-sm">
-                  Uluslararası kalite standartlarında üretim
-                </p>
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-5xl mx-auto">
+            <div className="group relative text-center">
+              <div className="bg-white/10 backdrop-blur-sm p-5 rounded-2xl border border-[#66B2FF]/20 hover:border-[#66B2FF]/60 hover:bg-white/15 transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+                {/* Animated Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#66B2FF]/0 via-[#FFD700]/0 to-[#66B2FF]/0 group-hover:from-[#66B2FF]/10 group-hover:via-[#FFD700]/5 group-hover:to-[#66B2FF]/10 transition-all duration-500"></div>
+                
+                {/* Icon */}
+                <div className="relative mb-4">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-[#FFD700]/20 to-[#FFD700]/10 border border-[#FFD700]/30 group-hover:from-[#FFD700]/30 group-hover:to-[#FFD700]/20 group-hover:scale-110 transition-all duration-300">
+                    <svg className="w-7 h-7 text-[#FFD700]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    </svg>
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="relative">
+                  <h4 className="text-base font-bold mb-2 group-hover:text-[#FFD700] transition-colors duration-300">Kalite Sertifikaları</h4>
+                  <p className="text-[#F1F5F9] text-xs sm:text-sm leading-relaxed">
+                    Uluslararası kalite standartlarında üretim
+                  </p>
+                </div>
+                
+                {/* Bottom Accent Line */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#66B2FF] via-[#FFD700] to-[#66B2FF] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </div>
             </div>
             
-            <div className="text-center">
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-[#66B2FF]/20">
-                <div className="text-3xl mb-4">🔧</div>
-                <h4 className="text-lg font-semibold mb-2">Teknik Destek</h4>
-                <p className="text-[#F1F5F9] text-sm">
-                  7/24 profesyonel teknik destek hizmeti
-                </p>
+            <div className="group relative text-center">
+              <div className="bg-white/10 backdrop-blur-sm p-5 rounded-2xl border border-[#66B2FF]/20 hover:border-[#66B2FF]/60 hover:bg-white/15 transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+                {/* Animated Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#66B2FF]/0 via-[#FFD700]/0 to-[#66B2FF]/0 group-hover:from-[#66B2FF]/10 group-hover:via-[#FFD700]/5 group-hover:to-[#66B2FF]/10 transition-all duration-500"></div>
+                
+                {/* Icon */}
+                <div className="relative mb-4">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-[#66B2FF]/20 to-[#66B2FF]/10 border border-[#66B2FF]/30 group-hover:from-[#66B2FF]/30 group-hover:to-[#66B2FF]/20 group-hover:scale-110 transition-all duration-300">
+                    <svg className="w-7 h-7 text-[#66B2FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="relative">
+                  <h4 className="text-base font-bold mb-2 group-hover:text-[#66B2FF] transition-colors duration-300">Teknik Destek</h4>
+                  <p className="text-[#F1F5F9] text-xs sm:text-sm leading-relaxed">
+                    7/24 profesyonel teknik destek hizmeti
+                  </p>
+                </div>
+                
+                {/* Bottom Accent Line */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#66B2FF] via-[#FFD700] to-[#66B2FF] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </div>
             </div>
             
-            <div className="text-center">
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-[#66B2FF]/20">
-                <div className="text-3xl mb-4">🚚</div>
-                <h4 className="text-lg font-semibold mb-2">Hızlı Teslimat</h4>
-                <p className="text-[#F1F5F9] text-sm">
-                  Dünya çapında güvenli ve hızlı teslimat
-                </p>
+            <div className="group relative text-center">
+              <div className="bg-white/10 backdrop-blur-sm p-5 rounded-2xl border border-[#66B2FF]/20 hover:border-[#66B2FF]/60 hover:bg-white/15 transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+                {/* Animated Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#66B2FF]/0 via-[#FFD700]/0 to-[#66B2FF]/0 group-hover:from-[#66B2FF]/10 group-hover:via-[#FFD700]/5 group-hover:to-[#66B2FF]/10 transition-all duration-500"></div>
+                
+                {/* Icon */}
+                <div className="relative mb-4">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-[#10B981]/20 to-[#10B981]/10 border border-[#10B981]/30 group-hover:from-[#10B981]/30 group-hover:to-[#10B981]/20 group-hover:scale-110 transition-all duration-300">
+                    <svg className="w-7 h-7 text-[#10B981]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="relative">
+                  <h4 className="text-base font-bold mb-2 group-hover:text-[#10B981] transition-colors duration-300">Hızlı Teslimat</h4>
+                  <p className="text-[#F1F5F9] text-xs sm:text-sm leading-relaxed">
+                    Dünya çapında güvenli ve hızlı teslimat
+                  </p>
+                </div>
+                
+                {/* Bottom Accent Line */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#66B2FF] via-[#FFD700] to-[#66B2FF] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </div>
             </div>
           </div>

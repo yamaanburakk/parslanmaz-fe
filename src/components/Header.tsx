@@ -94,9 +94,6 @@ const Header = () => {
                   </Link>
                 </div>
               </div>
-              <Link href="/projeler" className="text-white hover:text-[#66B2FF] font-semibold relative text-base">
-                Projeler
-              </Link>
               <Link href="/blog" className="text-white hover:text-[#66B2FF] font-semibold relative text-base">
                 Blog
               </Link>
@@ -258,17 +255,6 @@ const Header = () => {
                   </div>
                 )}
               </div>
-              <Link 
-                href="/projeler" 
-                className={`py-3 px-4 rounded-xl font-semibold transition-all duration-200 text-sm sm:text-base ${
-                  activeMenuItem === 'projects' 
-                    ? 'bg-[#66B2FF]/20 text-[#66B2FF] border-l-4 border-[#66B2FF] shadow-lg' 
-                    : 'text-white hover:text-[#66B2FF] hover:bg-[#66B2FF]/10'
-                }`}
-                onClick={() => handleMenuItemClick('projects')}
-              >
-                Projeler
-              </Link>
               <Link 
                 href="/blog" 
                 className={`py-3 px-4 rounded-xl font-semibold transition-all duration-200 text-sm sm:text-base ${

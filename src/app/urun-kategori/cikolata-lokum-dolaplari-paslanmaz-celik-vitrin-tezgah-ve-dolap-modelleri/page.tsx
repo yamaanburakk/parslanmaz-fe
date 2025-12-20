@@ -74,11 +74,14 @@ export default function CikolataLokumPage() {
       <ProductSpecs 
         title="Teknik Özellikler"
         specs={[
-          { label: "Malzeme", value: "Paslanmaz Çelik 304" },
-          { label: "Sıcaklık", value: "18-22°C" },
-          { label: "Aydınlatma", value: "LED" },
-          { label: "Kapak", value: "Şeffaf Cam" },
-          { label: "Üretim", value: "Yerli Üretim" }
+          { label: "Malzeme", value: "Paslanmaz Çelik 304-430 Kalite" },
+          { label: "Sıcaklık Kontrolü", value: "18-22°C (Dijital Termostat)" },
+          { label: "Aydınlatma Sistemi", value: "LED 12V Enerji Tasarruflu" },
+          { label: "Cam Kalınlığı", value: "5mm Temperli Şeffaf Cam" },
+          { label: "Kapı Tipi", value: "Kayar veya Açılır Kapı" },
+          { label: "Raf Sistemi", value: "Ayarlanabilir Paslanmaz Raf" },
+          { label: "Boyut Seçenekleri", value: "Özelleştirilebilir (60-200cm)" },
+          { label: "Üretim Standardı", value: "ISO 9001:2015 Sertifikalı" }
         ]}
       />
       <ProductCTA 

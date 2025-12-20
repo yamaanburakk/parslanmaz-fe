@@ -88,11 +88,14 @@ export default function EkmekUnluMamullerPage() {
       <ProductSpecs 
         title="Teknik Özellikler"
         specs={[
-          { label: "Malzeme", value: "Paslanmaz Çelik 304" },
-          { label: "Kapasite", value: "100-500 Ekmek" },
-          { label: "Havalandırma", value: "Otomatik" },
-          { label: "Kapak", value: "Şeffaf Cam" },
-          { label: "Üretim", value: "Yerli Üretim" }
+          { label: "Malzeme", value: "Paslanmaz Çelik 304-430 Kalite" },
+          { label: "Depolama Kapasitesi", value: "100-500 Ekmek (Modellere Göre)" },
+          { label: "Havalandırma Sistemi", value: "Otomatik Hava Sirkülasyonu" },
+          { label: "Cam Kalınlığı", value: "5mm Temperli Şeffaf Cam" },
+          { label: "Raf Sistemi", value: "Ayarlanabilir Paslanmaz Raf (4-6 Adet)" },
+          { label: "Kapı Tipi", value: "Açılır veya Kayar Kapı Sistemi" },
+          { label: "Boyut Seçenekleri", value: "Özelleştirilebilir (120-250cm)" },
+          { label: "Üretim Standardı", value: "ISO 9001:2015 Sertifikalı" }
         ]}
       />
       <ProductCTA 

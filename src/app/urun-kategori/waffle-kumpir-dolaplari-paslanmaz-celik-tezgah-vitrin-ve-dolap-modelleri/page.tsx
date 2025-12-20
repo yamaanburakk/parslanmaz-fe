@@ -74,11 +74,14 @@ export default function WaffleKumpirPage() {
       <ProductSpecs 
         title="Teknik Özellikler"
         specs={[
-          { label: "Malzeme", value: "Paslanmaz Çelik 304" },
-          { label: "Tip", value: "Mobil/Sabit" },
-          { label: "Isıtma", value: "Elektrikli" },
-          { label: "Tekerlek", value: "4 Adet" },
-          { label: "Üretim", value: "Yerli Üretim" }
+          { label: "Malzeme", value: "Paslanmaz Çelik 304-430 Kalite" },
+          { label: "Kullanım Tipi", value: "Mobil veya Sabit (Seçilebilir)" },
+          { label: "Isıtma Sistemi", value: "Elektrikli Rezistans (220V/380V)" },
+          { label: "Tekerlek Sistemi", value: "4 Adet Frenli Tekerlek (Mobil Modeller)" },
+          { label: "Tezgah Kalınlığı", value: "1.5mm Paslanmaz Çelik" },
+          { label: "Isı Kontrolü", value: "Dijital Termostat (0-200°C)" },
+          { label: "Boyut Seçenekleri", value: "Özelleştirilebilir (80-150cm)" },
+          { label: "Üretim Standardı", value: "ISO 9001:2015 Sertifikalı" }
         ]}
       />
       <ProductCTA 

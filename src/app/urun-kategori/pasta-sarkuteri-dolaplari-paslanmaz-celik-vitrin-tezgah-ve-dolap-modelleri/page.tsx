@@ -88,11 +88,14 @@ export default function PastaSarkuteriPage() {
       <ProductSpecs 
         title="Teknik Özellikler"
         specs={[
-          { label: "Malzeme", value: "Paslanmaz Çelik 304" },
-          { label: "Sıcaklık", value: "0-4°C" },
-          { label: "Aydınlatma", value: "LED" },
-          { label: "Kapak", value: "Şeffaf Cam" },
-          { label: "Üretim", value: "Yerli Üretim" }
+          { label: "Malzeme", value: "Paslanmaz Çelik 304-430 Kalite" },
+          { label: "Soğutma Sistemi", value: "0-4°C (Dijital Termostat Kontrollü)" },
+          { label: "Aydınlatma Sistemi", value: "LED 12V Enerji Tasarruflu" },
+          { label: "Cam Kalınlığı", value: "5mm Temperli Şeffaf Cam" },
+          { label: "Soğutma Teknolojisi", value: "Kompresörlü veya Termoelektrik" },
+          { label: "Raf Sistemi", value: "Ayarlanabilir Paslanmaz Raf (3-4 Adet)" },
+          { label: "Boyut Seçenekleri", value: "Özelleştirilebilir (100-200cm)" },
+          { label: "Üretim Standardı", value: "ISO 9001:2015 Sertifikalı" }
         ]}
       />
       <ProductCTA 

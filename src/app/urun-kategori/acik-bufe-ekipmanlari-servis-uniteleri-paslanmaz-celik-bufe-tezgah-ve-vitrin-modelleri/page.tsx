@@ -132,11 +132,14 @@ export default function AcikBufePage() {
         <ProductSpecs 
           title="Teknik Özellikler"
           specs={[
-            { label: "Malzeme", value: "Paslanmaz Çelik 304" },
-            { label: "Kapasite", value: "50-200 Kişi" },
-            { label: "Isı Kontrolü", value: "Sıcak/Soğuk" },
-            { label: "Boyut", value: "Özelleştirilebilir" },
-            { label: "Üretim", value: "Yerli Üretim" }
+            { label: "Malzeme", value: "Paslanmaz Çelik 304-430 Kalite" },
+            { label: "Servis Kapasitesi", value: "50-200 Kişi (Modüler Sistem)" },
+            { label: "Isı Kontrol Sistemi", value: "Sıcak/Soğuk Bölmeli (0-80°C)" },
+            { label: "Tezgah Kalınlığı", value: "1.5mm Paslanmaz Çelik" },
+            { label: "Aydınlatma", value: "LED Strip Aydınlatma" },
+            { label: "Boyut Seçenekleri", value: "Özelleştirilebilir (120-300cm)" },
+            { label: "Tekerlek Sistemi", value: "4 Adet Frenli Tekerlek (Opsiyonel)" },
+            { label: "Üretim Standardı", value: "ISO 9001:2015 Sertifikalı" }
           ]}
         />
       </Suspense>

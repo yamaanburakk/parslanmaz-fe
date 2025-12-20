@@ -35,7 +35,7 @@ export default function EndustriyelMutfakPage() {
     heroImage: "/endustriyel-mutfak-ürün-kategori/endustiyel-1.jpeg",
     features: [
       {
-        title: "Paslanmaz Çelik 304 Kalite",
+        title: "Paslanmaz Çelik 304-430 Kalite",
         description: "En yüksek kalite standartlarında paslanmaz çelik malzeme kullanımı",
         icon: "🔧"
       },
@@ -88,11 +88,14 @@ export default function EndustriyelMutfakPage() {
       <ProductSpecs 
         title="Teknik Özellikler"
         specs={[
-          { label: "Malzeme", value: "Paslanmaz Çelik 304" },
-          { label: "Kalınlık", value: "1.2mm - 2.0mm" },
-          { label: "Yüzey İşlemi", value: "Fırçalı / Parlak" },
-          { label: "Renk", value: "Gümüş Gri" },
-          { label: "Üretim", value: "Yerli Üretim" }
+          { label: "Malzeme", value: "Paslanmaz Çelik 304-430 Kalite" },
+          { label: "Malzeme Kalınlığı", value: "1.2mm - 2.0mm (Kullanım Alanına Göre)" },
+          { label: "Yüzey İşlemi", value: "Fırçalı / Parlak / Mat Finish" },
+          { label: "Renk Seçenekleri", value: "Gümüş Gri / Özel Renk (Opsiyonel)" },
+          { label: "Kaynak Tekniği", value: "Argon Kaynağı (Paslanmaz)" },
+          { label: "Yüzey Kaplama", value: "Paslanmaz Çelik (Korozif Önleyici)" },
+          { label: "Boyut Seçenekleri", value: "Özelleştirilebilir (Standart + Özel)" },
+          { label: "Üretim Standardı", value: "ISO 9001:2015 Sertifikalı" }
         ]}
       />
       <ProductCTA 
