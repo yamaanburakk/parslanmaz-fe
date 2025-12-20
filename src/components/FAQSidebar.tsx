@@ -1,9 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-
 const FAQSidebar = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const popularQuestions = [
     {
       id: 1,
