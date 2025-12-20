@@ -32,7 +32,7 @@ export default function EndustriyelMutfakPage() {
     title: "Endüstriyel Mutfak Ekipmanları",
     subtitle: "Paslanmaz Çelik Tezgah, Dolap, Raf ve Evye Modelleri",
     description: "Profesyonel mutfaklar için tasarlanmış, yüksek kaliteli paslanmaz çelik ekipmanlar. Dayanıklılık, hijyen ve fonksiyonellik bir arada.",
-    heroImage: "/endustriyel-mutfak-ürün-kategori/endustiyel-1.jpeg",
+    heroImage: "/endustriyel-mutfak-ürün-kategori/endustriyel-1.jpeg",
     features: [
       {
         title: "Paslanmaz Çelik 304-430 Kalite",
@@ -91,7 +91,6 @@ export default function EndustriyelMutfakPage() {
           { label: "Malzeme", value: "Paslanmaz Çelik 304-430 Kalite" },
           { label: "Malzeme Kalınlığı", value: "1.2mm - 2.0mm (Kullanım Alanına Göre)" },
           { label: "Yüzey İşlemi", value: "Fırçalı / Parlak / Mat Finish" },
-          { label: "Renk Seçenekleri", value: "Gümüş Gri / Özel Renk (Opsiyonel)" },
           { label: "Kaynak Tekniği", value: "Argon Kaynağı (Paslanmaz)" },
           { label: "Yüzey Kaplama", value: "Paslanmaz Çelik (Korozif Önleyici)" },
           { label: "Boyut Seçenekleri", value: "Özelleştirilebilir (Standart + Özel)" },

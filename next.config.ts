@@ -41,8 +41,8 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60 * 60 * 24 * 365, // 1 year
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    // Quality settings
-    // qualities: [75, 90, 100], // Removed - not compatible with Next.js 15.0.x
+    // Quality settings - Required for Next.js 16+
+    qualities: [75, 90, 100],
     // Remote patterns
     remotePatterns: [
       {
