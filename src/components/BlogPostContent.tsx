@@ -89,16 +89,16 @@ const BlogPostContent = ({ post }: BlogPostContentProps) => {
           </nav>
         </div>
 
-        {/* Main Content with Enhanced Styling */}
-        <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-headings:font-bold prose-p:text-gray-700 prose-p:leading-relaxed prose-ul:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900 prose-strong:font-semibold">
+        {/* Main Content with Enhanced Styling - Modern & Professional */}
+        <div className="prose prose-lg max-w-none prose-headings:text-[#131C3C] prose-headings:font-bold prose-headings:tracking-tight prose-p:text-[#475569] prose-p:leading-relaxed prose-p:text-base prose-ul:text-[#475569] prose-li:text-[#475569] prose-strong:text-[#131C3C] prose-strong:font-semibold prose-a:text-[#66B2FF] prose-a:no-underline hover:prose-a:underline prose-code:text-[#131C3C] prose-pre:bg-[#1E293B] prose-pre:text-[#F1F5F9]">
           {/* Introduction Section */}
           <section id="giris" className="mb-12">
             <div className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-xl p-6 mb-6 border-l-4 border-primary-500">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+              <h2 className="text-2xl font-bold text-[#131C3C] mb-4 flex items-center">
                 <span className="text-2xl mr-3">🎯</span>
                 Giriş
               </h2>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-[#475569] leading-relaxed text-base">
                 Paslanmaz çelik mutfak ekipmanları, dayanıklılığı ve hijyenik özellikleri nedeniyle endüstriyel mutfaklarda yaygın olarak kullanılmaktadır. Ancak bu ekipmanların uzun ömürlü olması ve optimal performans göstermesi için düzenli bakım ve doğru temizlik yöntemleri uygulanmalıdır.
               </p>
             </div>
@@ -106,11 +106,11 @@ const BlogPostContent = ({ post }: BlogPostContentProps) => {
 
           {/* Daily Cleaning Section */}
           <section id="gunluk-temizlik" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+            <h2 className="text-2xl font-bold text-[#131C3C] mb-6 flex items-center">
               <span className="text-2xl mr-3">🧽</span>
               Günlük Temizlik Rutini
             </h2>
-            <p className="text-gray-700 mb-6 leading-relaxed">
+            <p className="text-[#475569] mb-6 leading-relaxed text-base">
               Her kullanım sonrası ekipmanlarınızı temizlemek, kalıcı lekelerin oluşmasını önler ve hijyen standartlarını korur.
             </p>
             
@@ -150,11 +150,11 @@ const BlogPostContent = ({ post }: BlogPostContentProps) => {
 
           {/* Weekly Maintenance Section */}
           <section id="haftalik-bakim" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+            <h2 className="text-2xl font-bold text-[#131C3C] mb-6 flex items-center">
               <span className="text-2xl mr-3">🔧</span>
               Haftalık Bakım
             </h2>
-            <p className="text-gray-700 mb-6 leading-relaxed">
+            <p className="text-[#475569] mb-6 leading-relaxed text-base">
               Haftalık bakım rutini, ekipmanlarınızın uzun vadeli performansını garanti eder.
             </p>
             
@@ -182,11 +182,11 @@ const BlogPostContent = ({ post }: BlogPostContentProps) => {
 
           {/* What to Avoid Section */}
           <section id="kacinilmasi-gerekenler" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+            <h2 className="text-2xl font-bold text-[#131C3C] mb-6 flex items-center">
               <span className="text-2xl mr-3">⚠️</span>
               Kaçınılması Gerekenler
             </h2>
-            <p className="text-gray-700 mb-6 leading-relaxed">
+            <p className="text-[#475569] mb-6 leading-relaxed text-base">
               Paslanmaz çelik ekipmanlarınızın zarar görmemesi için aşağıdaki maddelerden kaçının:
             </p>
             
@@ -212,11 +212,11 @@ const BlogPostContent = ({ post }: BlogPostContentProps) => {
 
           {/* Professional Maintenance Section */}
           <section id="profesyonel-bakim" className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+            <h2 className="text-2xl font-bold text-[#131C3C] mb-6 flex items-center">
               <span className="text-2xl mr-3">👨‍🔧</span>
               Profesyonel Bakım
             </h2>
-            <p className="text-gray-700 mb-6 leading-relaxed">
+            <p className="text-[#475569] mb-6 leading-relaxed text-base">
               Yılda en az bir kez, ekipmanlarınızın profesyonel bakımını yaptırın. Bu bakım sırasında:
             </p>
             
@@ -245,11 +245,11 @@ const BlogPostContent = ({ post }: BlogPostContentProps) => {
           {/* Conclusion Section */}
           <section id="sonuc" className="mb-12">
             <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+              <h2 className="text-2xl font-bold text-[#131C3C] mb-4 flex items-center">
                 <span className="text-2xl mr-3">✅</span>
                 Sonuç
               </h2>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-[#475569] leading-relaxed text-base">
                 Düzenli bakım ve doğru temizlik yöntemleri, paslanmaz çelik ekipmanlarınızın ömrünü uzatır ve performansını optimize eder. Bu sayede hem maliyet tasarrufu sağlar hem de hijyen standartlarınızı korursunuz.
               </p>
             </div>
@@ -267,14 +267,14 @@ const BlogPostContent = ({ post }: BlogPostContentProps) => {
               </div>
               <div className="flex-1">
                 <div className="flex items-center space-x-3 mb-2">
-                  <h4 className="text-xl font-bold text-gray-900">
+                  <h4 className="text-xl font-bold text-[#131C3C]">
                     {post.author.name}
                   </h4>
-                  <span className="bg-accent-100 text-accent-700 px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="bg-gradient-to-r from-[#66B2FF]/20 to-[#FF6B35]/20 text-[#66B2FF] px-3 py-1 rounded-full text-sm font-medium border border-[#66B2FF]/30">
                     Uzman Yazar
                   </span>
                 </div>
-                <p className="text-gray-600 mb-4 leading-relaxed">
+                <p className="text-[#64748B] mb-4 leading-relaxed text-base">
                   {post.author.bio}
                 </p>
                 <div className="flex space-x-4">
@@ -292,8 +292,8 @@ const BlogPostContent = ({ post }: BlogPostContentProps) => {
 
         {/* Tags - Enhanced */}
         <div className="mt-8 pt-8 border-t border-gray-200">
-          <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-            <svg className="w-5 h-5 text-primary-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <h4 className="text-lg font-bold text-[#131C3C] mb-4 flex items-center">
+            <svg className="w-5 h-5 text-[#66B2FF] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
             </svg>
             Etiketler
@@ -302,7 +302,7 @@ const BlogPostContent = ({ post }: BlogPostContentProps) => {
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="bg-gradient-to-r from-primary-100 to-primary-200 hover:from-primary-200 hover:to-primary-300 text-primary-700 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer hover:shadow-md"
+                className="bg-gradient-to-r from-[#66B2FF]/10 to-[#66B2FF]/20 hover:from-[#66B2FF]/20 hover:to-[#66B2FF]/30 text-[#66B2FF] px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer hover:shadow-md border border-[#66B2FF]/20"
               >
                 #{tag}
               </span>
@@ -310,33 +310,6 @@ const BlogPostContent = ({ post }: BlogPostContentProps) => {
           </div>
         </div>
 
-        {/* Social Share - Enhanced */}
-        <div className="mt-8 pt-8 border-t border-gray-200">
-          <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-            <svg className="w-5 h-5 text-primary-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
-            </svg>
-            Bu Yazıyı Paylaş
-          </h4>
-          <div className="flex flex-wrap gap-3">
-            {[
-              { name: 'Facebook', icon: '📘', color: 'bg-blue-500 hover:bg-blue-600' },
-              { name: 'Twitter', icon: '🐦', color: 'bg-blue-400 hover:bg-blue-500' },
-              { name: 'LinkedIn', icon: '💼', color: 'bg-blue-700 hover:bg-blue-800' },
-              { name: 'WhatsApp', icon: '💬', color: 'bg-green-500 hover:bg-green-600' },
-              { name: 'Telegram', icon: '✈️', color: 'bg-blue-600 hover:bg-blue-700' },
-              { name: 'E-posta', icon: '📧', color: 'bg-gray-600 hover:bg-gray-700' }
-            ].map((social) => (
-              <button
-                key={social.name}
-                className={`${social.color} text-white w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-105 hover:shadow-lg`}
-                title={`${social.name}'da paylaş`}
-              >
-                <span className="text-lg">{social.icon}</span>
-              </button>
-            ))}
-          </div>
-        </div>
 
         {/* Newsletter CTA - Enhanced */}
         <div className="mt-8 bg-gradient-to-r from-primary-500 via-primary-600 to-accent-500 rounded-xl p-8 text-white text-center relative overflow-hidden">
