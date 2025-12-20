@@ -114,8 +114,23 @@ const Footer = memo(() => {
                 </Link>
               </li>
               <li>
+                <Link href="/urun-kategori/cikolata-lokum-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" className="text-[#F1F5F9] hover:text-[#66B2FF] transition-colors text-sm sm:text-base">
+                  Çikolata & Lokum Dolapları
+                </Link>
+              </li>
+              <li>
+                <Link href="/urun-kategori/borek-baklava-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" className="text-[#F1F5F9] hover:text-[#66B2FF] transition-colors text-sm sm:text-base">
+                  Börek & Baklava Dolapları
+                </Link>
+              </li>
+              <li>
                 <Link href="/urun-kategori/pasta-sarkuteri-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri" className="text-[#F1F5F9] hover:text-[#66B2FF] transition-colors text-sm sm:text-base">
                   Pasta & Şarküteri Dolapları
+                </Link>
+              </li>
+              <li>
+                <Link href="/urun-kategori/ekmek-unlu-mamuller-dolaplari-paslanmaz-celik-firin-vitrin-ve-tezgah-modelleri" className="text-[#F1F5F9] hover:text-[#66B2FF] transition-colors text-sm sm:text-base">
+                  Ekmek & Unlu Mamuller Dolapları
                 </Link>
               </li>
               <li>
