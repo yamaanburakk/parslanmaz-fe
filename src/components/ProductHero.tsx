@@ -1,4 +1,7 @@
+'use client';
+
 import Image from "next/image";
+import { useViewerCount } from "@/hooks/useViewerCount";
 
 interface ProductHeroProps {
   title: string;
@@ -8,6 +11,7 @@ interface ProductHeroProps {
 }
 
 const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroProps) => {
+  const viewerCount = useViewerCount();
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-[#131C3C] via-[#1A2647] to-[#223052] text-white overflow-hidden">
       {/* Background Image */}
@@ -20,6 +24,10 @@ const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroPro
           priority
           quality={100}
           sizes="100vw"
+          onError={() => {
+            console.error('Image load error:', heroImage);
+            // Fallback to a default image if needed
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#131C3C]/80 via-[#1A2647]/80 to-[#223052]/80"></div>
       </div>
@@ -37,9 +45,24 @@ const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroPro
                 <h2 className="text-2xl md:text-3xl bg-gradient-to-r from-[#66B2FF] to-[#FF6B35] bg-clip-text text-transparent mb-6 font-semibold">
                   {subtitle}
                 </h2>
-                <p className="text-base sm:text-lg text-[#F8FAFC] leading-relaxed font-medium">
+                <p className="text-base sm:text-lg text-[#F8FAFC] leading-relaxed font-medium mb-6">
                   {description}
                 </p>
+                
+                {/* Corporate Viewer Count Indicator */}
+                <div className="inline-flex items-center gap-2.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-3 py-2">
+                  {/* Minimal live indicator */}
+                  <div className="relative flex items-center justify-center w-2 h-2 flex-shrink-0">
+                    <div className="absolute w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <div className="relative w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                  </div>
+                  
+                  {/* Count and text */}
+                  <span className="text-sm font-medium text-white/90 tabular-nums">
+                    <span className="font-semibold text-white">{viewerCount}</span>
+                    <span className="text-white/70 ml-1.5">kişi şu anda bu ürünü inceliyor</span>
+                  </span>
+                </div>
               </div>
               
             </div>
@@ -55,6 +78,10 @@ const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroPro
                   priority
                   quality={100}
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  onError={() => {
+                    console.error('Image load error:', heroImage);
+                    // Fallback to a default image if needed
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>

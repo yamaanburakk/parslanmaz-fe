@@ -26,6 +26,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://parslanmaz-fe.vercel.app'),
   title: {
     default: "Pars Endüstriyel Mutfak | Paslanmaz Çelik Mutfak Ekipmanları",
     template: "%s | Pars Endüstriyel Mutfak",

@@ -184,9 +184,12 @@ const BlogPostSidebar = ({ post }: BlogPostSidebarProps) => {
         <p className="text-accent-100 text-sm mb-4">
           Bu konu hakkında daha fazla bilgi almak ister misiniz?
         </p>
-        <button className="bg-white text-accent-600 px-6 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">
+        <Link 
+          href="/iletisim"
+          className="inline-block bg-white text-accent-600 px-6 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors"
+        >
           Uzmanla İletişime Geç
-        </button>
+        </Link>
       </div>
 
     </div>

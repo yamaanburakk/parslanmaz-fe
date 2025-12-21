@@ -91,18 +91,19 @@ const Footer = memo(() => {
                 </div>
               </div>
               
-              <div className="flex items-start justify-center sm:justify-start space-x-3">
-                <svg className="w-5 h-5 text-[#66B2FF] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <div className="pt-0.5 space-y-2">
-                  <a href="mailto:info@parslanmaz.com" className="block text-[#F1F5F9] hover:text-[#66B2FF] transition-colors text-sm sm:text-base">
-                    info@parslanmaz.com
-                  </a>
-                  <a href="mailto:sales@parslanmaz.com" className="block text-[#F1F5F9] hover:text-[#66B2FF] transition-colors text-sm sm:text-base">
-                    sales@parslanmaz.com
-                  </a>
-                </div>
+              <div className="space-y-1">
+                <a href="mailto:info@parslanmaz.com" className="flex items-center justify-center sm:justify-start gap-2 text-[#F1F5F9] hover:text-[#66B2FF] transition-colors text-sm sm:text-base">
+                  <svg className="w-4 h-4 text-[#66B2FF] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span>info@parslanmaz.com</span>
+                </a>
+                <a href="mailto:sales@parslanmaz.com" className="flex items-center justify-center sm:justify-start gap-2 text-[#F1F5F9] hover:text-[#66B2FF] transition-colors text-sm sm:text-base">
+                  <svg className="w-4 h-4 text-[#66B2FF] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span>sales@parslanmaz.com</span>
+                </a>
               </div>
             </div>
           </div>
