@@ -105,11 +105,9 @@ const HeroSection = memo(() => {
             <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed font-medium" style={{
               textShadow: '2px 2px 4px rgba(0,0,0,0.9)'
             }}>
-              Restoran, otel, kafe, fırın ve catering işletmeleri için 
-              <span className="text-[#B8860B] font-bold" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}> pasta dolabı</span>,
-              <span className="text-[#B8860B] font-bold" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}> kumpir-waffle dolabı</span>,
-              <span className="text-[#B8860B] font-bold" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}> teşhir dolapları</span> ve
-              <span className="text-[#B8860B] font-bold" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}> özel üretim çelik tezgahlar</span>.
+              Restoran, otel, kafe, catering ve endüstriyel mutfak projeleri için 
+              <span className="text-[#B8860B] font-bold" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}> paslanmaz çelik ekipman ve sistemleri</span> ihtiyaca özel tasarlıyor, üretiyor ve 
+              <span className="text-[#B8860B] font-bold" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}> anahtar teslim çözümler</span> sunuyoruz.
             </p>
           </div>
           
