@@ -6,11 +6,13 @@ const ProjectsHero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=100"
           alt="Endüstriyel Mutfak Projeleri"
           fill
           className="object-cover opacity-15"
           priority
+          quality={100}
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A]/90 via-[#1E293B]/90 to-[#334155]/90"></div>
       </div>

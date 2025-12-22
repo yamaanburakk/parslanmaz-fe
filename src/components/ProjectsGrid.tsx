@@ -200,6 +200,11 @@ const ProjectsGrid = memo(() => {
                     alt={project.title}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    quality={100}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    priority={project.id <= 3}
+                    loading={project.id <= 3 ? "eager" : "lazy"}
+                    fetchPriority={project.id <= 3 ? "high" : "auto"}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 via-transparent to-transparent"></div>
                   

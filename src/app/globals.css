@@ -13,6 +13,7 @@ img{image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges}
 @keyframes loading{0%{background-position:200% 0}100%{background-position:-200% 0}}
 @keyframes gradient{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 @keyframes gradient-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes button-pulse{0%,100%{box-shadow:0 10px 30px rgba(212,175,55,0.4),0 4px 12px rgba(212,175,55,0.25),inset 0 1px 0 rgba(255,255,255,0.25),inset 0 -1px 0 rgba(0,0,0,0.15)}50%{box-shadow:0 12px 35px rgba(212,175,55,0.5),0 6px 15px rgba(212,175,55,0.35),inset 0 1px 0 rgba(255,255,255,0.3),inset 0 -1px 0 rgba(0,0,0,0.2)}}
 .skeleton{background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:200% 100%;animation:loading 1.5s infinite;will-change:background-position}
 .animate-gradient{background-size:200% 200%;animation:gradient 3s ease infinite;will-change:background-position}
 
@@ -171,7 +172,30 @@ p{font-size:.875rem;line-height:1.6;font-weight:400}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 }
 .hero-section{backface-visibility:hidden;transform:translateZ(0)}
-.hero-background{backface-visibility:hidden;transform:translateZ(0)}
+.hero-image-container{
+  image-rendering:-webkit-optimize-contrast;
+  image-rendering:crisp-edges;
+  -webkit-transform:translateZ(0);
+  transform:translate3d(0,0,0);
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
+  will-change:transform;
+}
+.hero-background{
+  backface-visibility:hidden;
+  transform:translateZ(0);
+  -webkit-image-rendering:-webkit-optimize-contrast;
+  image-rendering:crisp-edges;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  -ms-interpolation-mode:bicubic;
+  will-change:auto;
+  -webkit-transform:translateZ(0);
+  transform:translate3d(0,0,0);
+  -webkit-backface-visibility:hidden;
+  -moz-backface-visibility:hidden;
+  -ms-backface-visibility:hidden;
+}
 .lazy-load{content-visibility:auto;contain-intrinsic-size:0 400px}
 
 

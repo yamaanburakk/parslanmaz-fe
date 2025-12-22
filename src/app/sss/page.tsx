@@ -1,19 +1,34 @@
 import dynamic from 'next/dynamic';
+import { Metadata } from 'next';
 import FAQHero from '@/components/FAQHero';
 import FAQCategories from '@/components/FAQCategories';
 
 // Lazy load non-critical components
 const FAQAccordion = dynamic(() => import('@/components/FAQAccordion'), {
   loading: () => <div className="h-96 bg-gradient-to-br from-[#0F172A] to-[#1E293B] animate-pulse rounded-2xl" />,
+  ssr: true,
 });
 
 const FAQSidebar = dynamic(() => import('@/components/FAQSidebar'), {
   loading: () => <div className="h-96 bg-gradient-to-br from-[#0F172A] to-[#1E293B] animate-pulse rounded-2xl" />,
+  ssr: true,
 });
 
-export const metadata = {
-  title: "Sıkça Sorulan Sorular - Pars Endüstriyel Mutfak",
-  description: "Endüstriyel mutfak ekipmanları hakkında merak ettiğiniz her şey. Uzman cevapları ve detaylı açıklamalar.",
+export const metadata: Metadata = {
+  title: "Sıkça Sorulan Sorular (SSS) - Pars Endüstriyel Mutfak",
+  description: "Endüstriyel mutfak ekipmanları hakkında merak ettiğiniz her şey. Uzman cevapları ve detaylı açıklamalar. Paslanmaz çelik, mutfak dolapları, tezgahlar hakkında SSS.",
+  keywords: [
+    "endüstriyel mutfak sss",
+    "mutfak ekipmanları sorular",
+    "paslanmaz çelik sorular",
+    "mutfak dolapları sss",
+    "endüstriyel mutfak soru cevap",
+  ],
+  openGraph: {
+    title: "Sıkça Sorulan Sorular - Pars Endüstriyel Mutfak",
+    description: "Endüstriyel mutfak ekipmanları hakkında merak ettiğiniz her şey.",
+    type: "website",
+  },
 };
 
 export const revalidate = 7200; // Revalidate every 2 hours

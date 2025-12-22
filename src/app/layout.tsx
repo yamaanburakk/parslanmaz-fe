@@ -135,6 +135,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         
+        {/* Preload Critical Hero Image for Maximum Sharpness */}
+        <link rel="preload" as="image" href="/anasayfa-2.jpeg" fetchPriority="high" />
+        
         {/* Disable auto-translation to avoid hydration mismatches */}
         <meta name="google" content="notranslate" />
 

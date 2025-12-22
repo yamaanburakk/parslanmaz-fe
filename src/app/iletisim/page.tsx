@@ -1,18 +1,33 @@
 import dynamic from 'next/dynamic';
+import { Metadata } from 'next';
 import ContactHero from '@/components/ContactHero';
 
 // Lazy load non-critical components
 const ContactForm = dynamic(() => import('@/components/ContactForm'), {
   loading: () => <div className="h-96 bg-gradient-to-br from-[#0F172A] to-[#1E293B] animate-pulse rounded-2xl" />,
+  ssr: true,
 });
 
 const GoogleMap = dynamic(() => import('@/components/GoogleMap'), {
   loading: () => <div className="h-96 bg-gray-200 animate-pulse rounded-2xl" />,
+  ssr: true,
 });
 
-export const metadata = {
-  title: "İletişim - Pars Endüstriyel Mutfak",
-  description: "Pars Endüstriyel Mutfak ile iletişime geçin. Profesyonel mutfak çözümleriniz için uzman ekibimizle görüşün.",
+export const metadata: Metadata = {
+  title: "İletişim - Pars Endüstriyel Mutfak | İletişim Bilgileri",
+  description: "Pars Endüstriyel Mutfak ile iletişime geçin. Profesyonel mutfak çözümleriniz için uzman ekibimizle görüşün. 7/24 destek hattı.",
+  keywords: [
+    "pars endüstriyel mutfak iletişim",
+    "mutfak ekipmanları iletişim",
+    "istanbul mutfak firması iletişim",
+    "endüstriyel mutfak telefon",
+    "mutfak ekipmanları adres",
+  ],
+  openGraph: {
+    title: "İletişim - Pars Endüstriyel Mutfak",
+    description: "Pars Endüstriyel Mutfak ile iletişime geçin.",
+    type: "website",
+  },
 };
 
 export const revalidate = 3600;

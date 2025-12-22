@@ -1,19 +1,34 @@
 import dynamic from 'next/dynamic';
+import { Metadata } from 'next';
 import BlogHero from '@/components/BlogHero';
 import BlogCategories from '@/components/BlogCategories';
 
 // Lazy load below-the-fold content
 const BlogGrid = dynamic(() => import('@/components/BlogGrid'), {
   loading: () => <div className="h-96 bg-white animate-pulse rounded-2xl" />,
+  ssr: true,
 });
 
 const BlogSidebar = dynamic(() => import('@/components/BlogSidebar'), {
   loading: () => <div className="h-96 bg-white animate-pulse rounded-2xl" />,
+  ssr: true,
 });
 
-export const metadata = {
-  title: "Blog - Pars Endüstriyel Mutfak",
-  description: "Endüstriyel mutfak ekipmanları, paslanmaz çelik ürünler ve mutfak tasarımı hakkında bilgilendirici makaleler.",
+export const metadata: Metadata = {
+  title: "Blog - Pars Endüstriyel Mutfak | Mutfak Ekipmanları Makaleleri",
+  description: "Endüstriyel mutfak ekipmanları, paslanmaz çelik ürünler ve mutfak tasarımı hakkında bilgilendirici makaleler. Uzman yazılar ve sektör haberleri.",
+  keywords: [
+    "endüstriyel mutfak blog",
+    "mutfak ekipmanları makaleler",
+    "paslanmaz çelik blog",
+    "mutfak tasarımı yazılar",
+    "endüstriyel mutfak haberler",
+  ],
+  openGraph: {
+    title: "Blog - Pars Endüstriyel Mutfak",
+    description: "Endüstriyel mutfak ekipmanları hakkında bilgilendirici makaleler.",
+    type: "website",
+  },
 };
 
 export const revalidate = 1800; // Revalidate every 30 minutes for blog content
