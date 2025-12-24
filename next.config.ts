@@ -5,6 +5,12 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 const nextConfig: NextConfig = {
+  // Static export için out klasörüne build
+  output: 'export',
+  
+  // cPanel için trailing slash ekle (URL sonunda / olsun)
+  trailingSlash: true,
+  
   // Performance optimizations
   compress: true,
   poweredByHeader: false,
@@ -43,19 +49,10 @@ const nextConfig: NextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     // Quality settings - Required for Next.js 16+
     qualities: [75, 90, 100],
-    // Remote patterns
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
-    ],
     // Loader optimization
     loader: 'default',
-    // Unoptimized for development
-    unoptimized: false,
+    // Static export için unoptimized olmalı
+    unoptimized: true,
   },
 
   // Webpack optimizations (simplified for Vercel compatibility)

@@ -11,7 +11,7 @@ interface ProductHeroProps {
 }
 
 const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroProps) => {
-  const viewerCount = useViewerCount();
+  const viewerCount = 10
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-[#131C3C] via-[#1A2647] to-[#223052] text-white overflow-hidden">
       {/* Background Image */}
@@ -50,7 +50,7 @@ const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroPro
                 </p>
                 
                 {/* Corporate Viewer Count Indicator */}
-                <div className="inline-flex items-center gap-2.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-3 py-2">
+                <div suppressHydrationWarning className="inline-flex items-center gap-2.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-3 py-2">
                   {/* Minimal live indicator */}
                   <div className="relative flex items-center justify-center w-2 h-2 flex-shrink-0">
                     <div className="absolute w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
@@ -58,8 +58,8 @@ const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroPro
                   </div>
                   
                   {/* Count and text */}
-                  <span className="text-sm font-medium text-white/90 tabular-nums">
-                    <span className="font-semibold text-white">{viewerCount}</span>
+                  <span suppressHydrationWarning className="text-sm font-medium text-white/90 tabular-nums">
+                    <span suppressHydrationWarning className="font-semibold text-white">{viewerCount}</span>
                     <span className="text-white/70 ml-1.5">kişi şu anda bu ürünü inceliyor</span>
                   </span>
                 </div>

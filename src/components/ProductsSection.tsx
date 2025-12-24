@@ -25,7 +25,7 @@ const ProductsSection = memo(() => {
       description: "Profesyonel mutfaklar için özel tasarım ekipmanlar",
       // Local optimized hero for the card
       image: {
-        src: "/endustriyel-mutfak-ekipmanları.jpeg",
+        src: "/endustriyel-mutfak-ekipmanlari.jpeg",
         alt: "Endüstriyel Mutfak Ekipmanları görseli"
       },
       href: "/urun-kategori/endustriyel-mutfak-ekipmanlari-paslanmaz-celik-tezgah-dolap-raf-ve-evye-modelleri"

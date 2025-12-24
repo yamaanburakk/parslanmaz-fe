@@ -7,6 +7,14 @@ import { useState, useEffect, useRef } from 'react';
  * Sayı yavaş ve yumuşak bir şekilde değişir
  */
 export function useViewerCount() {
+  // İlk değeri sabit 15 olarak başlat (hydration hatası olmaması için)
+  const [displayCount, setDisplayCount] = useState<number>(15);
+  const [isClient, setIsClient] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const animationRef = useRef<number | null>(null);
+  const isMountedRef = useRef(true);
+  const displayCountRef = useRef<number>(15);
+  
   // İlk değeri belirle (8-42 arası gerçekçi bir aralık)
   const getRandomCount = (): number => {
     // %75 ihtimalle 8-28 arası (daha gerçekçi)
@@ -19,19 +27,22 @@ export function useViewerCount() {
     }
   };
 
-  const initialCount = getRandomCount();
-  const [displayCount, setDisplayCount] = useState<number>(initialCount);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const animationRef = useRef<number | null>(null);
-  const isMountedRef = useRef(true);
-  const displayCountRef = useRef<number>(initialCount);
-
   // displayCount değiştiğinde ref'i güncelle
   useEffect(() => {
     displayCountRef.current = displayCount;
   }, [displayCount]);
 
+  // İlk mount'da client-side olduğumuzu belirle
   useEffect(() => {
+    setIsClient(true);
+    // İlk gerçek değeri ayarla
+    const initialCount = getRandomCount();
+    setDisplayCount(initialCount);
+    displayCountRef.current = initialCount;
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return; // Client-side değilse çalışma
     isMountedRef.current = true;
 
     // Smooth count animation - daha yavaş ve profesyonel
@@ -118,7 +129,7 @@ export function useViewerCount() {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, []); // Sadece mount olduğunda çalış
+  }, [isClient]); // isClient değiştiğinde yeniden çalış
 
   return displayCount;
 }

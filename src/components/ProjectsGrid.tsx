@@ -9,7 +9,7 @@ const ProjectsGrid = memo(() => {
       category: "Otel & Resort",
       location: "İstanbul, Türkiye",
       description: "5 yıldızlı otel için tam donanımlı endüstriyel mutfak tasarımı ve kurulumu.",
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/endustriyel-mutfak-urun-kategori/endustriyel-1.jpeg",
       features: ["Paslanmaz Çelik Tezgahlar", "Özel Dolap Sistemleri", "Hijyenik Yüzeyler"],
       year: "2024"
     },
@@ -19,7 +19,7 @@ const ProjectsGrid = memo(() => {
       category: "Restoran",
       location: "Ankara, Türkiye",
       description: "15 şubeli restoran zinciri için standart mutfak ekipmanları ve özel tasarım çözümler.",
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/acik-bufe-urun-kategori/acik-bufe-1.jpeg",
       features: ["Modüler Tasarım", "Hızlı Kurulum", "Bakım Kolaylığı"],
       year: "2024"
     },
@@ -29,7 +29,7 @@ const ProjectsGrid = memo(() => {
       category: "Sağlık",
       location: "İzmir, Türkiye",
       description: "500 yataklı hastane için hijyen standartlarına uygun mutfak ekipmanları.",
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/endustriyel-mutfak-urun-kategori/endustriyel-2.jpeg",
       features: ["Hijyen Sertifikası", "Özel Temizlik", "Dayanıklı Yapı"],
       year: "2023"
     },
@@ -39,7 +39,7 @@ const ProjectsGrid = memo(() => {
       category: "Kafe & Bar",
       location: "Bursa, Türkiye",
       description: "8 şubeli kafe zinciri için modern ve estetik mutfak çözümleri.",
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/pasta-urun-kategori/pasta-1.jpeg",
       features: ["Estetik Tasarım", "Fonksiyonellik", "Maliyet Etkinliği"],
       year: "2023"
     },
@@ -49,7 +49,7 @@ const ProjectsGrid = memo(() => {
       category: "Catering",
       location: "Dubai, UAE",
       description: "Uluslararası catering firması için büyük kapasiteli mutfak ekipmanları.",
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/endustriyel-mutfak-urun-kategori/endustriyel-3.jpeg",
       features: ["Büyük Kapasite", "Uluslararası Standart", "Hızlı Teslimat"],
       year: "2023"
     },
@@ -59,7 +59,7 @@ const ProjectsGrid = memo(() => {
       category: "Fırın & Pastane",
       location: "Antalya, Türkiye",
       description: "12 şubeli fırın zinciri için özel ekmek ve pasta dolapları.",
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/unlu-mamul-urun-kategori/unlu-1.jpeg",
       features: ["Özel Tasarım", "Tazelik Koruma", "Görsel Sunum"],
       year: "2022"
     },
@@ -69,7 +69,7 @@ const ProjectsGrid = memo(() => {
       category: "Havacılık",
       location: "İstanbul, Türkiye",
       description: "Uluslararası havalimanı VIP lounge için premium mutfak ekipmanları ve servis sistemleri.",
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/acik-bufe-urun-kategori/acik-bufe-2.jpeg",
       features: ["Premium Kalite", "Sessiz Çalışma", "Hızlı Servis"],
       year: "2024"
     },
@@ -79,7 +79,7 @@ const ProjectsGrid = memo(() => {
       category: "AVM & Food Court",
       location: "İzmir, Türkiye",
       description: "Büyük AVM food court için 25+ restoran mutfağı tasarımı ve kurulumu.",
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/endustriyel-mutfak-urun-kategori/endustriyel-4.jpeg",
       features: ["Merkezi Sistem", "Yüksek Kapasite", "Standart Kalite"],
       year: "2024"
     },
@@ -89,7 +89,7 @@ const ProjectsGrid = memo(() => {
       category: "Otel & Resort",
       location: "Türkiye Geneli",
       description: "35 otelli zincir için standart mutfak ekipmanları tedariki ve kurulumu.",
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/acik-bufe-urun-kategori/acik-bufe-3.jpeg",
       features: ["Standart Tasarım", "Toplu Üretim", "Kalite Garantisi"],
       year: "2023"
     },
@@ -99,7 +99,7 @@ const ProjectsGrid = memo(() => {
       category: "Fine Dining",
       location: "İstanbul, Türkiye",
       description: "Michelin yıldızlı restoran için özel tasarım mutfak ekipmanları ve aksesuarlar.",
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/pasta-urun-kategori/pasta-2.jpeg",
       features: ["Özel Tasarım", "Premium Malzeme", "Mükemmellik"],
       year: "2023"
     },
@@ -109,7 +109,7 @@ const ProjectsGrid = memo(() => {
       category: "Eğitim",
       location: "Ankara, Türkiye",
       description: "15,000 öğrenci kapasiteli üniversite yemekhanesi için tam donanımlı mutfak.",
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/endustriyel-mutfak-urun-kategori/endustriyel-5.jpeg",
       features: ["Yüksek Kapasite", "Dayanıklılık", "Hijyen Standartları"],
       year: "2023"
     },
@@ -119,7 +119,7 @@ const ProjectsGrid = memo(() => {
       category: "Catering",
       location: "Kocaeli, Türkiye",
       description: "Günlük 50,000 porsiyon kapasiteli endüstriyel catering mutfağı kurulumu.",
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/acik-bufe-urun-kategori/acik-bufe-4.jpeg",
       features: ["Endüstriyel Kapasite", "Otomasyon", "Verimlilik"],
       year: "2023"
     },
@@ -129,7 +129,7 @@ const ProjectsGrid = memo(() => {
       category: "Otel & Resort",
       location: "Bodrum, Türkiye",
       description: "Lüks boutique otel için açık mutfak konsepti ve özel tasarım ekipmanlar.",
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/borek-urun-kategori/borek-1.jpeg",
       features: ["Açık Mutfak", "Estetik Tasarım", "Show Cooking"],
       year: "2022"
     },
@@ -139,7 +139,7 @@ const ProjectsGrid = memo(() => {
       category: "Fast Food",
       location: "Türkiye & Yurt Dışı",
       description: "120+ şubeli fast food zinciri için standart mutfak ekipmanları tedariki.",
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/waffle-urun-kategori/waffle-1.jpeg",
       features: ["Hızlı Kurulum", "Standart Sistem", "Global Kalite"],
       year: "2022"
     },
@@ -149,7 +149,7 @@ const ProjectsGrid = memo(() => {
       category: "Fırın & Pastane",
       location: "İstanbul, Türkiye",
       description: "45 şubeli pastane ve kafe zinciri için özel vitrin ve teşhir dolapları.",
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/lokum-urun-kategori/lokum-1.jpeg",
       features: ["Özel Vitrinler", "Soğutma Sistemleri", "LED Aydınlatma"],
       year: "2022"
     }
