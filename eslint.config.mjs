@@ -12,6 +12,9 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
+    rules: {
+      "@next/next/google-font-preconnect": "off", // Disable rule as preconnect is handled manually
+    },
     ignores: [
       "node_modules/**",
       ".next/**",

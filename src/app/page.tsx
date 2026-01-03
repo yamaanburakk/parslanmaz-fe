@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description: "Pars Endüstriyel Mutfak, paslanmaz çelik ekipman üretiminde uzmanlaşmış, yenilikçi tasarım ve kaliteli üretim anlayışıyla sektörde fark yaratan lider firmadır. Restoran, otel, kafe, fırın ve catering işletmeleri için profesyonel mutfak çözümleri sunuyoruz.",
     images: [
       {
-        url: "https://parslanmaz-fe.vercel.app/og-image.jpg",
+        url: "https://www.parslanmaz.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Pars Endüstriyel Mutfak - Paslanmaz Çelik Mutfak Ekipmanları",

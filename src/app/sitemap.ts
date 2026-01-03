@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next'
 export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://parslanmaz-fe.vercel.app'
+  const baseUrl = 'https://www.parslanmaz.com'
   const currentDate = new Date()
 
   return [

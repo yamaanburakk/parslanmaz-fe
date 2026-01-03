@@ -24,96 +24,32 @@
       "purpose": "any maskable"
     }
   ],
-  "screenshots": [
-    {
-      "src": "/screenshot-mobile.png",
-      "sizes": "390x844",
-      "type": "image/png",
-      "form_factor": "narrow"
-    },
-    {
-      "src": "/screenshot-desktop.png",
-      "sizes": "1920x1080",
-      "type": "image/png",
-      "form_factor": "wide"
-    }
-  ],
   "shortcuts": [
     {
       "name": "Hakkımızda",
       "short_name": "Hakkımızda",
       "description": "Firmamız hakkında bilgi alın",
-      "url": "/hakkimizda",
-      "icons": [
-        {
-          "src": "/icon-about.png",
-          "sizes": "96x96"
-        }
-      ]
+      "url": "/hakkimizda"
     },
     {
       "name": "Projeler",
       "short_name": "Projeler",
       "description": "Tamamlanan projelerimizi görün",
-      "url": "/projeler",
-      "icons": [
-        {
-          "src": "/icon-projects.png",
-          "sizes": "96x96"
-        }
-      ]
+      "url": "/projeler"
     },
     {
       "name": "İletişim",
       "short_name": "İletişim",
       "description": "Bizimle iletişime geçin",
-      "url": "/iletisim",
-      "icons": [
-        {
-          "src": "/icon-contact.png",
-          "sizes": "96x96"
-        }
-      ]
+      "url": "/iletisim"
     },
     {
       "name": "Hemen Teklif Al",
       "short_name": "Teklif Al",
       "description": "Hızlıca teklif alın",
-      "url": "/hemen-teklif-al",
-      "icons": [
-        {
-          "src": "/icon-quote.png",
-          "sizes": "96x96"
-        }
-      ]
+      "url": "/hemen-teklif-al"
     }
   ],
   "related_applications": [],
-  "prefer_related_applications": false,
-  "edge_side_panel": {
-    "preferred_width": 400
-  },
-  "launch_handler": {
-    "client_mode": "navigate-existing"
-  },
-  "handle_links": "preferred",
-  "capture_links": "new-client",
-  "file_handlers": [
-    {
-      "action": "/file-handler",
-      "accept": {
-        "image/*": [".jpg", ".jpeg", ".png", ".webp"]
-      }
-    }
-  ],
-  "protocol_handlers": [
-    {
-      "protocol": "mailto",
-      "url": "/contact?email=%s"
-    },
-    {
-      "protocol": "tel",
-      "url": "/contact?phone=%s"
-    }
-  ]
+  "prefer_related_applications": false
 }

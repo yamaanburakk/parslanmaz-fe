@@ -4,6 +4,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect, memo } from 'react';
 import { usePathname } from 'next/navigation';
+import dynamic from 'next/dynamic';
+
+// Lazy load ViewerCount
+const ViewerCount = dynamic(() => import('./ViewerCount'), {
+  loading: () => null,
+  ssr: false,
+});
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,19 +40,19 @@ const Header = () => {
 
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header className="fixed top-0 left-0 right-0 z-50" role="banner" aria-label="Site başlığı ve navigasyon">
       {/* Top Section - Logo Color Background */}
       <div className="bg-[#131C3C]">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className="flex items-center">
-              <Link href="/" className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#66B2FF]/20 to-[#4A90E2]/20 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 blur-sm group-hover:blur-none"></div>
+            <div className="flex items-center gap-4">
+              <Link href="/" className="group relative" aria-label="Pars Endüstriyel Mutfak Ana Sayfa">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#66B2FF]/20 to-[#4A90E2]/20 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 blur-sm group-hover:blur-none" aria-hidden="true"></div>
                 <div className="relative bg-gradient-to-r from-[#131C3C]/0 to-[#1A2647]/0 group-hover:from-[#131C3C]/10 group-hover:to-[#1A2647]/10 rounded-xl p-2 transition-all duration-300 border border-transparent group-hover:border-[#66B2FF]/30 group-hover:shadow-lg group-hover:shadow-[#66B2FF]/20">
                   <Image 
                     src="/parslanmaz-logo.jpeg" 
-                    alt="Parslanmaz Endüstriyel Mutfak" 
+                    alt="Pars Endüstriyel Mutfak Logo - Paslanmaz Çelik Mutfak Ekipmanları İstanbul" 
                     width={240}
                     height={64}
                     className="w-auto object-contain h-16 transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
@@ -55,24 +62,36 @@ const Header = () => {
                 {/* Professional Glow Effect */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#66B2FF] to-[#4A90E2] rounded-xl opacity-0 group-hover:opacity-20 transition-all duration-300 blur-md group-hover:blur-lg"></div>
               </Link>
+              
+              {/* ViewerCount - Only on desktop and product pages */}
+              {isProductPage && (
+                <div className="hidden lg:block">
+                  <ViewerCount />
+                </div>
+              )}
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-6">
-              <Link href="/" className={`font-semibold relative text-base transition-colors ${isHomePage ? 'text-[#66B2FF]' : 'text-white hover:text-[#66B2FF]'}`}>
+            <nav className="hidden lg:flex items-center space-x-6" role="navigation" aria-label="Ana navigasyon menüsü">
+              <Link href="/" className={`font-semibold relative text-base transition-colors ${isHomePage ? 'text-[#66B2FF]' : 'text-white hover:text-[#66B2FF]'}`} aria-current={isHomePage ? 'page' : undefined}>
                 Anasayfa
               </Link>
-              <Link href="/hakkimizda" className={`font-semibold relative text-base transition-colors ${isAboutPage ? 'text-[#66B2FF]' : 'text-white hover:text-[#66B2FF]'}`}>
+              <Link href="/hakkimizda" className={`font-semibold relative text-base transition-colors ${isAboutPage ? 'text-[#66B2FF]' : 'text-white hover:text-[#66B2FF]'}`} aria-current={isAboutPage ? 'page' : undefined}>
                 Hakkımızda
               </Link>
               <div className="relative group">
-                <button className={`font-semibold flex items-center relative text-base transition-colors ${isProductPage ? 'text-[#66B2FF]' : 'text-white hover:text-[#66B2FF]'}`}>
+                <button 
+                  className={`font-semibold flex items-center relative text-base transition-colors ${isProductPage ? 'text-[#66B2FF]' : 'text-white hover:text-[#66B2FF]'}`}
+                  aria-haspopup="true"
+                  aria-expanded={isProductsOpen}
+                  aria-label="Ürünler menüsü"
+                  type="button">
                   Ürünler
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                <div className="absolute top-full left-0 mt-2 w-64 bg-white backdrop-blur-md shadow-2xl border border-[#66B2FF]/20 rounded-xl py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="absolute top-full left-0 mt-2 w-64 bg-white backdrop-blur-md shadow-2xl border border-[#66B2FF]/20 rounded-xl py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200" role="menu" aria-label="Ürün kategorileri">
                   <Link href="/urun-kategori/endustriyel-mutfak-ekipmanlari-paslanmaz-celik-tezgah-dolap-raf-ve-evye-modelleri" className="block px-4 py-3 text-[#131C3C] hover:bg-[#66B2FF]/10 hover:text-[#66B2FF] transition-colors font-semibold border-l-2 border-transparent hover:border-[#66B2FF] text-sm sm:text-base rounded-lg mx-2">
                     Endüstriyel Mutfak Ekipmanları
                   </Link>

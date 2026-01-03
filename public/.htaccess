@@ -1,37 +1,49 @@
-# Next.js Static Export için Apache Yapılandırması
-# Bu dosya build sırasında otomatik olarak out klasörüne kopyalanır
+# Pars Endüstriyel Mutfak - Apache Configuration
+# www.parslanmaz.com
 
-# Rewrite Engine'i etkinleştir
-RewriteEngine On
-RewriteBase /
+# Enable RewriteEngine
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
 
-# HTTPS yönlendirmesi (SSL varsa aktif edin)
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Mevcut dosya varsa dokunma
-RewriteCond %{REQUEST_FILENAME} -f
-RewriteRule ^ - [L]
+  # Redirect non-www to www
+  RewriteCond %{HTTP_HOST} ^parslanmaz\.com [NC]
+  RewriteRule ^(.*)$ https://www.parslanmaz.com/$1 [L,R=301]
 
-# Mevcut klasör varsa ve index.html içeriyorsa
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteCond %{REQUEST_FILENAME}/index.html -f
-RewriteRule ^(.*)/?$ $1/index.html [L]
+  # Handle trailing slashes (Next.js static export uses trailing slashes)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !(.*)/$
+  RewriteRule ^(.*)$ $1/ [L,R=301]
 
-# Trailing slash olmayan URL'leri klasöre yönlendir (eğer klasör varsa)
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteCond %{REQUEST_URI} !/$
-RewriteRule ^(.*)$ $1/ [L,R=301]
+  # Serve index.html for directories
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/$ $1/index.html [L,QSA]
+</IfModule>
 
-# Trailing slash ile gelen istekleri index.html'e yönlendir
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
-RewriteRule ^(.*)/?$ $1/index.html [L]
+# Error Pages
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
 
-# 404 sayfasına yönlendirme
-ErrorDocument 404 /404/index.html
+# Prevent directory browsing
+Options -Indexes
+
+# Protect sensitive files
+<FilesMatch "^\.">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Protect package.json, README, etc.
+<FilesMatch "(package\.json|package-lock\.json|README\.md|\.env|\.git)">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
 
 # Önbellek ayarları - Statik dosyalar için
 <IfModule mod_expires.c>
@@ -67,12 +79,49 @@ ErrorDocument 404 /404/index.html
     AddOutputFilterByType DEFLATE image/svg+xml
 </IfModule>
 
-# Güvenlik başlıkları
+# Security Headers
 <IfModule mod_headers.c>
-    Header set X-Content-Type-Options "nosniff"
-    Header set X-Frame-Options "DENY"
-    Header set X-XSS-Protection "1; mode=block"
-    Header set Referrer-Policy "strict-origin-when-cross-origin"
+  # X-Frame-Options: Prevent clickjacking attacks
+  Header always set X-Frame-Options "DENY"
+  
+  # X-Content-Type-Options: Prevent MIME type sniffing
+  Header always set X-Content-Type-Options "nosniff"
+  
+  # X-XSS-Protection: Enable XSS filter
+  Header always set X-XSS-Protection "1; mode=block"
+  
+  # Referrer-Policy
+  Header always set Referrer-Policy "origin-when-cross-origin"
+  
+  # DNS Prefetch Control
+  Header always set X-DNS-Prefetch-Control "on"
+  
+  # Strict Transport Security (HSTS) - Requires HTTPS
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  
+  # Content Security Policy (CSP)
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: http:; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'none';"
+  
+  # Permissions Policy
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# Cache Control Headers
+<IfModule mod_headers.c>
+  # Static assets with versioning (Next.js _next folder)
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|woff|woff2|ttf|eot|css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  
+  # HTML files
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+  
+  # XML files (sitemap, rss)
+  <FilesMatch "\.(xml)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
 </IfModule>
 
 # MIME türleri

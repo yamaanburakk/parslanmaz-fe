@@ -26,35 +26,102 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://parslanmaz-fe.vercel.app'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.parslanmaz.com'),
   title: {
     default: "Pars Endüstriyel Mutfak | Paslanmaz Çelik Mutfak Ekipmanları",
     template: "%s | Pars Endüstriyel Mutfak",
   },
   description: "Pars Endüstriyel Mutfak, paslanmaz çelik ekipman üretiminde uzmanlaşmış, yenilikçi tasarım ve kaliteli üretim anlayışıyla sektörde fark yaratan lider firmadır. Restoran, otel, kafe, fırın ve catering işletmeleri için profesyonel mutfak çözümleri sunuyoruz.",
   keywords: [
+    // Marka ve Genel
     "pars endüstriyel mutfak",
+    "parslanmaz endüstriyel mutfak",
     "paslanmaz çelik ekipman",
+    "paslanmaz çelik mutfak ekipmanları",
+    "paslanmaz çelik ürünler",
     "endüstriyel mutfak",
+    "endüstriyel mutfak ekipmanları",
+    "endüstriyel mutfak malzemeleri",
+    "profesyonel mutfak ekipmanları",
+    "ticari mutfak ekipmanları",
+    "sanayi tipi mutfak ekipmanları",
+    
+    // Mutfak Türleri
     "restoran mutfakları",
     "otel mutfakları",
     "kafe mutfakları",
     "fırın ekipmanları",
     "catering mutfakları",
-    "mutfak çözümleri",
+    "hastane mutfakları",
+    "okul mutfakları",
+    "toplu mutfak",
+    "endüstriyel mutfak firmaları",
+    
+    // Ürün Kategorileri
     "paslanmaz tezgah",
+    "paslanmaz dolap",
+    "mutfak rafları",
+    "endüstriyel evye",
+    "çalışma tezgahı",
+    "bulaşık yıkama tezgahı",
+    "duvar rafları",
     "endüstriyel buzdolabı",
     "endüstriyel fırın",
+    "endüstriyel ocak",
+    "davlumbaz sistemleri",
+    "açık büfe ekipmanları",
+    "servis üniteleri",
+    "ısıtmalı vitrin",
+    "soğutmalı vitrin",
+    
+    // Özel Dolaplar
+    "pasta dolabı",
+    "şarküteri dolabı",
+    "ekmek dolabı",
+    "unlu mamuller dolabı",
+    "waffle dolabı",
+    "kumpir dolabı",
+    "çikolata dolabı",
+    "lokum dolabı",
+    "börek dolabı",
+    "baklava dolabı",
+    
+    // Hizmetler
+    "mutfak çözümleri",
     "mutfak tasarımı",
     "anahtar teslim mutfak",
     "özel üretim mutfak",
     "mutfak projelendirme",
+    "mutfak danışmanlığı",
+    "mutfak montajı",
+    "mutfak bakımı",
+    
+    // Şehirler
     "istanbul mutfak firması",
+    "istanbul endüstriyel mutfak",
     "ankara endüstriyel mutfak",
     "izmir mutfak ekipmanları",
+    "bursa mutfak ekipmanları",
+    "antalya mutfak firması",
+    
+    // Kalite ve Özellikler
+    "304 kalite paslanmaz",
+    "316 kalite paslanmaz",
+    "hijyenik mutfak",
+    "HACCP uyumlu",
+    "CE belgeli mutfak",
+    "kaliteli mutfak",
+    "dayanıklı mutfak ekipmanı",
+    
+    // Diğer
     "türkiye mutfak üreticisi",
+    "mutfak ekipmanı üreticisi",
+    "paslanmaz çelik üretici",
+    "endüstriyel mutfak fiyatları",
+    "mutfak ekipmanı satış",
+    "zeytinburnu mutfak",
   ],
-  authors: [{ name: "Pars Endüstriyel Mutfak", url: "https://parslanmaz-fe.vercel.app" }],
+  authors: [{ name: "Pars Endüstriyel Mutfak", url: "https://www.parslanmaz.com" }],
   creator: "Pars Endüstriyel Mutfak",
   publisher: "Pars Endüstriyel Mutfak",
   robots: {
@@ -76,11 +143,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Pars Endüstriyel Mutfak | Paslanmaz Çelik Mutfak Ekipmanları",
     description: "Pars Endüstriyel Mutfak, paslanmaz çelik ekipman üretiminde uzmanlaşmış, yenilikçi tasarım ve kaliteli üretim anlayışıyla sektörde fark yaratan lider firmadır. Restoran, otel, kafe, fırın ve catering işletmeleri için profesyonel mutfak çözümleri sunuyoruz.",
-    url: "https://parslanmaz-fe.vercel.app",
+    url: "https://www.parslanmaz.com",
     siteName: "Pars Endüstriyel Mutfak",
     images: [
       {
-        url: "https://parslanmaz-fe.vercel.app/og-image.jpg",
+        url: "https://www.parslanmaz.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Pars Endüstriyel Mutfak - Paslanmaz Çelik Mutfak Ekipmanları",
@@ -94,14 +161,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pars Endüstriyel Mutfak | Paslanmaz Çelik Mutfak Ekipmanları",
     description: "Pars Endüstriyel Mutfak, paslanmaz çelik ekipman üretiminde uzmanlaşmış, yenilikçi tasarım ve kaliteli üretim anlayışıyla sektörde fark yaratan lider firmadır. Restoran, otel, kafe, fırın ve catering işletmeleri için profesyonel mutfak çözümleri sunuyoruz.",
-    images: ["https://parslanmaz-fe.vercel.app/twitter-image.jpg"],
+    images: ["https://www.parslanmaz.com/twitter-image.jpg"],
     creator: "@parslanmaz",
     site: "@parslanmaz",
   },
   alternates: {
-    canonical: "https://parslanmaz-fe.vercel.app",
+    canonical: "https://www.parslanmaz.com",
     languages: {
-      'tr-TR': 'https://parslanmaz-fe.vercel.app',
+      'tr-TR': 'https://www.parslanmaz.com',
     },
   },
   category: "Endüstriyel Mutfak Ekipmanları",
@@ -133,18 +200,25 @@ export default function RootLayout({
         {/* Preconnect for Performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         
-        {/* Preload Critical Hero Image for Maximum Sharpness */}
-        <link rel="preload" as="image" href="/anasayfa-2.jpeg" fetchPriority="high" />
+        {/* Preload Critical Images */}
+        <link rel="preload" as="image" href="/parslanmaz-logo.jpeg" fetchPriority="high" />
+        <link rel="preload" as="image" href="/anasayfa.jpeg" fetchPriority="high" />
+        <link rel="preload" as="image" href="/endustriyel-mutfak-ekipmanlari.jpeg" fetchPriority="high" />
         
         {/* Disable auto-translation to avoid hydration mismatches */}
         <meta name="google" content="notranslate" />
 
+        {/* Prefetch Important Pages */}
+        <link rel="prefetch" href="/hakkimizda" />
+        <link rel="prefetch" href="/projeler" />
+        <link rel="prefetch" href="/iletisim" />
+        
         {/* PWA and Mobile Optimization */}
         <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/parslanmaz-logo.jpeg" />
-        <link rel="icon" type="image/jpeg" sizes="32x32" href="/parslanmaz-logo.jpeg" />
-        <link rel="icon" type="image/jpeg" sizes="16x16" href="/parslanmaz-logo.jpeg" />
+        <link rel="apple-touch-icon" href="/parslanmaz-logo.jpeg" />
         
         {/* Theme and Mobile App Configuration */}
         <meta name="theme-color" content="#131C3C" media="(prefers-color-scheme: light)" />
