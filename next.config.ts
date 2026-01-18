@@ -5,7 +5,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 const nextConfig: NextConfig = {
-  // Static export için out klasörüne build
+  // Static export için out klasörüne build (cPanel deployment)
   output: 'export',
   
   // cPanel için trailing slash ekle (URL sonunda / olsun)
@@ -15,16 +15,14 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
-  // Note: Vercel handles output automatically, standalone is not needed
   
   // React compiler optimization
   reactStrictMode: true,
   
-  // Production source maps
+  // Production source maps (disabled for smaller bundle size)
   productionBrowserSourceMaps: false,
   
-
-  // Experimental features for better performance (Vercel optimized)
+  // Experimental features for better performance
   experimental: {
     optimizePackageImports: ['react', 'react-dom', 'next'],
     // Enable static generation optimization
@@ -32,11 +30,6 @@ const nextConfig: NextConfig = {
     // Performance monitoring
     gzipSize: true,
     scrollRestoration: true,
-    // Note: Disabled features that can cause Vercel deployment issues
-    // esmExternals: true, (can cause issues on Vercel)
-    // webpackBuildWorker: true, (can cause issues on Vercel)
-    // parallelServerCompiles: true, (can cause issues on Vercel)
-    // parallelServerBuildTraces: true, (can cause issues on Vercel)
   },
 
   // Image optimization - Maximum Performance
@@ -55,18 +48,15 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
 
-  // Webpack optimizations (simplified for Vercel compatibility)
+  // Webpack optimizations
   webpack: (config, { dev, isServer }) => {
-    // Simplified webpack config for better Vercel compatibility
     // Let Next.js handle most optimizations automatically
-    
     return config;
   },
 
   // NOTE: Headers, redirects, and rewrites don't work with static export (output: 'export')
-  // These should be configured on your web server instead:
-  // - For Apache/cPanel: See public/.htaccess
-  // - For Vercel: See vercel.json
+  // These should be configured on your web server:
+  // - For Apache/cPanel: See public/.htaccess (ACTIVE - www.parslanmaz.com)
   // - For Nginx: See nginx.conf.example
 };
 

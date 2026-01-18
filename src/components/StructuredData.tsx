@@ -11,7 +11,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
     description: 'Paslanmaz çelik ekipman üretiminde uzmanlaşmış, yenilikçi tasarım ve kaliteli üretim anlayışıyla sektörde fark yaratan lider firmadır.',
     url: 'https://www.parslanmaz.com',
     logo: 'https://www.parslanmaz.com/parslanmaz-logo.jpeg',
-    image: 'https://www.parslanmaz.com/og-image.jpg',
+    image: 'https://www.parslanmaz.com/parslanmaz-logo.jpeg',
     sameAs: [
       'https://www.facebook.com/parslanmaz',
       'https://www.instagram.com/parslanmaz',

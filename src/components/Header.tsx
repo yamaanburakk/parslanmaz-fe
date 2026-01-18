@@ -4,13 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect, memo } from 'react';
 import { usePathname } from 'next/navigation';
-import dynamic from 'next/dynamic';
-
-// Lazy load ViewerCount
-const ViewerCount = dynamic(() => import('./ViewerCount'), {
-  loading: () => null,
-  ssr: false,
-});
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -62,13 +55,6 @@ const Header = () => {
                 {/* Professional Glow Effect */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#66B2FF] to-[#4A90E2] rounded-xl opacity-0 group-hover:opacity-20 transition-all duration-300 blur-md group-hover:blur-lg"></div>
               </Link>
-              
-              {/* ViewerCount - Only on desktop and product pages */}
-              {isProductPage && (
-                <div className="hidden lg:block">
-                  <ViewerCount />
-                </div>
-              )}
             </div>
 
             {/* Desktop Navigation */}

@@ -559,3 +559,4 @@ Bu adımları eksiksiz uyguladığınızda:
 
 **Not:** Bu rehber 2025 Google algoritmaları için güncellenmiştir.
 
+

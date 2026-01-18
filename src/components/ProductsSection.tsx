@@ -1,6 +1,7 @@
 import { memo, useMemo, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 
 type ProductBase = {
   title: string;
@@ -26,7 +27,7 @@ const ProductsSection = memo(() => {
       // Local optimized hero for the card
       image: {
         src: "/endustriyel-mutfak-ekipmanlari.jpeg",
-        alt: "Endüstriyel Mutfak Ekipmanları görseli"
+        alt: "Paslanmaz Çelik Endüstriyel Mutfak Ekipmanları - Tezgah, Dolap, Raf ve Evye Modelleri | Pars Endüstriyel Mutfak İstanbul"
       },
       href: "/urun-kategori/endustriyel-mutfak-ekipmanlari-paslanmaz-celik-tezgah-dolap-raf-ve-evye-modelleri"
     },
@@ -35,7 +36,7 @@ const ProductsSection = memo(() => {
       description: "Büfe ve servis alanları için modern çözümler",
       image: {
         src: "/acik-bufe.jpeg",
-        alt: "Açık Büfe Ekipmanları ve Servis Üniteleri"
+        alt: "Paslanmaz Çelik Açık Büfe Ekipmanları ve Servis Üniteleri - Büfe Tezgahı, Vitrin ve Servis Modelleri | Pars Endüstriyel Mutfak"
       },
       href: "/urun-kategori/acik-bufe-ekipmanlari-servis-uniteleri-paslanmaz-celik-bufe-tezgah-ve-vitrin-modelleri"
     },
@@ -44,7 +45,7 @@ const ProductsSection = memo(() => {
       description: "Fırın ve pastaneler için özel dolaplar",
       image: {
         src: "/ekmek-unlu-mamul.jpeg",
-        alt: "Ekmek ve Unlu Mamuller Dolapları"
+        alt: "Paslanmaz Çelik Ekmek ve Unlu Mamuller Dolapları - Fırın Vitrini, Tezgah ve Dolap Modelleri | Pars Endüstriyel Mutfak"
       },
       href: "/urun-kategori/ekmek-unlu-mamuller-dolaplari-paslanmaz-celik-firin-vitrin-ve-tezgah-modelleri"
     },
@@ -53,7 +54,7 @@ const ProductsSection = memo(() => {
       description: "Pasta ve şarküteri ürünleri için vitrin dolapları",
       image: {
         src: "/pasta.jpeg",
-        alt: "Pasta ve Şarküteri Dolapları"
+        alt: "Paslanmaz Çelik Pasta ve Şarküteri Dolapları - Vitrin, Tezgah ve Dolap Modelleri | Pars Endüstriyel Mutfak İstanbul"
       },
       href: "/urun-kategori/pasta-sarkuteri-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri"
     },
@@ -62,7 +63,7 @@ const ProductsSection = memo(() => {
       description: "Waffle ve kumpir satış noktaları için özel dolaplar",
       image: {
         src: "/waffle.jpeg",
-        alt: "Waffle ve Kumpir Dolapları"
+        alt: "Paslanmaz Çelik Waffle ve Kumpir Dolapları - Tezgah, Vitrin ve Dolap Modelleri | Pars Endüstriyel Mutfak İstanbul"
       },
       href: "/urun-kategori/waffle-kumpir-dolaplari-paslanmaz-celik-tezgah-vitrin-ve-dolap-modelleri"
     },
@@ -71,7 +72,7 @@ const ProductsSection = memo(() => {
       description: "Çikolata ve lokum satışı için vitrin dolapları",
       image: {
         src: "/cikolata.jpeg",
-        alt: "Çikolata ve Lokum Dolapları"
+        alt: "Paslanmaz Çelik Çikolata ve Lokum Dolapları - Vitrin, Tezgah ve Dolap Modelleri | Pars Endüstriyel Mutfak İstanbul"
       },
       href: "/urun-kategori/cikolata-lokum-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri"
     },
@@ -80,17 +81,67 @@ const ProductsSection = memo(() => {
       description: "Börek ve baklava satışı için özel dolaplar",
       image: {
         src: "/borek.jpeg",
-        alt: "Börek ve Baklava Dolapları"
+        alt: "Paslanmaz Çelik Börek ve Baklava Dolapları - Vitrin, Tezgah ve Dolap Modelleri | Pars Endüstriyel Mutfak İstanbul"
       },
       href: "/urun-kategori/borek-baklava-dolaplari-paslanmaz-celik-vitrin-tezgah-ve-dolap-modelleri"
     }
   ], []);
 
+  // Generate ImageObject structured data for Google Images
+  const imageStructuredData = useMemo(() => {
+    const images = productCategories
+      .filter((product): product is ProductWithImage => 'image' in product)
+      .map((product) => ({
+        "@context": "https://schema.org",
+        "@type": "ImageObject",
+        "contentUrl": `https://www.parslanmaz.com${product.image.src}`,
+        "url": `https://www.parslanmaz.com${product.href}`,
+        "name": product.title,
+        "description": product.image.alt,
+        "caption": product.description,
+        "author": {
+          "@type": "Organization",
+          "name": "Pars Endüstriyel Mutfak",
+          "url": "https://www.parslanmaz.com"
+        },
+        "copyrightHolder": {
+          "@type": "Organization",
+          "name": "Pars Endüstriyel Mutfak"
+        },
+        "creditText": "Pars Endüstriyel Mutfak",
+        "creator": {
+          "@type": "Organization",
+          "name": "Pars Endüstriyel Mutfak"
+        },
+        "license": "https://www.parslanmaz.com",
+        "acquireLicensePage": "https://www.parslanmaz.com/iletisim",
+        "isPartOf": {
+          "@type": "WebPage",
+          "url": `https://www.parslanmaz.com${product.href}`,
+          "name": product.title
+        },
+        "keywords": `${product.title}, paslanmaz çelik, endüstriyel mutfak, mutfak ekipmanları, pars endüstriyel mutfak, istanbul`
+      }));
+    return images;
+  }, [productCategories]);
+
   return (
-    <section id="products" className="relative py-24 sm:py-32 bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#334155] overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 opacity-40" style={{backgroundImage: "url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.03\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"1\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')"}}></div>
-      <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#66B2FF]/10 to-[#FFD700]/10 rounded-full blur-3xl"></div>
+    <>
+      {/* Structured Data for Google Images */}
+      {imageStructuredData.map((imageData, index) => (
+        <Script
+          key={index}
+          id={`image-structured-data-${index}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(imageData) }}
+          strategy="afterInteractive"
+        />
+      ))}
+      
+      <section id="products" className="relative py-24 sm:py-32 bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#334155] overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 opacity-40" style={{backgroundImage: "url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.03\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"1\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')"}}></div>
+        <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#66B2FF]/10 to-[#FFD700]/10 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header Section */}
@@ -229,7 +280,8 @@ const ProductsSection = memo(() => {
         </div>
 
       </div>
-    </section>
+      </section>
+    </>
   );
 });
 

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   description: "Pars Endüstriyel Mutfak, paslanmaz çelik ekipman üretiminde uzmanlaşmış, yenilikçi tasarım ve kaliteli üretim anlayışıyla sektörde fark yaratan lider firmadır. Restoran, otel, kafe, fırın ve catering işletmeleri için profesyonel mutfak çözümleri sunuyoruz.",
   keywords: [
-    // Marka ve Genel
+    // Marka ve Genel - Ana Anahtar Kelimeler
     "pars endüstriyel mutfak",
     "parslanmaz endüstriyel mutfak",
     "paslanmaz çelik ekipman",
@@ -45,37 +45,113 @@ export const metadata: Metadata = {
     "profesyonel mutfak ekipmanları",
     "ticari mutfak ekipmanları",
     "sanayi tipi mutfak ekipmanları",
+    "paslanmaz mutfak ekipmanları",
+    "inox mutfak ekipmanları",
+    "paslanmaz çelik mutfak ürünleri",
+    "endüstriyel mutfak sistemleri",
     
-    // Mutfak Türleri
+    // Mutfak Türleri - Detaylı
     "restoran mutfakları",
+    "restoran mutfak ekipmanları",
     "otel mutfakları",
+    "otel mutfak ekipmanları",
     "kafe mutfakları",
+    "kafe mutfak ekipmanları",
     "fırın ekipmanları",
+    "fırın mutfak ekipmanları",
     "catering mutfakları",
+    "catering ekipmanları",
     "hastane mutfakları",
+    "hastane mutfak ekipmanları",
     "okul mutfakları",
+    "okul kantini ekipmanları",
     "toplu mutfak",
+    "toplu yemek mutfağı",
     "endüstriyel mutfak firmaları",
+    "fast food mutfak ekipmanları",
+    "lokanta mutfak ekipmanları",
+    "yemekhane mutfak ekipmanları",
+    "kafeterya mutfak ekipmanları",
     
-    // Ürün Kategorileri
+    // Ürün Kategorileri - Tezgahlar
     "paslanmaz tezgah",
-    "paslanmaz dolap",
-    "mutfak rafları",
-    "endüstriyel evye",
+    "paslanmaz çelik tezgah",
     "çalışma tezgahı",
+    "mutfak çalışma tezgahı",
+    "endüstriyel çalışma tezgahı",
     "bulaşık yıkama tezgahı",
+    "evyeli çalışma tezgahı",
+    "paslanmaz çalışma masası",
+    "endüstriyel mutfak tezgahı",
+    "paslanmaz mutfak tezgahı",
+    "hazırlık tezgahı",
+    "servis tezgahı",
+    
+    // Ürün Kategorileri - Dolaplar
+    "paslanmaz dolap",
+    "paslanmaz çelik dolap",
+    "mutfak dolabı",
+    "endüstriyel mutfak dolabı",
+    "asma dolap",
+    "duvar dolabı",
+    "kapaklı dolap",
+    "sürgülü kapılı dolap",
+    "açık raf dolap",
+    
+    // Ürün Kategorileri - Raflar
+    "mutfak rafları",
+    "paslanmaz raf",
     "duvar rafları",
+    "endüstriyel raf",
+    "paslanmaz çelik raf",
+    "mutfak duvar rafı",
+    "açık raf sistemi",
+    "kapalı raf sistemi",
+    
+    // Ürün Kategorileri - Evyeler
+    "endüstriyel evye",
+    "paslanmaz evye",
+    "mutfak evyesi",
+    "endüstriyel mutfak evyesi",
+    "çift gözlü evye",
+    "tek gözlü evye",
+    "bulaşık yıkama evyesi",
+    "el yıkama lavabosi",
+    
+    // Pişirme Ekipmanları
     "endüstriyel buzdolabı",
     "endüstriyel fırın",
     "endüstriyel ocak",
+    "endüstriyel ızgara",
+    "endüstriyel fritöz",
+    "endüstriyel derin fritöz",
+    "gazlı ocak",
+    "elektrikli ocak",
+    "endüstriyel ankastre",
+    "pilot ocak",
+    "endüstriyel izgara",
+    
+    // Havalandırma ve Davlumbaz
     "davlumbaz sistemleri",
+    "endüstriyel davlumbaz",
+    "mutfak davlumbazı",
+    "aspiratör sistemi",
+    "havalandırma sistemleri",
+    "filtreli davlumbaz",
+    
+    // Servis ve Vitrin Ekipmanları
     "açık büfe ekipmanları",
     "servis üniteleri",
     "ısıtmalı vitrin",
     "soğutmalı vitrin",
+    "sıcak servis ünitesi",
+    "soğuk servis ünitesi",
+    "salata barı",
+    "self servis ünitesi",
     
-    // Özel Dolaplar
+    // Özel Dolaplar ve Vitrinler
     "pasta dolabı",
+    "pasta vitrini",
     "şarküteri dolabı",
     "ekmek dolabı",
     "unlu mamuller dolabı",
@@ -85,41 +161,90 @@ export const metadata: Metadata = {
     "lokum dolabı",
     "börek dolabı",
     "baklava dolabı",
+    "tatlı vitrini",
+    "sandviç vitrini",
     
-    // Hizmetler
+    // Hizmetler - Detaylı
     "mutfak çözümleri",
     "mutfak tasarımı",
+    "mutfak projelendirme",
     "anahtar teslim mutfak",
     "özel üretim mutfak",
-    "mutfak projelendirme",
     "mutfak danışmanlığı",
     "mutfak montajı",
+    "mutfak kurulumu",
     "mutfak bakımı",
+    "mutfak tamiri",
+    "mutfak modernizasyonu",
+    "mutfak yenileme",
+    "3d mutfak tasarımı",
+    "mutfak planlama",
     
-    // Şehirler
+    // Şehirler - Genişletilmiş
     "istanbul mutfak firması",
     "istanbul endüstriyel mutfak",
+    "zeytinburnu mutfak",
+    "zeytinburnu endüstriyel mutfak",
     "ankara endüstriyel mutfak",
     "izmir mutfak ekipmanları",
     "bursa mutfak ekipmanları",
     "antalya mutfak firması",
+    "kocaeli mutfak ekipmanları",
+    "adana mutfak firması",
+    "gaziantep mutfak ekipmanları",
+    "konya mutfak firması",
+    "mersin mutfak ekipmanları",
     
     // Kalite ve Özellikler
     "304 kalite paslanmaz",
     "316 kalite paslanmaz",
+    "304 quality stainless steel",
+    "316 quality stainless steel",
     "hijyenik mutfak",
+    "hijyenik mutfak ekipmanları",
     "HACCP uyumlu",
+    "HACCP sertifikalı",
     "CE belgeli mutfak",
+    "TSE belgeli mutfak",
     "kaliteli mutfak",
     "dayanıklı mutfak ekipmanı",
+    "uzun ömürlü mutfak",
+    "kolay temizlenebilir mutfak",
     
-    // Diğer
+    // Üretim ve Satış
     "türkiye mutfak üreticisi",
     "mutfak ekipmanı üreticisi",
     "paslanmaz çelik üretici",
+    "endüstriyel mutfak üreticisi",
+    "mutfak ekipmanı imalatı",
+    "özel üretim mutfak ekipmanı",
     "endüstriyel mutfak fiyatları",
+    "mutfak ekipmanı fiyatları",
     "mutfak ekipmanı satış",
-    "zeytinburnu mutfak",
+    "uygun fiyatlı mutfak ekipmanı",
+    "toptan mutfak ekipmanı",
+    
+    // Long-tail Keywords - Spesifik Aramalar
+    "paslanmaz çelik mutfak tezgahı fiyatları",
+    "endüstriyel mutfak ekipmanları istanbul",
+    "restoran mutfak ekipmanları fiyatları",
+    "otel mutfak ekipmanları üreticileri",
+    "paslanmaz çelik evye fiyatları",
+    "endüstriyel mutfak dolabı modelleri",
+    "mutfak rafları fiyatları",
+    "endüstriyel mutfak tasarımı istanbul",
+    "anahtar teslim mutfak projeleri",
+    "profesyonel mutfak ekipmanları satışı",
+    "paslanmaz çelik mutfak ürünleri üreticisi",
+    "endüstriyel mutfak ekipmanları toptan satış",
+    
+    // Sektörel Kelimeler
+    "horeca ekipmanları",
+    "gastronomi ekipmanları",
+    "mutfak sektörü",
+    "gıda sektörü ekipmanları",
+    "endüstri tipi mutfak",
+    "ticari mutfak çözümleri",
   ],
   authors: [{ name: "Pars Endüstriyel Mutfak", url: "https://www.parslanmaz.com" }],
   creator: "Pars Endüstriyel Mutfak",
@@ -136,7 +261,7 @@ export const metadata: Metadata = {
     },
   },
   other: {
-    'google-site-verification': 'verification-code-placeholder',
+    'google-site-verification': 'm9UqDiRb0b8kOMpkLhMVBoRZj9cJeHS0996wTgk5RJA',
     'yandex-verification': 'verification-code-placeholder',
     'facebook-domain-verification': 'verification-code-placeholder',
   },
@@ -147,10 +272,10 @@ export const metadata: Metadata = {
     siteName: "Pars Endüstriyel Mutfak",
     images: [
       {
-        url: "https://www.parslanmaz.com/og-image.jpg",
+        url: "https://www.parslanmaz.com/parslanmaz-logo.jpeg",
         width: 1200,
         height: 630,
-        alt: "Pars Endüstriyel Mutfak - Paslanmaz Çelik Mutfak Ekipmanları",
+        alt: "Pars Endüstriyel Mutfak Logo - Paslanmaz Çelik Mutfak Ekipmanları",
       },
     ],
     locale: "tr_TR",
@@ -161,7 +286,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pars Endüstriyel Mutfak | Paslanmaz Çelik Mutfak Ekipmanları",
     description: "Pars Endüstriyel Mutfak, paslanmaz çelik ekipman üretiminde uzmanlaşmış, yenilikçi tasarım ve kaliteli üretim anlayışıyla sektörde fark yaratan lider firmadır. Restoran, otel, kafe, fırın ve catering işletmeleri için profesyonel mutfak çözümleri sunuyoruz.",
-    images: ["https://www.parslanmaz.com/twitter-image.jpg"],
+    images: ["https://www.parslanmaz.com/parslanmaz-logo.jpeg"],
     creator: "@parslanmaz",
     site: "@parslanmaz",
   },
@@ -219,6 +344,10 @@ export default function RootLayout({
         {/* PWA and Mobile Optimization */}
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/parslanmaz-logo.jpeg" />
+        
+        {/* Favicon - Parslanmaz Logo */}
+        <link rel="icon" type="image/jpeg" href="/parslanmaz-logo.jpeg" />
+        <link rel="shortcut icon" type="image/jpeg" href="/parslanmaz-logo.jpeg" />
         
         {/* Theme and Mobile App Configuration */}
         <meta name="theme-color" content="#131C3C" media="(prefers-color-scheme: light)" />
