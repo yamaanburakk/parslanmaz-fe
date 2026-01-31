@@ -22,8 +22,8 @@ const HeroSection = memo(() => {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/anasayfa.jpeg"
-          alt="Pars Endüstriyel Mutfak - Paslanmaz Çelik Ekipmanlar - Profesyonel Mutfak Çözümleri İstanbul"
+          src="/anasayfa-2.jpeg"
+          alt="Pars Endüstriyel Mutfak - Paslanmaz Çelik Ekipmanlar"
           className="absolute inset-0 w-full h-full object-cover hero-background"
           loading="eager"
           decoding="sync"
@@ -31,7 +31,7 @@ const HeroSection = memo(() => {
           style={{
             objectPosition: 'center center',
             objectFit: 'cover',
-            filter: 'contrast(1.05) brightness(0.95) saturate(1.1)',
+            filter: 'contrast(1.45) brightness(1.18) saturate(1.35)',
             imageRendering: 'crisp-edges',
             transform: 'scale(1) translateZ(0)',
             backfaceVisibility: 'hidden',

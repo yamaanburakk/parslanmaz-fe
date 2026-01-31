@@ -1,7 +1,6 @@
 'use client';
 
 import Image from "next/image";
-import { useViewerCount } from "@/hooks/useViewerCount";
 
 interface ProductHeroProps {
   title: string;
@@ -11,7 +10,7 @@ interface ProductHeroProps {
 }
 
 const ProductHero = ({ title, subtitle, description, heroImage }: ProductHeroProps) => {
-  const viewerCount = useViewerCount();
+  const viewerCount = 10
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-[#131C3C] via-[#1A2647] to-[#223052] text-white overflow-hidden">
       {/* Background Image */}

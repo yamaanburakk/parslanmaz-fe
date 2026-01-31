@@ -1,49 +1,37 @@
-# Pars Endüstriyel Mutfak - Apache Configuration
-# www.parslanmaz.com
+# Next.js Static Export için Apache Yapılandırması
+# Bu dosya build sırasında otomatik olarak out klasörüne kopyalanır
 
-# Enable RewriteEngine
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
+# Rewrite Engine'i etkinleştir
+RewriteEngine On
+RewriteBase /
 
-  # Force HTTPS
-  RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# HTTPS yönlendirmesi (SSL varsa aktif edin)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-  # Redirect non-www to www
-  RewriteCond %{HTTP_HOST} ^parslanmaz\.com [NC]
-  RewriteRule ^(.*)$ https://www.parslanmaz.com/$1 [L,R=301]
+# Mevcut dosya varsa dokunma
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
 
-  # Handle trailing slashes (Next.js static export uses trailing slashes)
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_URI} !(.*)/$
-  RewriteRule ^(.*)$ $1/ [L,R=301]
+# Mevcut klasör varsa ve index.html içeriyorsa
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.*)/?$ $1/index.html [L]
 
-  # Serve index.html for directories
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(.+)/$ $1/index.html [L,QSA]
-</IfModule>
+# Trailing slash olmayan URL'leri klasöre yönlendir (eğer klasör varsa)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.*)$ $1/ [L,R=301]
 
-# Error Pages
-ErrorDocument 404 /404.html
-ErrorDocument 500 /500.html
+# Trailing slash ile gelen istekleri index.html'e yönlendir
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+RewriteRule ^(.*)/?$ $1/index.html [L]
 
-# Prevent directory browsing
-Options -Indexes
-
-# Protect sensitive files
-<FilesMatch "^\.">
-  Order allow,deny
-  Deny from all
-</FilesMatch>
-
-# Protect package.json, README, etc.
-<FilesMatch "(package\.json|package-lock\.json|README\.md|\.env|\.git)">
-  Order allow,deny
-  Deny from all
-</FilesMatch>
+# 404 sayfasına yönlendirme
+ErrorDocument 404 /404/index.html
 
 # Önbellek ayarları - Statik dosyalar için
 <IfModule mod_expires.c>
@@ -79,50 +67,12 @@ Options -Indexes
     AddOutputFilterByType DEFLATE image/svg+xml
 </IfModule>
 
-# Security Headers
+# Güvenlik başlıkları
 <IfModule mod_headers.c>
-  # X-Frame-Options: Allow only same origin (SAMEORIGIN allows Google Maps embed)
-  Header always set X-Frame-Options "SAMEORIGIN"
-  
-  # X-Content-Type-Options: Prevent MIME type sniffing
-  Header always set X-Content-Type-Options "nosniff"
-  
-  # X-XSS-Protection: Enable XSS filter
-  Header always set X-XSS-Protection "1; mode=block"
-  
-  # Referrer-Policy
-  Header always set Referrer-Policy "origin-when-cross-origin"
-  
-  # DNS Prefetch Control
-  Header always set X-DNS-Prefetch-Control "on"
-  
-  # Strict Transport Security (HSTS) - Requires HTTPS
-  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-  
-  # Content Security Policy (CSP) - Updated for production (www.parslanmaz.com)
-  # Includes: Google Maps, Google Analytics, Cloudflare Insights
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://maps.googleapis.com https://maps.gstatic.com https://*.google.com https://static.cloudflareinsights.com https://cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://maps.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: http: https://maps.googleapis.com https://maps.gstatic.com https://*.google.com https://*.googleapis.com https://*.gstatic.com; connect-src 'self' https://www.google-analytics.com https://maps.googleapis.com https://cloudflareinsights.com; frame-src 'self' https://www.google.com https://maps.google.com; frame-ancestors 'self';"
-  
-  # Permissions Policy
-  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(self)"
-</IfModule>
-
-# Cache Control Headers
-<IfModule mod_headers.c>
-  # Static assets with versioning (Next.js _next folder)
-  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|woff|woff2|ttf|eot|css|js)$">
-    Header set Cache-Control "public, max-age=31536000, immutable"
-  </FilesMatch>
-  
-  # HTML files
-  <FilesMatch "\.(html|htm)$">
-    Header set Cache-Control "public, max-age=3600, must-revalidate"
-  </FilesMatch>
-  
-  # XML files (sitemap, rss)
-  <FilesMatch "\.(xml)$">
-    Header set Cache-Control "public, max-age=3600"
-  </FilesMatch>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
 
 # MIME türleri

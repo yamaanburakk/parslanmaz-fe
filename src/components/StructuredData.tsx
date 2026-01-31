@@ -1,5 +1,5 @@
 interface StructuredDataProps {
-  type: 'Organization' | 'Product' | 'Service' | 'LocalBusiness' | 'FAQ' | 'BreadcrumbList' | 'WebSite' | 'ItemList';
+  type: 'Organization' | 'Product' | 'Service' | 'LocalBusiness';
   data?: Record<string, unknown>;
 }
 
@@ -9,14 +9,12 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
     '@type': type,
     name: 'Pars Endüstriyel Mutfak',
     description: 'Paslanmaz çelik ekipman üretiminde uzmanlaşmış, yenilikçi tasarım ve kaliteli üretim anlayışıyla sektörde fark yaratan lider firmadır.',
-    url: 'https://www.parslanmaz.com',
-    logo: 'https://www.parslanmaz.com/parslanmaz-logo.jpeg',
-    image: 'https://www.parslanmaz.com/parslanmaz-logo.jpeg',
+    url: 'https://parslanmaz-fe.vercel.app',
+    logo: 'https://parslanmaz-fe.vercel.app/parslanmaz-logo.jpeg',
     sameAs: [
       'https://www.facebook.com/parslanmaz',
       'https://www.instagram.com/parslanmaz',
       'https://www.linkedin.com/company/parslanmaz',
-      'https://www.youtube.com/@parslanmaz',
     ],
   };
 
@@ -27,92 +25,22 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
       structuredData = {
         ...baseData,
         '@type': 'Organization',
-        '@id': 'https://www.parslanmaz.com/#organization',
-        legalName: 'Pars Endüstriyel Mutfak',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'Maltepe Mah. Gümüşsuyu Cad. Hacıoğlu Sanayi Sitesi No: 51',
-          addressLocality: 'Zeytinburnu',
-          addressRegion: 'İstanbul',
-          postalCode: '34010',
           addressCountry: 'TR',
+          addressLocality: 'İstanbul',
+          addressRegion: 'İstanbul',
         },
-        contactPoint: [
-          {
-            '@type': 'ContactPoint',
-            telephone: '+90-541-228-83-66',
-            contactType: 'sales',
-            areaServed: 'TR',
-            availableLanguage: ['Turkish', 'English'],
-            contactOption: 'TollFree',
-            hoursAvailable: {
-              '@type': 'OpeningHoursSpecification',
-              dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-              opens: '08:00',
-              closes: '18:00',
-            },
-          },
-          {
-            '@type': 'ContactPoint',
-            telephone: '+90-541-228-83-66',
-            contactType: 'customer support',
-            areaServed: 'TR',
-            availableLanguage: 'Turkish',
-          },
-          {
-            '@type': 'ContactPoint',
-            telephone: '+90-541-228-83-66',
-            contactType: 'technical support',
-            areaServed: 'TR',
-            availableLanguage: 'Turkish',
-          },
-        ],
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '4.8',
-          reviewCount: '127',
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: '+90-xxx-xxx-xxxx',
+          contactType: 'customer service',
+          areaServed: 'TR',
+          availableLanguage: 'Turkish',
         },
-        review: [
-          {
-            '@type': 'Review',
-            author: {
-              '@type': 'Person',
-              name: 'Ayşe Yılmaz',
-            },
-            reviewRating: {
-              '@type': 'Rating',
-              ratingValue: '5',
-            },
-            reviewBody: 'Mutfak ekipmanları çok kaliteli ve hızlı teslimat yapıldı. Teşekkürler!',
-            datePublished: '2023-10-26',
-          },
-          {
-            '@type': 'Review',
-            author: {
-              '@type': 'Person',
-              name: 'Mehmet Demir',
-            },
-            reviewRating: {
-              '@type': 'Rating',
-              ratingValue: '5',
-            },
-            reviewBody: 'Profesyonel hizmet ve kaliteli ürünler. Restoranımız için mükemmel çözümler sundular.',
-            datePublished: '2023-11-15',
-          },
-        ],
-        foundingDate: '2010',
+        foundingDate: '2020',
         numberOfEmployees: '50-100',
-        slogan: 'Paslanmaz Çelik Ekipman Üretiminde Uzman',
-        knowsAbout: [
-          'Endüstriyel Mutfak Ekipmanları',
-          'Paslanmaz Çelik Üretimi',
-          'Mutfak Tasarımı',
-          'Profesyonel Mutfak Çözümleri',
-        ],
-        areaServed: {
-          '@type': 'Country',
-          name: 'Turkey',
-        },
+        industry: 'Endüstriyel Mutfak Ekipmanları',
         description: 'Pars Endüstriyel Mutfak, restoran, otel, kafe, fırın ve catering işletmeleri için profesyonel mutfak çözümleri sunan lider firmadır.',
       };
       break;
@@ -121,43 +49,18 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
       structuredData = {
         ...baseData,
         '@type': 'LocalBusiness',
-        '@id': 'https://www.parslanmaz.com/#localbusiness',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'Maltepe Mah. Gümüşsuyu Cad. Hacıoğlu Sanayi Sitesi No: 51',
-          addressLocality: 'Zeytinburnu',
+          streetAddress: 'Adres Bilgisi',
+          addressLocality: 'İstanbul',
           addressRegion: 'İstanbul',
-          postalCode: '34010',
+          postalCode: '34000',
           addressCountry: 'TR',
         },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: '41.0082',
-          longitude: '28.9784',
-        },
-        openingHoursSpecification: [
-          {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-            opens: '08:00',
-            closes: '18:00',
-          },
-          {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: 'Saturday',
-            opens: '09:00',
-            closes: '14:00',
-          },
-        ],
-        telephone: '+90-541-228-83-66',
-        priceRange: '₺₺₺',
-        paymentAccepted: ['Cash', 'Credit Card', 'Bank Transfer', 'Check'],
-        currenciesAccepted: 'TRY, EUR, USD',
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '4.8',
-          reviewCount: '127',
-        },
+        openingHours: 'Mo-Fr 08:00-18:00',
+        telephone: '+90-xxx-xxx-xxxx',
+        priceRange: '$$',
+        paymentAccepted: 'Cash, Credit Card, Bank Transfer',
       };
       break;
 

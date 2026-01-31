@@ -13,7 +13,7 @@ export function useViewerCount() {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const animationRef = useRef<number | null>(null);
   const isMountedRef = useRef(true);
-  const displayCountRef = useRef<number>(15);
+  const displayCountRef = useRef<number>(45);
   
   // İlk değeri belirle (8-42 arası gerçekçi bir aralık)
   const getRandomCount = (): number => {
@@ -80,18 +80,18 @@ export function useViewerCount() {
       animationRef.current = requestAnimationFrame(step);
     };
 
-    // Profesyonel ve çok yavaş sayı güncelleme (30-60 saniye arası - gerçekçi ve profesyonel)
+    // Profesyonel ve yavaş sayı güncelleme (15-25 saniye arası - çok daha yavaş)
     const updateTargetCount = () => {
       if (!isMountedRef.current) return;
 
-      // Çok küçük ve yumuşak değişimler: %90 ihtimalle ±1, %8 ihtimalle ±2, %2 ihtimalle ±3
+      // Çok küçük ve yumuşak değişimler: %85 ihtimalle ±1, %12 ihtimalle ±2, %3 ihtimalle ±3
       const changeType = Math.random();
       let change = 0;
       
-      if (changeType < 0.90) {
+      if (changeType < 0.85) {
         // En yaygın: ±1 (çok küçük değişim)
         change = Math.random() < 0.5 ? -1 : 1;
-      } else if (changeType < 0.98) {
+      } else if (changeType < 0.97) {
         // Nadir: ±2
         change = Math.random() < 0.5 ? -2 : 2;
       } else {
@@ -102,19 +102,19 @@ export function useViewerCount() {
       const currentDisplay = displayCountRef.current;
       const newTarget = Math.max(5, Math.min(45, currentDisplay + change));
       
-      // Animasyonu başlat (yavaş ve yumuşak animasyon - 3 saniye)
-      animateCount(currentDisplay, newTarget, 3000);
+      // Animasyonu başlat (daha yavaş animasyon)
+      animateCount(currentDisplay, newTarget);
 
-      // Bir sonraki güncelleme için rastgele süre belirle (30000-60000ms = 30-60 saniye - çok daha yavaş ve profesyonel)
-      const nextUpdate = Math.floor(Math.random() * 30000) + 30000;
+      // Bir sonraki güncelleme için rastgele süre belirle (15000-25000ms - çok daha yavaş ve profesyonel)
+      const nextUpdate = Math.floor(Math.random() * 10000) + 15000;
       
       timeoutRef.current = setTimeout(() => {
         updateTargetCount();
       }, nextUpdate);
     };
 
-    // İlk güncellemeyi başlat (20-30 saniye sonra - daha uzun bekleme)
-    const initialDelay = Math.floor(Math.random() * 10000) + 20000;
+    // İlk güncellemeyi başlat (10-15 saniye sonra - daha uzun bekleme)
+    const initialDelay = Math.floor(Math.random() * 5000) + 10000;
     timeoutRef.current = setTimeout(() => {
       updateTargetCount();
     }, initialDelay);
